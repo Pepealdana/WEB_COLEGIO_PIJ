@@ -507,6 +507,9 @@ body {
     padding: 10px;
     cursor: pointer;
     z-index: 10;
+    font-size: 24px; /* Fija el tamaño del botón */
+    width: 50px;
+    height: 50px;
 }
 
 .prev {
@@ -557,5 +560,36 @@ body {
 
     .next {
         right: 5px;
+    }
+}
+
+/* Estilos para pantallas grandes */
+.info-box {
+    max-height: 500px; /* Altura máxima en pantallas grandes */
+    overflow: hidden;
+}
+
+.scrollable-text {
+    max-height: 300px; /* Altura de la caja de texto en pantallas grandes */
+    overflow-y: auto; /* Desplazamiento vertical */
+    padding: 10px;
+}
+
+/* Estilos para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+    .info-box {
+        max-height: 400px; /* Ajustar la altura de la caja en pantallas pequeñas */
+    }
+
+    .scrollable-text {
+        max-height: 200px; /* Caja de texto más grande para pantallas pequeñas */
+        overflow-y: auto; /* Desplazamiento vertical */
+    }
+
+    /* Mantener el tamaño de los botones de navegación */
+    .prev, .next {
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
     }
 }
