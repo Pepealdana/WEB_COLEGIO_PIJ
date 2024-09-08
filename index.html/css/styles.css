@@ -427,4 +427,135 @@ body {
   button.prev:hover, button.next:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
-  
+  @media (max-width: 768px) {
+    .slider-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slider-text {
+        max-height: 200px; /* Ajusta el tamaño según lo necesario */
+        overflow-y: auto;
+        padding: 10px;
+        margin-top: 15px; /* Para separar el texto de la imagen */
+        box-sizing: border-box;
+    }
+
+    .slider img {
+        width: 100%; /* Para que la imagen ocupe el ancho completo */
+        height: auto;
+    }
+
+    .slider-buttons {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .slider-prev {
+        left: 10px;
+    }
+
+    .slider-next {
+        right: 10px;
+    }
+}
+/* Estilos para pantallas grandes */
+.info-slider {
+    position: relative;
+    width: 100%;
+}
+
+.slider-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-item {
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.info-box {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 50%;
+}
+
+.slider-item img {
+    width: 50%;
+    height: auto;
+}
+
+.slider-text {
+    max-height: none; /* Sin restricciones en pantallas grandes */
+    overflow-y: visible;
+}
+
+/* Botones de navegación */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Estilos para pantallas pequeñas (responsive) */
+@media (max-width: 768px) {
+    .slider-container {
+        display: block; /* Cada item en una fila */
+    }
+
+    .slider-item {
+        flex-direction: column; /* Imagen arriba y texto debajo */
+    }
+
+    .slider-item img {
+        width: 100%; /* Imagen ocupa todo el ancho */
+        height: auto;
+    }
+
+    .info-box {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .slider-text {
+        max-height: 200px; /* Ajusta según necesidad */
+        overflow-y: auto;  /* Scroll para el texto */
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+    }
+
+    .prev, .next {
+        top: auto;
+        bottom: 10px;
+        transform: none;
+    }
+
+    .prev {
+        left: 5px;
+    }
+
+    .next {
+        right: 5px;
+    }
+}
