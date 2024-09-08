@@ -86,6 +86,21 @@
         </div>
     </header>
 
+    <!-- Sidebar Menu -->
+<div class="sidebar-menu">
+    <!-- Icono de menú hamburguesa -->
+    <div class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
+  
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <a href="#">Inicio</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Beata Clara Fey</a>
+      <a href="#">Modelo Pedagógico</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </div>
+
     <!-- Sección hero con imagen de fondo y texto centralizado -->
     <section class="hero-section">
         <div class="hero-content">
@@ -145,5 +160,17 @@
     <!-- Incluyendo el archivo JavaScript -->
     <script src="js/scripts.js"></script>
     <script src="js/slider.js"></script>
+
+    <script>
+        function toggleSidebar() {
+          var sidebar = document.querySelector(".sidebar");
+          if (sidebar.style.width === "250px") {
+            sidebar.style.width = "0";
+          } else {
+            sidebar.style.width = "250px";
+          }
+        }
+        </script>
+
 </body>
 </html>
