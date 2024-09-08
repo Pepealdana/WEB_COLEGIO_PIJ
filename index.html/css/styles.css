@@ -652,6 +652,8 @@ body {
   
   .sidebar a:hover {
     background-color: #ffcc00;
+    font-size: 18px;
+    color: #01142d;
   }
   
   /* Mostrar el ícono en pantallas pequeñas */
