@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://trusted-site.com; script-src 'self' https://trusted-site.com;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título y enlaces a recursos externos como CSS y favicon -->
+    <title>Colsme.edu.co</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/escudo-sme.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
+</head>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                console.log('Service Worker registrado con éxito:', registration);
+            })
+            .catch(error => {
+                console.log('Registro de Service Worker fallido:', error);
+            });
+    }
+</script>
+
+<body>
+    <!-- Barra superior con enlaces a redes sociales -->
+    <div class="top-bar">
+        <div class="social-media">
+            <span>Síguenos:</span>
+            <a href="https://www.facebook.com/colegiosantamariadelaesperanza" target="_blank">
+                <img src="img/facebook-icon.png" alt="Facebook">
+            </a>
+            <a href="https://www.youtube.com/channel/UCY0figVslii6xSoJrAxj-Cg" target="_blank">
+                <img src="img/youtube-icon.png" alt="Youtube">
+            </a>
+            <a href="https://www.instagram.com/colegio_sme/?hl=es-la" target="_blank">
+                <img src="img/instagram-icon.png" alt="Instagram">
+            </a>
+        </div>
+          <!-- Imagen enlazada al lado derecho -->
+        <a href="https://colsme.phidias.co/" class="topbar-link" target="_blank">
+            <img src="img/boton-phidias.png" alt="Nuevo sitio" class="topbar-image">
+        </a>
+    </div>
+
+    <!-- Encabezado fijo con logotipo y navegación -->
+    <header>
+        <!-- Logotipo de la institución -->
+        <div class="logo">
+            <img src="img/logosmeytexto.png" alt="Logo de la Institución">
+        </div>
+
+        <!-- Menú de navegación principal -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#nosotros">Acerca de Nosotros</a>
+                    <ul class="submenu">
+                        <li><a href="#">Comunidad PIJ</a></li>
+                        <li><a href="#">Direccionamiento</a></li>
+                        <li><a href="#">Colegio SME</a></li>
+                        <li><a href="#">Nuestro Equipo</a></li>
+                    </ul>
+                </li>
+                <li><a href="#beataclara">Beata Clara Fey</a>
+                    <ul class="submenu">
+                        <li><a href="#">Biografía</a></li>
+                        <li><a href="#">Beatificación</a></li>
+                        <li><a href="#">Espiritualidad</a></li>
+                        <li><a href="#">Pensamientos</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#modeloped">Modelo Pedagógico</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Botón de menú hamburguesa para pantallas pequeñas -->
+        <div id="menu-toggle" class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Sección hero con imagen de fondo y texto centralizado -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Bienvenido al Colegio Santa María de la Esperanza</h1>
+            <p>"Somos Luz y Esperanza para el mundo de hoy."</p>
+            <a href="#about" class="cta-button">Conoce Más</a>
+        </div>
+        <!-- Imagen de fondo en la sección hero -->
+        <img src="img/colegio1.JPG" alt="Vista aérea del colegio" class="hero-image active">
+    </section>
+
+<!-- Sección de la organización -->
+<section class="info-slider">
+    <div class="slider-container">
+      <div class="slider-item active">
+        <img src="img/plazoleta.jpg" alt="Nuestra Historia">
+        <div class="info-box">
+          <h2>Nuestra Historia</h2>
+          <p>El Lunes 8 de Febrero de 1.988 a las 7:30 a.m. se comenzaron las clases del nuevo Colegio SANTA MARIA DE LA ESPERANZA fundado a los 50 años de haberse iniciado  la obra apostólica de las Hermanas del Niño Jesús Pobre en Colombia.
+
+            Las hermanas con las cuales se comenzó la obra fueron:  La Hna. Anna Gertrud PIJ, la Hna. María del Rocío PIJ y la Hna. María Helena Henao PIJ.  El Colegio se inició con 38 alumnas en 6° y 10 en transición.
+                       
+            La construcción empezó en Octubre de 1988 y en Febrero de 1.989 se dio comienzo a las  labores escolares en el nuevo edificio sin terminar. Se inició con mucho entusiasmo, alegría y gran ESPERANZA.</p>
+        </div>
+      </div>
+      <div class="slider-item">
+        <img src="img/estudiante.jpg" alt="Congregación">
+        <div class="info-box">
+          <h2>Innovación Pedagógica</h2>
+          <p>La comunidad de las Hermanas del Niño Jesús Pobre, en pro del mejoramiento continuo en la calidad de la educación, viene implementando su modelo pedagógico basado en el trabajo cooperativo, teniendo encuenta las etapas de desarrollo,
+            para la obtención de un aprendizaje significativo; utilizando herramientas innovadoras como la plataforma Progrentis.
+          </p>
+        </div>
+      </div>
+      <div class="slider-item">
+        <img src="img/hermanas.jpg" alt="Formación Integral">
+        <div class="info-box">
+          <h2>Formación Integral</h2>
+          <p>En los colegios PIJ entendemos la formación integral como la educación que  promueve el desarrollo de la persona en sus dimensiones física, afectiva, cognitiva,  espiritual e interpersonal, para su realización personal dentro de la realidad y el  entorno en el cual interactúa.</p>
+        </div>
+      </div>
+    </div>
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+  </section>
+  
+
+
+    <!-- Pie de página con información de derechos de autor -->
+    <footer>
+        <p>&copy; 2024. Colegio Santa María de la Esperanza. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Incluyendo el archivo JavaScript -->
+    <script src="js/scripts.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>
