@@ -651,7 +651,7 @@ body {
   }
   
   .sidebar a:hover {
-    background-color: #ffcc00;
+    background-color: #ffdd57;
     font-size: 18px;
     color: #01142d;
   }
@@ -663,8 +663,23 @@ body {
     }
   
     .sidebar {
-      width: 250px;
+        height: auto; /* Cambia esto si está configurado a 100vh */
+        max-height: 100vh; /* Para evitar que sobrepase la pantalla */
+        overflow-y: auto; /* Añadir scroll si el contenido excede la altura */
+        width: 250px;
       box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
     }
   }
-  
+  .hamburger-icon span {
+    background-color: #ffdd57; /* Elige el color que prefieras */
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 5px auto;
+    transition: background-color 0.3s ease;
+}
+
+/* Cuando el menú está activo, puedes cambiar el color también */
+.hamburger-icon.active span {
+    background-color: #ffdd57; /* Otro color cuando el menú está activo */
+}
