@@ -575,21 +575,37 @@ body {
     padding: 10px;
 }
 
-/* Estilos para pantallas pequeñas */
-@media only screen and (max-width: 768px) {
+/* Ajustes para pantallas pequeñas y medianas */
+@media screen and (max-width: 768px) {
     .info-box {
-        max-height: 400px; /* Ajustar la altura de la caja en pantallas pequeñas */
+      height: 200px; /* Ajusta según lo que necesites */
+      overflow: hidden; /* Oculta cualquier contenido que se desborde */
     }
-
-    .scrollable-text {
-        max-height: 200px; /* Caja de texto más grande para pantallas pequeñas */
-        overflow-y: auto; /* Desplazamiento vertical */
+  
+    .scrollable-content {
+      height: 100%;
+      overflow-y: scroll; /* Permite el desplazamiento vertical */
+      padding-right: 15px; /* Evita que el scroll tape el texto */
     }
-
-    /* Mantener el tamaño de los botones de navegación */
+  
+    .info-box h2 {
+      margin: 0;
+      font-size: 1.2em; /* Ajustar el tamaño del título */
+    }
+  
+    .info-box p {
+      font-size: 0.9em; /* Ajustar el tamaño del párrafo */
+    }
+  }
+  
+  /* Mantener los tamaños de los botones */
+  .prev, .next {
+    font-size: 24px;
+  }
+  
+  @media screen and (max-width: 768px) {
     .prev, .next {
-        font-size: 24px;
-        width: 50px;
-        height: 50px;
+      font-size: 24px; /* Mantener el tamaño de los botones en pantallas pequeñas */
     }
-}
+  }
+  
