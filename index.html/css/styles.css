@@ -624,23 +624,37 @@ body {
     z-index: 1001;
     display: none; /* Se mostrará solo en pantallas pequeñas */
   }
-  
-  /* Sidebar oculto inicialmente */
-  .sidebar {
-    height: 100%;
-    width: 0;
+/* Ajusta también la posición del icono del sidebar */
+.menu-icon {
     position: fixed;
-    top: 0;
+    top: 10px; /* Ajusta según la posición deseada */
+    left: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333; /* Ajusta el color aquí */
+}
+
+  .menu-icon.active {
+    background-color: #555; /* Cambia esto por el color que prefieras */
+    color: #fff; /* Color del ícono cuando está pulsado */
+}
+
+  /* Sidebar oculto por defecto */
+  .sidebar {
+    position: fixed;
+    top: 60px; /* Ajusta esta altura según la altura de tu header */
     left: 0;
+    width: 250px;
+    height: calc(100% - 60px); /* Resta la altura del header */
     background-color: #01142d;
-    overflow-x: hidden;
-    transition: 0.5s;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    padding-top: 60px;
+    transition: all 0.3s;
   }
-  
+
+  /* Cambia el color cuando el sidebar está activo */
+.sidebar.active {
+    background-color: #333; /* Cambia esto por el color que prefieras */
+}
+
   .sidebar a {
     padding: 10px 15px;
     text-decoration: none;
@@ -655,6 +669,10 @@ body {
     font-size: 18px;
     color: #01142d;
   }
+
+  .sidebar.open {
+    width: 250px; /* Ancho cuando está visible */
+}
   
   /* Mostrar el ícono en pantallas pequeñas */
   @media screen and (max-width: 768px) {
@@ -673,9 +691,9 @@ body {
   .hamburger-icon span {
     background-color: #ffdd57; /* Elige el color que prefieras */
     display: block;
-    width: 30px;
-    height: 4px;
-    margin: 5px auto;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
     transition: background-color 0.3s ease;
 }
 

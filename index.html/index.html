@@ -89,17 +89,22 @@
     <!-- Sidebar Menu -->
 <div class="sidebar-menu">
     <!-- Icono de menú hamburguesa -->
-    <div class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
-  
+    <div id="hamburger-icon" class="hamburger-icon" onclick="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
     <!-- Sidebar -->
-    <nav class="sidebar">
-      <a href="#">Inicio</a>
-      <a href="#">Nosotros</a>
-      <a href="#">Beata Clara Fey</a>
-      <a href="#">Modelo Pedagógico</a>
-      <a href="#">Contacto</a>
-    </nav>
-  </div>
+    <div id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Beata Clara Fey</a></li>
+            <li><a href="#">Modelo Pedagógico</a></li>
+            <li><a href="#">Contacto</a></li>
+    </ul>
+</div>
 
     <!-- Sección hero con imagen de fondo y texto centralizado -->
     <section class="hero-section">
