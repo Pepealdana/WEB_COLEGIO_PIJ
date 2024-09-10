@@ -41,6 +41,9 @@
             </a>
         </div>
           <!-- Imagen enlazada al lado derecho -->
+        <a href="https://prod.progrentis.com/signin/tabid/1543/Default.aspx?returnurl=%2fmain.aspx" class="topbar-link" target="_blank">
+            <img src="img/boton-progrentis.png" alt="Nuevo sitio" class="topbar-image">
+        </a>
         <a href="https://colsme.phidias.co/" class="topbar-link" target="_blank">
             <img src="img/boton-phidias.png" alt="Nuevo sitio" class="topbar-image">
         </a>
@@ -86,25 +89,26 @@
         </div>
     </header>
 
-    <!-- Sidebar Menu -->
-<div class="sidebar-menu">
-    <!-- Icono de menú hamburguesa -->
-    <div id="hamburger-icon" class="hamburger-icon" onclick="toggleSidebar()">
+<!-- Icono del menú hamburguesa -->
+<div id="menu-toggle" class="hamburger-icon" onclick="toggleMenu()">
     <span></span>
     <span></span>
     <span></span>
 </div>
 
-    <!-- Sidebar -->
-    <div id="sidebar" class="sidebar">
+<!-- Menú móvil (Sidebar) -->
+<div id="sidebar" class="sidebar">
+    <nav>
         <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Nosotros</a></li>
             <li><a href="#">Beata Clara Fey</a></li>
             <li><a href="#">Modelo Pedagógico</a></li>
             <li><a href="#">Contacto</a></li>
-    </ul>
+        </ul>
+    </nav>
 </div>
+
 
     <!-- Sección hero con imagen de fondo y texto centralizado -->
     <section class="hero-section">
@@ -166,16 +170,6 @@
     <script src="js/scripts.js"></script>
     <script src="js/slider.js"></script>
 
-    <script>
-        function toggleSidebar() {
-          var sidebar = document.querySelector(".sidebar");
-          if (sidebar.style.width === "250px") {
-            sidebar.style.width = "0";
-          } else {
-            sidebar.style.width = "250px";
-          }
-        }
-        </script>
-
+    
 </body>
 </html>

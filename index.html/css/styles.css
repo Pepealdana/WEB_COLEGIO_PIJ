@@ -26,7 +26,7 @@ body {
     z-index: 1000;
     display: flex;
     justify-content: space-between;
-    padding: 5px 20px;
+    padding: 10px 20px;
     align-items: center;
     box-sizing: border-box;
     height: 40px;
@@ -108,9 +108,9 @@ body {
 }
 
 .main-nav ul li {
-    margin-left: 50px;
+    margin-left: 0px;
     position: relative;
-}
+    }
 
 .main-nav ul li a {
     text-decoration: none;
@@ -118,6 +118,7 @@ body {
     font-size: 16px;
     padding: 10px;
     transition: color 0.3s ease, background-color 0.3s ease;
+    white-space: nowrap; /* Evita que las palabras se dividan en dos líneas */
 }
 
 .main-nav ul li a:hover {
@@ -610,158 +611,64 @@ body {
   }
   
   /* SIDEBAR */
-.sidebar-menu {
-    position: relative;
-}
-
-/* Icono de menú */
-.menu-toggle {
-    font-size: 28px;
+/* Menú hamburguesa */
+.hamburger-icon {
     cursor: pointer;
-    position: fixed;
-    top: 60px;
-    left: 15px;
-    z-index: 1001;
-    display: none; /* Se mostrará solo en pantallas pequeñas */
+    display: inline-block;
+    padding: 15px;
+    z-index: 100;
 }
 
-#menu-toggle {
-    position: relative;
-    top: 40px;
-    z-index: 1002;
+.hamburger-icon span {
+    background-color: #333;
+    display: block;
+    height: 3px;
+    width: 30px;
+    margin: 5px 0;
+    transition: 0.4s;
 }
 
-/* Ajusta también la posición del icono del sidebar */
-.menu-toggle {
-    position: fixed;
-    top: 60px; /* Ajusta según la posición deseada */
-    left: 10px;
-    font-size: 30px;
-    cursor: pointer;
-    color: #b6aaac; /* Ajusta el color aquí */
-}
-
-.menu-toggle.active {
-    background-color: #555; /* Cambia esto por el color que prefieras */
-    color: #fff; /* Color del ícono cuando está pulsado */
-}
-
-/* Sidebar oculto por defecto */
+/* Sidebar */
 .sidebar {
     position: fixed;
-    top: 40px; /* Ajusta esta altura según la altura de tu header */
-    left: 0;
-    width: 200px;
-    height: calc(100% - 40px); /* Resta la altura del header */
-    background-color: #01142d;
-    transition: all 0.3s;
-    z-index: 1000;
-    margin-top: 25px;
-    transform: translateX(-0%);
-}
-
-/* Cambia el color cuando el sidebar está activo */
-.sidebar.active {
-    transform: translateX(-0);
-    background-color: #e5d1d1;
-}
-
-.menu-icon {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    font-size: 30px;
-    cursor: pointer;
-    color: #b6aaac;
-}
-
-.sidebar a {
-    padding: 05px 15px;
-    text-decoration: none;
-    font-size: 16px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    background-color: #ffdd57;
-    color: #01142d;
-}
-
-.sidebar ul li a:hover,
-.sidebar ul li a.active {
-    background-color: #ffdd57;
-    color: #01142d;
-}
-
-.main-nav ul {
-    z-index: 1001; /* Debe estar por encima del header pero debajo del menú toggle */
-    position: absolute;
-}
-
-/* Cambiar el color cuando se selecciona un ítem */
-.sidebar a:active {
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
     background-color: #333;
-    color: #fff;
-}
-
-.sidebar.active a.selected {
-    background-color: #333;
-    color: #fff;
+    transition: left 0.3s ease;
+    z-index: 99;
 }
 
 .sidebar.open {
-    width: 200px;
+    left: 0;
 }
 
-/* Mostrar el ícono en pantallas pequeñas */
-@media screen and (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-        top: 60px;
-    }
-
-    .sidebar {
-        top: 80px;
-        height: auto;
-        max-height: 100vh;
-        overflow-y: auto;
-        width: 200px; /* ancho de sidebar */
-        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
-    }
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
 }
 
-.menu-toggle span {
-    background-color: #ffdd57;
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
-    transition: background-color 0.3s ease;
+.sidebar nav ul li {
+    margin-bottom: 15px;
 }
 
-/* Cuando el menú está activo */
-.menu-toggle.active span {
-    background-color: #ffdd57;
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
 }
 
-/* Ocultar sidebar en pantallas grandes */
-@media (min-width: 768px) {
-    .sidebar {
-        transform: translateX(-100%);
-    }
+/* Animación del menú hamburguesa */
+.hamburger-icon.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
 
-/* Sidebar visible solo en pantallas pequeñas cuando está activo */
-@media (max-width: 768px) {
-    .sidebar.active {
-        transform: translateX(0);
-        transition: transform 0.3s ease-in-out;
-    }
-}@media screen and (max-width: 768px) {
-    .sidebar {
-        width: 180px; /* Un tamaño más pequeño en pantallas móviles */
-    }
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
 }
 
+.hamburger-icon.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
