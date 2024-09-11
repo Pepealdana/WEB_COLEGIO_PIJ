@@ -33,6 +33,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    document.querySelector('.down-arrow').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.querySelector('.info-slider').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+    
+
     // Slider de información
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slider-item');
