@@ -68,3 +68,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     showSlide(currentSlide);
 });
+// Cargar la frase desde frases.json
+fetch('frases.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('No se pudo cargar el archivo frases.json');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Seleccionar una frase aleatoria
+        const randomIndex = Math.floor(Math.random() * data.frases.length);
+        const randomQuote = data.frases[randomIndex];
+        // Mostrar la frase en el contenedor
+        document.getElementById('random-quote').textContent = randomQuote.texto;
+    })
+    .catch(error => {
+        console.error('Error al cargar las frases:', error);
+    });
