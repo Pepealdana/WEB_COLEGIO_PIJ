@@ -10,7 +10,7 @@ body {
 
 /* Estilos del logotipo */
 .logo img {
-    width: 350px;
+    width: 320px;
     height: auto;
     display: block;
     margin-left: 20px; /* Ajusta este valor para separar el logo del borde izquierdo */
@@ -71,12 +71,33 @@ body {
 .top-bar .topbar-link {
     display: flex;
     align-items: center;
-}
+    margin-left: 0;
+    margin-right: 0;}
 
 .top-bar .topbar-image {
     width: 100px;
     height: auto;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    margin-left: 10px; /* Espacio entre las imágenes */
 }
+
+/* Contenedor de las imágenes para controlar el espaciado */
+.topbar-images {
+    display: flex; /* Hace que las imágenes estén una al lado de la otra */
+    align-items: center;
+    gap: 20; /* Asegura que no haya espacio extra entre las imágenes */
+}
+
+.top-bar .topbar-link:first-child {
+    margin-left: 0; /* Asegurarse de que la primera imagen no tenga margen */
+}
+
+.top-bar .topbar-link:first-of-type {
+    margin-right: 5px; /* Espacio ajustado entre las dos imágenes */
+}
+
 
 /* Estilos para el encabezado y la navegación */
 header {
