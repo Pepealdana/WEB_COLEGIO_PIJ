@@ -885,9 +885,13 @@ body {
 /* Línea vertical divisoria en el centro */
 .vertical-line {
     width: 3px;
-    background-color: #01142d; /* Color azul oscuro */
-    margin: 0 20px;
-    height: 100%; /* Ocupa el 100% de la sección */
+    background-color: #01142d;
+    height: 0;
+    transition: height 0.5s ease;
+}
+
+.content-section:hover .vertical-line {
+    height: 100%; /* La barra crece cuando se pasa el mouse sobre la sección */
 }
 
 /* Derecha: contenedor del video */
@@ -966,6 +970,16 @@ body {
 .madre-clara-image, .quote-container, .video-container {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Suave */
     border-radius: 8px;
+}
+
+/* Añadir animación para cuando los elementos son visibles */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
 }
 
 /* Nueva sección para derechos reservados */
