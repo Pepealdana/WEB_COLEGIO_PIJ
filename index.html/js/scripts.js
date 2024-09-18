@@ -89,3 +89,4 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error('Error al cargar las frases:', error);
         });
 });
+
