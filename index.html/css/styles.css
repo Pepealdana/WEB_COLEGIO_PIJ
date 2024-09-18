@@ -813,27 +813,17 @@ body {
 /* Sección frases Madre clara */
 .content-section {
     display: flex;
-    justify-content: center; /* Centrar los contenidos */
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-top: 2px solid #ccc;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #f7f9fc; /* Color suave */
 }
 
 /* Títulos con fondo de color */
 .title-container {
-    margin-bottom: 15px;
-}
-
-.title-bg {
-    background-color: #01142d;
-    padding: 10px;
-    font-size: 1.8rem; /* Incrementado el tamaño */
+    font-size: 2rem;
+    padding: 15px;
+    background-color: #001f3f; /* Azul más oscuro */
     color: #ffdd57;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
 }
 
 /* Estilo para la frase y la imagen alineadas horizontalmente */
@@ -954,6 +944,9 @@ body {
 /* Mover el título del video a la derecha */
 .video-title {
     text-align: right;
+    font-size: 1.2rem;
+    color: #01142d;
+    margin-top: 10px;
 }
 
 /* Contenedor del video estilizado */
@@ -967,6 +960,12 @@ body {
 .video-container img {
     max-width: 200px; /* Tamaño del escudo */
     margin-right: 20px; /* Espacio entre la imagen y el video */
+}
+
+/* Suavizar sombras */
+.madre-clara-image, .quote-container, .video-container {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Suave */
+    border-radius: 8px;
 }
 
 /* Nueva sección para derechos reservados */
