@@ -424,6 +424,8 @@ body {
   .info-box p {
     font-size: 16px;
     color: #01142d;
+    font-style: italic;
+    text-align: justify;
   }
   
   button.prev, button.next {
@@ -462,6 +464,7 @@ body {
         padding: 10px;
         margin-top: 15px; /* Para separar el texto de la imagen */
         box-sizing: border-box;
+        font-style: italic;
     }
 
     .slider img {
@@ -506,6 +509,7 @@ body {
     padding: 20px;
     box-sizing: border-box;
     width: 50%;
+    
 }
 
 .slider-item img {
@@ -814,38 +818,38 @@ body {
 .content-section {
     display: flex;
     justify-content: space-between;
-    padding: 40px;
+    padding: 30px;
     background-color: #f7f9fc; /* Color suave */
 }
 
 /* Títulos con fondo de color */
 .title-container {
-    font-size: 2rem;
-    padding: 15px;
+    font-size: 1.3rem;
+    padding: 3px;
     background-color: #001f3f; /* Azul más oscuro */
-    color: #ffdd57;
+    color: #f8f8f7;
 }
 
 /* Estilo para la frase y la imagen alineadas horizontalmente */
 .image-text-row {
     display: flex;
     align-items: flex-start;
-    margin-left: 20px; /* Mueve el contenido hacia la derecha */
+    margin-left: 35px; /* Mueve el contenido hacia la derecha */
 }
 
 /* Imagen de Madre Clara más grande */
 .madre-clara-image {
-    width: 100%;
+    width: 300%;
     max-width: 200px; /* Tamaño aumentado */
     display: block;
     margin-right: 20px; /* Espacio entre la imagen y la frase */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15); /* Sombra para la imagen */
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15); /* Sombra para la imagen */
 }
 
 /* Contenedor de la frase */
 .quote-container {
     max-width: 500px; /* Caja de la frase más grande */
-    border: 2px solid #01142d;
+    border: 120px solid #01142d;
     padding: 20px; /* Más espacio interno */
     background-color: #ffffff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -858,7 +862,7 @@ body {
 /* Marco de la frase con estilo */
 .quote-container.styled-quote {
     width: 300px; /* Tamaño fijo del contenedor de la frase */
-    border: 2px solid #01142d; /* Borde azul */
+    border: 4px solid #55C9F4; /* Borde azul */
     padding: 15px;
     background-color: #ffffff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -869,16 +873,16 @@ body {
 }
 
 .big-quote {
-    font-size: 4rem; /* Aumentado el tamaño de la comilla */
-    color: #01142d;
-    margin-right: 10px;
+    font-size: 5rem; /* Aumentado el tamaño de la comilla */
+    color: #55C9F4;
+    margin-right: 8px;
 }
 
 /* Ajuste para que el texto de la frase se adapte */
 .quote-text {
     font-size: 1.1rem;
     font-style: italic;
-    flex: 1;
+    flex: 2;
     word-wrap: break-word; /* Para frases largas */
 }
 
@@ -908,9 +912,8 @@ body {
     border: 2px solid #ffdd57; /* Borde amarillo */
     padding: 10px;
     background-color: #f5f5f5;
-    margin-right: 20px; /* Espacio entre el video y la imagen adicional */
+    margin-right: 10px; /* Espacio entre el video y la imagen adicional */
 }
-
 
 .video-container {
     display: flex;
@@ -920,7 +923,7 @@ body {
 .video-container video {
     width: 100%;
     height: auto;
-    max-width: 450px; /* Aumenta el tamaño del video */
+    max-width: 500px; /* Aumenta el tamaño del video */
     margin-left: 20px;
 }
 
@@ -950,7 +953,7 @@ body {
     text-align: right;
     font-size: 1.2rem;
     color: #01142d;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 /* Contenedor del video estilizado */
@@ -983,7 +986,7 @@ body {
 }
 
 
-/* Nueva sección para derechos reservados */
+/*sección para derechos reservados */
 footer {
     width: 100%;
     text-align: center;
