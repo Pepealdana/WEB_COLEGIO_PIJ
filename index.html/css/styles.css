@@ -900,7 +900,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 40px; /* Mueve el contenido a la derecha */
+    margin-left: 20px; /* Mueve el contenido a la derecha */
 }
 
 /* Contenedor del video estilizado */

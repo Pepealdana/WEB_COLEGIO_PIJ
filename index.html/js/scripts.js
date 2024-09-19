@@ -122,4 +122,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById('random-quote').textContent = randomQuote;
 });
-
