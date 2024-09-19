@@ -814,21 +814,25 @@ body {
     }
 }
 }
+
 /* Sección frases Madre clara */
 .content-section {
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    padding: 40px;
     background-color: #f7f9fc; /* Color suave */
 }
 
 /* Títulos con fondo de color */
 .title-container {
-    font-size: 1.3rem;
-    padding: 3px;
-    background-color: #001f3f; /* Azul más oscuro */
-    color: #f8f8f7;
-}
+        font-size: 1.3rem;
+        padding: 3px;
+        background-color: #001f3f;
+        color: #f8f8f7;
+        width: 30vw; /* Asegura que se extienda a todo el ancho de la pantalla */
+        margin-left: -40px; /* Asegura que comience desde el borde izquierdo absoluto */
+        padding-left: 120px; /* Agrega un poco de espacio interno si es necesario */
+    }
 
 /* Estilo para la frase y la imagen alineadas horizontalmente */
 .image-text-row {
@@ -839,29 +843,32 @@ body {
 
 /* Imagen de Madre Clara más grande */
 .madre-clara-image {
-    width: 300%;
-    max-width: 200px; /* Tamaño aumentado */
+    width: 300%; 
+    max-width: 200px; /* Mantener el tamaño */
     display: block;
-    margin-right: 20px; /* Espacio entre la imagen y la frase */
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15); /* Sombra para la imagen */
+    margin-right: 15px;
+    margin-top: 25px; /* Alinea la imagen con la caja de frases */
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15); /* Sombra suave */
 }
 
 /* Contenedor de la frase */
 .quote-container {
-    max-width: 500px; /* Caja de la frase más grande */
+    margin-top: 45px;
+    margin-left: 40px;
+    max-width: 600px; /* Caja de la frase más grande */
     border: 120px solid #01142d;
     padding: 20px; /* Más espacio interno */
     background-color: #ffffff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    font-size: 1.4rem; /* Tamaño de letra más grande */
+    font-size: 1.2rem; /* Tamaño de letra más grande */
     font-style: italic;
 }
 
 /* Marco de la frase con estilo */
 .quote-container.styled-quote {
-    width: 300px; /* Tamaño fijo del contenedor de la frase */
+    width: 400px; /* Tamaño fijo del contenedor de la frase */
     border: 4px solid #55C9F4; /* Borde azul */
     padding: 15px;
     background-color: #ffffff;
@@ -876,6 +883,8 @@ body {
     font-size: 5rem; /* Aumentado el tamaño de la comilla */
     color: #55C9F4;
     margin-right: 8px;
+    align-self: flex-start; /* Alinea la comilla al principio de la caja */
+    margin-top: -15px; /* Ajustar la posición superior si es necesario */
 }
 
 /* Ajuste para que el texto de la frase se adapte */
@@ -886,13 +895,12 @@ body {
     word-wrap: break-word; /* Para frases largas */
 }
 
-/* Línea vertical divisoria en el centro */
-.vertical-line {
-    width: 3px;
-    background-color: #01142d;
-    height: 0;
-    transition: height 0.5s ease;
+.side-image {
+    width: 100%;
+    max-width: 150px; /* Imagen más pequeña para moverla a la derecha */
+    display: block;
 }
+
 
 .content-section:hover .vertical-line {
     height: 100%; /* La barra crece cuando se pasa el mouse sobre la sección */
@@ -912,48 +920,42 @@ body {
     border: 2px solid #ffdd57; /* Borde amarillo */
     padding: 10px;
     background-color: #f5f5f5;
-    margin-right: 10px; /* Espacio entre el video y la imagen adicional */
+    margin-right: 5px; /* Espacio entre el video y la imagen adicional */
 }
 
 .video-container {
     display: flex;
-    align-items: center; /* Centrar verticalmente el video y la imagen */
+    flex-direction: column; /* Apilar video y título verticalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+    max-width: 700px; /* Reduce el ancho del video */
+    margin-left: 20px; /* Espacio para que la imagen y logo se muevan más a la derecha */   
 }
 
 .video-container video {
-    width: 100%;
+    margin-top: 15px;
+    width: 80%;
     height: auto;
-    max-width: 500px; /* Aumenta el tamaño del video */
-    margin-left: 20px;
 }
 
-/* Imagen al lado del video */
-.side-image-container {
-    display: flex;
-    align-items: center;
-}
-
-/* Contenedor para alinear video e imagen en fila */
-.video-image-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Imagen al lado del video */
-.side-image {
-    width: 100%;
-    max-width: 200px; /* Mismo tamaño que la imagen de la izquierda */
+/* Línea debajo del título del video */
+.video-title::after {
+    content: '';
     display: block;
-    margin-left: 20px; /* Espacio entre el video y la imagen */
+    width: calc(80vw - 830px); /* Longitud de la línea: desde el borde derecho hasta el borde izquierdo del video */
+    height: 2px;
+    background-color: #01142d; /* Color de la línea */
+    margin-top: 5px; /* Pequeño margen superior */
+    margin-right: auto; /* Asegura que la línea comience en el borde derecho */
 }
 
-/* Mover el título del video a la derecha */
+
+/* Mover el título del video a la derecha y abajo */
 .video-title {
-    text-align: right;
+    text-align: center; /* Centra el texto del título */
     font-size: 1.2rem;
     color: #01142d;
-    margin-top: 50px;
+    margin-top: 10px; /* Espacio más pequeño entre video y título */
+    position: relative; /* Posición relativa para controlar la línea debajo */
 }
 
 /* Contenedor del video estilizado */
@@ -985,6 +987,28 @@ body {
     opacity: 1;
 }
 
+/* Añadir transición para el título y la barra */
+.title-container, .vertical-line, .video-title {
+    transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+/* Efecto de disolvencia al pasar el cursor */
+.title-container:hover {
+    background-color: #001f3f; /* Mantén el mismo color o ajusta */
+    opacity: 0.8; /* Efecto de disolvencia */
+}
+
+.video-title:hover::after, .vertical-line:hover {
+    background-color: #ffdd57; /* Cambia el color o disolvencia al pasar */
+    opacity: 1; /* Aumenta la visibilidad */
+}
+/* Hover para imágenes */
+.madre-clara-image:hover, .video-container video:hover {
+    transform: scale(1.05); /* Efecto de zoom */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+    transition: all 0.3s ease-in-out;
+}
+
 
 /*sección para derechos reservados */
 footer {
@@ -993,4 +1017,26 @@ footer {
     padding: 10px 0;
     background-color: #f5f5f5;
     border-top: 1px solid #ccc;
+}
+
+
+/* Imagen al lado del video */
+.side-image-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Contenedor para alinear video e imagen en fila */
+.video-image-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Imagen al lado del video */
+.side-image {
+    width: 100%;
+    max-width: 200px; /* Mismo tamaño que la imagen de la izquierda */
+    display: block;
+    margin-left: 20px; /* Espacio entre el video y la imagen */
 }
