@@ -121,3 +121,17 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('random-quote').textContent = randomQuote;
 });
 
+// SECCIÓN NOTICIAS Y CRONOGRAMA
+document.getElementById('btn-news').addEventListener('click', function() {
+    document.getElementById('news-section').classList.add('active');
+    document.getElementById('schedule-section').classList.remove('active');
+    this.classList.add('active');
+    document.getElementById('btn-schedule').classList.remove('active');
+});
+
+document.getElementById('btn-schedule').addEventListener('click', function() {
+    document.getElementById('schedule-section').classList.add('active');
+    document.getElementById('news-section').classList.remove('active');
+    this.classList.add('active');
+    document.getElementById('btn-news').classList.remove('active');
+});

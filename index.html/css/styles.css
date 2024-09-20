@@ -1098,6 +1098,114 @@ body {
     }
 }
 
+/*sección NOTICIAS Y CRONOGRAMA */
+/* Estilos para la sección general */
+.news-schedule-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* Estilos de los botones */
+.tab-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.tab-buttons button {
+    background-color: #EAEAEA;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.tab-buttons button.active {
+    background-color: #0066CC;
+    color: white;
+}
+
+/* Estilos para las tarjetas de noticias */
+.section-content {
+    display: none; /* Oculta por defecto */
+}
+
+.section-content.active {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.news-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 15px;
+}
+
+.news-content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.news-content p {
+    font-size: 14px;
+    color: #666;
+}
+
+.news-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #0066CC;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.news-link:hover {
+    color: #004A99;
+}
+
+/* Cronograma imagen */
+.schedule-img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .section-content.active {
+        grid-template-columns: 1fr; /* Las tarjetas se apilan verticalmente */
+    }
+
+    .tab-buttons {
+        justify-content: center; /* Centra los botones en pantallas pequeñas */
+    }
+}
 
 
 
