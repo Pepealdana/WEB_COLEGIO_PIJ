@@ -827,8 +827,8 @@ body {
 .title-container {
         font-size: 1.3rem;
         padding: 3px;
-        background-color: #001f3f;
-        color: #f8f8f7;
+        background-color: #ffdd57;
+        color: #001f3f;
         width: 30vw; /* Asegura que se extienda a todo el ancho de la pantalla */
         margin-left: -40px; /* Asegura que comience desde el borde izquierdo absoluto */
         padding-left: 120px; /* Agrega un poco de espacio interno si es necesario */
@@ -837,8 +837,10 @@ body {
 /* Estilo para la frase y la imagen alineadas horizontalmente */
 .image-text-row {
     display: flex;
-    align-items: flex-start;
-    margin-left: 35px; /* Mueve el contenido hacia la derecha */
+    align-items: center; /* Centrado vertical entre la imagen y la caja de frases */
+    justify-content: space-between; /* Mantener separación horizontal */
+    margin-left: 35px;
+    height: auto; /* Ajuste dinámico de altura */
 }
 
 /* Imagen de Madre Clara más grande */
@@ -891,8 +893,9 @@ body {
 .quote-text {
     font-size: 1.1rem;
     font-style: italic;
-    flex: 2;
-    word-wrap: break-word; /* Para frases largas */
+    flex: 1;
+    word-wrap: break-word;
+    text-align: center; /* Alinea el texto en el centro horizontalmente */
 }
 
 .side-image {
@@ -1035,8 +1038,8 @@ footer {
 
 /* Imagen al lado del video */
 .side-image {
-    width: 100%;
-    max-width: 200px; /* Mismo tamaño que la imagen de la izquierda */
+    width: 50%;
+    max-width: 100px; /* Mismo tamaño que la imagen de la izquierda */
     display: block;
     margin-left: 20px; /* Espacio entre el video y la imagen */
 }
