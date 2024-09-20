@@ -997,7 +997,7 @@ body {
 
 /* Efecto de disolvencia al pasar el cursor */
 .title-container:hover {
-    background-color: #001f3f; /* Mantén el mismo color o ajusta */
+    background-color: #fdf102; /* Mantén el mismo color o ajusta */
     opacity: 0.8; /* Efecto de disolvencia */
 }
 
@@ -1011,6 +1011,94 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
     transition: all 0.3s ease-in-out;
 }
+
+/*RESPONSIVE DESING - sección madres clara */
+/* Estilo general para mantener el diseño aprobado */
+.content-section {
+    display: flex;
+    justify-content: center; /* Centra todo el contenido */
+    flex-wrap: wrap; /* Permite que los elementos se muevan uno debajo del otro en pantallas pequeñas */
+    padding: 40px;
+    background-color: #f7f9fc;
+}
+
+/* Contenedor principal para imagen y frase */
+.image-text-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar en pantallas pequeñas */
+    margin-left: 0; /* Restablece el margen en pantallas pequeñas */
+    width: 90%;
+}
+
+@media (min-width: 768px) {
+    .image-text-row {
+        flex-direction: row; /* Alineación horizontal en pantallas grandes */
+        justify-content: space-between;
+        margin-left: 35px;
+    }
+}
+
+/* Ajustes para la imagen de Madre Clara */
+.madre-clara-image {
+    width: 100%;
+    max-width: 200px;
+    margin-right: 0;
+    margin-bottom: 20px; /* Espacio entre imagen y frase en pantallas pequeñas */
+}
+
+@media (min-width: 768px) {
+    .madre-clara-image {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+}
+
+/* Ajustes para la caja de frases */
+.quote-container {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin: 0 auto; /* Centra la caja de frases */
+}
+
+@media (min-width: 768px) {
+    .quote-container {
+        margin: 0;
+        text-align: left;
+    }
+}
+
+/* Ajustes para la tipografía y tamaño de la caja en pantallas pequeñas */
+@media (max-width: 767px) {
+    .quote-container {
+        font-size: 1rem; /* Reduce el tamaño de la letra en pantallas pequeñas */
+        padding: 15px;
+    }
+}
+
+/* Ajustes para el video */
+.video-container {
+    width: 100%;
+    text-align: center; /* Centra el video */
+    margin-top: 20px;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    max-width: 500px; /* Ajusta el tamaño del video en pantallas pequeñas */
+}
+
+/* Mantén el video al lado derecho en pantallas grandes */
+@media (min-width: 768px) {
+    .video-container {
+        text-align: left; /* Alinea a la izquierda en pantallas grandes */
+        margin-left: 20px;
+    }
+}
+
+
 
 
 /*sección para derechos reservados */
