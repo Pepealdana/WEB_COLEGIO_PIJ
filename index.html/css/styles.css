@@ -1100,14 +1100,14 @@ body {
 
 /*sección NOTICIAS Y CRONOGRAMA */
 /* Estilos para la sección general */
+
 .news-schedule-section {
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
-    position: relative;
 }
 
-/* Estilos de los botones */
+/* Botones de Noticias y Cronograma */
 .tab-buttons {
     display: flex;
     justify-content: flex-end;
@@ -1130,10 +1130,14 @@ body {
     background-color: #0066CC;
     color: white;
 }
+/* Evitamos la duplicación de botones */
+#btn-news, #btn-schedule {
+    display: inline-block;
+}
 
-/* Estilos para las tarjetas de noticias */
+/* Estilos para la sección de contenido */
 .section-content {
-    display: none; /* Oculta por defecto */
+    display: none; /* Ocultamos las secciones por defecto */
 }
 
 .section-content.active {
@@ -1143,6 +1147,7 @@ body {
     transition: opacity 0.3s ease-in-out;
 }
 
+/* Estilos para las tarjetas de Noticias */
 .news-card {
     background-color: white;
     border-radius: 10px;
@@ -1189,21 +1194,182 @@ body {
     color: #004A99;
 }
 
-/* Cronograma imagen */
-.schedule-img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive design para pantallas más pequeñas */
+/* Responsive para la sección de noticias */
 @media (max-width: 768px) {
     .section-content.active {
-        grid-template-columns: 1fr; /* Las tarjetas se apilan verticalmente */
+        grid-template-columns: 1fr;
     }
-
     .tab-buttons {
-        justify-content: center; /* Centra los botones en pantallas pequeñas */
+        justify-content: center;
+    }
+}
+
+
+/* ========== Sección CRONOGRAMA ========== */
+/* Contenedor general para las imágenes */
+.schedule-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste dinámico */
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Estilos para cada tarjeta del cronograma */
+.schedule-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding: 5px;
+}
+
+.schedule-item img {
+    width: 100%;
+    height: 120px;/*  altura de la imagen */
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.schedule-item:hover {
+    transform: translateY(-5px);
+}
+
+.schedule-item h4 {
+    font-size: 16px;
+    margin-top: 5px; /* margen superior */
+    color: #333;
+}
+
+/* Estilos específicos para la sección de cronograma */
+#schedule-section.active {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas para las imágenes del cronograma */
+    grid-gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrado en la página */
+}
+
+
+/* Modal para agrandar imágenes */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: 180px auto; /* Ajustamos la posición para que no se corte con la barra superior */
+    display: block;
+    width: 100%; /* Reducimos el tamaño de la imagen modal */
+    max-width: 700px; /* Limite máximo */
+}
+
+.close {
+    position: absolute;
+    top: 40px; /* Ajustamos la posición de la "X" más abajo */
+    right: 35px;
+    color: white;
+    font-size: 40px;/* Reducimos el tamaño de la "X" si es necesario */
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000; /* Aseguramos que esté por encima de todo */
+}
+
+.expandable:hover {
+    transform: scale(1.05);
+}
+
+
+/* Botones de navegación en el modal */
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none; /* Permite la navegación sin cerrar el modal */
+}
+
+.modal-nav button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    pointer-events: all; /* Asegura que los botones puedan ser clickeados */
+}
+
+.modal-nav button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* Botones de navegación */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#left-btn {
+    left: 10px;
+}
+
+#right-btn {
+    right: 10px;
+}
+
+.schedule-grid {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.6s ease-in-out;
+    width: 100%;
+}
+
+.trimester-display {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: #0066CC;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+/* Responsive design para la sección cronograma */
+@media (max-width: 768px) {
+    .schedule-container {
+        grid-template-columns: 1fr 1fr; /* Una sola columna en pantallas pequeñas */
+    }
+    .modal-content {
+        width: 90%; /* Ajustamos el tamaño de la imagen modal para pantallas más pequeñas */
     }
 }
 
@@ -1218,24 +1384,3 @@ footer {
     border-top: 1px solid #ccc;
 }
 
-
-/* Imagen al lado del video */
-.side-image-container {
-    display: flex;
-    align-items: center;
-}
-
-/* Contenedor para alinear video e imagen en fila */
-.video-image-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Imagen al lado del video */
-.side-image {
-    width: 50%;
-    max-width: 100px; /* Mismo tamaño que la imagen de la izquierda */
-    display: block;
-    margin-left: 20px; /* Espacio entre el video y la imagen */
-}

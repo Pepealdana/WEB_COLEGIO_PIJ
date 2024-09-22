@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Tendríamos que estar más agradecidos por todo lo que él señor ha hecho por nosotros. De esta manera nos dispondríamos a recibir mayores gracias y con más frecuencia”.",
         "Dichoso quien acoge con corazón fiel la gracia de Dios y no rechaza ninguno que llama la puerta, por pequeña que sea”.",
         "Si el señor ve en un alma la sed de santidad, entonces la bendice, la planifica con sus dones y la colma abundantemente con sus gracias”.",
-        "Si vamos a él y suplicamos misericordia nos curara; porque como niño que es nos ama; un niño ama siempre”.",
+        "Si vamos a él y suplicamos misericordia nos curará; porque como niño que es nos ama; un niño ama siempre”.",
         "El mismo señor y Dios que se nos dio a través de María entra en nuestro corazón por la sagrada comunión. ¿pero dónde está nuestro amor, nuestro aprecio, nuestra devoción, nuestro recogimiento continuo?”.",
         "El Señor nos regala en la Sagrada comunión su sangre, la sangre de su corazón. Que esta Sangre nos encienda en el amor verdadero a Él y un amor sincero al prójimo”.",
         "Si practicamos el amor al prójimo el Señor será misericordioso con nosotros y nos perdonará nuestros pecados”.",
@@ -122,16 +122,68 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // SECCIÓN NOTICIAS Y CRONOGRAMA
-document.getElementById('btn-news').addEventListener('click', function() {
-    document.getElementById('news-section').classList.add('active');
-    document.getElementById('schedule-section').classList.remove('active');
-    this.classList.add('active');
-    document.getElementById('btn-schedule').classList.remove('active');
+// Obtén las secciones de botones y contenido
+const newsBtn = document.getElementById('btn-news');
+const scheduleBtn = document.getElementById('btn-schedule');
+const newsSection = document.getElementById('news-section');
+const scheduleSection = document.getElementById('schedule-section');
+
+// Evitar duplicación de botones
+newsBtn.addEventListener('click', () => {
+    newsSection.classList.add('active');
+    scheduleSection.classList.remove('active');
+    newsBtn.classList.add('active');
+    scheduleBtn.classList.remove('active');
+
+ // Deshabilitar botón activo
+ newsBtn.style.pointerEvents = "none";
+ scheduleBtn.style.pointerEvents = "auto"; // Habilitar el otro botón
 });
 
-document.getElementById('btn-schedule').addEventListener('click', function() {
-    document.getElementById('schedule-section').classList.add('active');
-    document.getElementById('news-section').classList.remove('active');
-    this.classList.add('active');
-    document.getElementById('btn-news').classList.remove('active');
+scheduleBtn.addEventListener('click', () => {
+    scheduleSection.classList.add('active');
+    newsSection.classList.remove('active');
+    scheduleBtn.classList.add('active');
+    newsBtn.classList.remove('active');
+    
+// Deshabilitar botón activo
+    scheduleBtn.style.pointerEvents = "none";
+    newsBtn.style.pointerEvents = "auto"; // Habilitar el otro botón
+});
+
+// Modal y navegación entre imágenes
+let modal = document.getElementById('myModal');
+let modalImg = document.getElementById('imgModal');
+let images = document.querySelectorAll('.schedule-item img'); // Todas las imágenes del cronograma
+let currentIndex = 0;
+
+// Abrir el modal al hacer clic en una imagen
+images.forEach((img, index) => {
+    img.addEventListener('click', () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        currentIndex = index; // Guardamos el índice actual
+    });
+});
+
+// Cerrar el modal
+document.querySelector('.close').addEventListener('click', () => {
+    modal.style.display = "none";
+});
+
+// Función para navegar entre las imágenes
+function showImage(index) {
+    modalImg.src = images[index].src;
+}
+
+// Navegación a la siguiente imagen
+document.getElementById('next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+});
+
+// Navegación a la imagen anterior
+document.getElementById('prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
 });
