@@ -127,6 +127,15 @@ const newsBtn = document.getElementById('btn-news');
 const scheduleBtn = document.getElementById('btn-schedule');
 const newsSection = document.getElementById('news-section');
 const scheduleSection = document.getElementById('schedule-section');
+// Asegúrate de que esto se ejecute solo una vez
+const buttonContainer = document.querySelector('.tab-buttons');
+if (!buttonContainer.querySelector('#btn-news')) {
+    buttonContainer.innerHTML = `
+        <button id="btn-news" class="active">Noticias</button>
+        <button id="btn-schedule">Cronograma</button>
+    `;
+}
+
 
 // Evitar duplicación de botones
 newsBtn.addEventListener('click', () => {

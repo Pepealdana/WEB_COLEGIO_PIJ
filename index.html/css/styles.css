@@ -1130,6 +1130,7 @@ body {
     background-color: #0066CC;
     color: white;
 }
+
 /* Evitamos la duplicación de botones */
 #btn-news, #btn-schedule {
     display: inline-block;
@@ -1209,9 +1210,10 @@ body {
 /* Contenedor general para las imágenes */
 .schedule-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste dinámico */
-    gap: 20px;
+    grid-template-columns: repeat(6, 1fr); /* Ajuste dinámico */
+    grid-gap: 20px;
     width: 100%;
+    max-width: 100vw; /* Asegura que ocupe el 100% del ancho visible */
     margin: 0 auto;
 }
 
@@ -1273,14 +1275,14 @@ body {
 }
 
 .close {
-    position: absolute;
-    top: 40px; /* Ajustamos la posición de la "X" más abajo */
-    right: 35px;
+    position: fixed; /* Asegura que esté siempre visible */
+    top: 20px; /* Ajustamos la posición de la "X" más abajo */
+    right: 5px;
     color: white;
     font-size: 40px;/* Reducimos el tamaño de la "X" si es necesario */
     font-weight: bold;
     cursor: pointer;
-    z-index: 1000; /* Aseguramos que esté por encima de todo */
+    z-index: 9999; /* Aseguramos que esté por encima de todo */
 }
 
 .expandable:hover {
@@ -1373,7 +1375,22 @@ body {
     }
 }
 
+@media (max-width: 1200px) {
+    .schedule-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
+    }
+}
 
+@media (max-width: 768px) {
+    .schedule-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+    }
+}
+@media (max-width: 480px) {
+    .schedule-container {
+        grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    }
+}
 
 /*sección para derechos reservados */
 footer {
