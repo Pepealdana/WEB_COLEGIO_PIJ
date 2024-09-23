@@ -213,8 +213,8 @@
     </div>
 
   <!-- Sección NOTICIAS Y CRONOGRAMA -->
+<!-- Sección NOTICIAS Y CRONOGRAMA -->
 
-  <!-- Sección NOTICIAS Y CRONOGRAMA -->
 <div class="news-schedule-section">
     <!-- Contenedor de botones -->
     <div class="tab-buttons">
@@ -224,12 +224,14 @@
 
     <!-- Sección de Noticias -->
     <div id="news-section" class="section-content active">
-        <div class="news-card">
+        
+        <!-- Tarjetas de noticias -->
+         <div class="news-card">
             <img src="img/legado.jpg" alt="Clara Fey">
             <div class="news-content">
                 <h3>¡Una vida que ha dejado huella!</h3>
                 <p>Conoce el legado de la Madre Clara Fey, fundadora de la comunidad de las Hermanas del Niño Jesús Pobre, 180 años al servicio de los más necesitados.</p>
-                <a href="https://www.pijcolombia.org" target="_blank" class="news-link">Visita  el sitio web de la comunidad PIJ en Colombia</a>
+                <a href="https://www.pijcolombia.org" target="_blank" class="news-link">Visita el sitio web de la comunidad PIJ en Colombia</a>
             </div>
         </div>
 
@@ -252,88 +254,73 @@
         </div>
     </div>
 
-<!-- Sección NOTICIAS Y CRONOGRAMA -->
-<div class="news-schedule-section">
-    <!-- Contenedor de botones -->
-    <div class="tab-buttons">
-        <button id="btn-news" class="active">Noticias</button>
-        <button id="btn-schedule">Cronograma</button>
-    </div>
-
-    <!-- Sección de Noticias -->
-    <div id="news-section" class="section-content active">   
-    </div>
-
     <!-- Sección de Cronograma -->
-    <div id="schedule-section" class="section-content">
+    <section id="schedule-section" class="section-content">
+        <h2>Cronograma</h2>
         <div class="schedule-container">
-            <!-- Meses del cronograma -->
+            <!-- Imágenes del cronograma por mes -->
             <div class="schedule-item">
-                <img src="img/crono1.jpg" alt="Enero" class="expandable">
-                <h4>Enero</h4>
+                <img src="img/enero.jpg" alt="Enero">
+                <p>Enero</p>
             </div>
             <div class="schedule-item">
-                <img src="img/crono2.jpg" alt="Febrero" class="expandable">
-                <h4>Febrero</h4>
+                <img src="img/febrero.jpg" alt="Febrero">
+                <p>Febrero</p>
             </div>
             <div class="schedule-item">
-                <img src="img/crono3.jpg" alt="Marzo" class="expandable">
-                <h4>Marzo</h4>
+                <img src="img/marzo.jpg" alt="Marzo">
+                <p>Marzo</p>
             </div>
             <div class="schedule-item">
-                <img src="img/crono4.jpg" alt="Abril" class="expandable">
-                <h4>Abril</h4>
+                <img src="img/abril.jpg" alt="Abril">
+                <p>Abril</p>
             </div>
             <div class="schedule-item">
-                <img src="img/crono5.jpg" alt="Mayo" class="expandable">
-                <h4>Mayo</h4>
+                <img src="img/mayo.jpg" alt="Mayo">
+                <p>Mayo</p>
             </div>
             <div class="schedule-item">
-                <img src="img/crono6.jpg" alt="Junio" class="expandable">
-                <h4>Junio</h4>
+                <img src="img/junio.jpg" alt="Junio">
+                <p>Junio</p>
             </div>
             <div class="schedule-item">
-                <img src="img/crono7.jpg" alt="Julio" class="expandable">
-                <h4>Julio</h4>
+                <img src="img/julio.jpg" alt="Julio">
+                <p>Julio</p>
             </div>
             <div class="schedule-item">
-                <img src="img/crono8.jpg" alt="Agosto" class="expandable">
-                <h4>Agosto</h4>
+                <img src="img/agosto.jpg" alt="Agosto">
+                <p>Agosto</p>
             </div>
             <div class="schedule-item">
-                <img src="img/crono9.jpg" alt="Septiembre" class="expandable">
-                <h4>Septiembre</h4>
+                <img src="img/septiembre.jpg" alt="Septiembre">
+                <p>Septiembre</p>
             </div>
             <div class="schedule-item">
-                <img src="img/crono10.jpg" alt="Octubre" class="expandable">
-                <h4>Octubre</h4>
+                <img src="img/octubre.jpg" alt="Octubre">
+                <p>Octubre</p>
             </div>
             <div class="schedule-item">
-                <img src="img/crono11.jpg" alt="Noviembre" class="expandable">
-                <h4>Noviembre</h4>
+                <img src="img/noviembre.jpg" alt="Noviembre">
+                <p>Noviembre</p>
             </div>
             <div class="schedule-item">
-                <img src="img/crono12.jpg" alt=Diciembre" class="expandable">
-                <h4>Diciembre</h4>
+                <img src="img/diciembre.jpg" alt="Diciembre">
+                <p>Diciembre</p>
             </div>
-             
+
+            <!-- Botones de navegación -->
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
         </div>
-    </div>
 
-   
+        <!-- Modal para imagen expandida -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
+    </section>
+</div>
 
-<!-- Modal con botones de navegación -->
- 
-<div class="modal">
-    <span class="close">&times;</button>
-    <img class="modal-content" id="imgModal">
-    <div class="modal-nav">
-        <button id="prev">&lt;</button> <!-- Botón anterior -->
-        <button id="next">&gt;</button> <!-- Botón siguiente -->
-    </div>
-</div>
-</div>
- 
     
 <!-- Sección Derechos de autor - Información Institucional -->
     <footer>

@@ -122,77 +122,80 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // SECCIÓN NOTICIAS Y CRONOGRAMA
-// Obtén las secciones de botones y contenido
-const newsBtn = document.getElementById('btn-news');
-const scheduleBtn = document.getElementById('btn-schedule');
+
+// Variables para los botones de secciones
+const btnNews = document.getElementById('btn-news');
+const btnSchedule = document.getElementById('btn-schedule');
 const newsSection = document.getElementById('news-section');
 const scheduleSection = document.getElementById('schedule-section');
-// Asegúrate de que esto se ejecute solo una vez
-const buttonContainer = document.querySelector('.tab-buttons');
-if (!buttonContainer.querySelector('#btn-news')) {
-    buttonContainer.innerHTML = `
-        <button id="btn-news" class="active">Noticias</button>
-        <button id="btn-schedule">Cronograma</button>
-    `;
-}
 
-
-// Evitar duplicación de botones
-newsBtn.addEventListener('click', () => {
+/// Función para cambiar entre secciones
+btnNews.addEventListener('click', function () {
+    // Cambiar estilos para mostrar Noticias y ocultar Cronograma
     newsSection.classList.add('active');
     scheduleSection.classList.remove('active');
-    newsBtn.classList.add('active');
-    scheduleBtn.classList.remove('active');
 
- // Deshabilitar botón activo
- newsBtn.style.pointerEvents = "none";
- scheduleBtn.style.pointerEvents = "auto"; // Habilitar el otro botón
+    // Cambiar el estado de los botones
+    btnNews.classList.add('active');
+    btnSchedule.classList.remove('active');
 });
 
-scheduleBtn.addEventListener('click', () => {
-    scheduleSection.classList.add('active');
+btnSchedule.addEventListener('click', function () {
+    // Cambiar estilos para mostrar Cronograma y ocultar Noticias
     newsSection.classList.remove('active');
-    scheduleBtn.classList.add('active');
-    newsBtn.classList.remove('active');
-    
-// Deshabilitar botón activo
-    scheduleBtn.style.pointerEvents = "none";
-    newsBtn.style.pointerEvents = "auto"; // Habilitar el otro botón
+    scheduleSection.classList.add('active');
+
+    // Cambiar el estado de los botones
+    btnNews.classList.remove('active');
+    btnSchedule.classList.add('active');
 });
 
-// Modal y navegación entre imágenes
-let modal = document.getElementById('myModal');
-let modalImg = document.getElementById('imgModal');
-let images = document.querySelectorAll('.schedule-item img'); // Todas las imágenes del cronograma
-let currentIndex = 0;
+// Lógica para el carrusel en el cronograma
+let currentSlide = 0;
+const items = document.querySelectorAll('.schedule-item');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
 
-// Abrir el modal al hacer clic en una imagen
-images.forEach((img, index) => {
-    img.addEventListener('click', () => {
-        modal.style.display = "block";
-        modalImg.src = img.src;
-        currentIndex = index; // Guardamos el índice actual
+function showSlide(index) {
+    // Asegurarse de que el índice esté dentro del rango
+    if (index < 0) {
+        currentSlide = items.length - 1;
+    } else if (index >= items.length) {
+        currentSlide = 0;
+    } else {
+        currentSlide = index;
+    }
+
+    // Mostrar solo el ítem actual
+    items.forEach((item, i) => {
+        item.style.display = (i === currentSlide) ? 'block' : 'none';
+    });
+}
+
+// Mostrar el primer slide al cargar la página
+showSlide(currentSlide);
+
+// Eventos para cambiar de slide
+prevBtn.addEventListener('click', function () {
+    showSlide(currentSlide - 1);
+});
+
+nextBtn.addEventListener('click', function () {
+    showSlide(currentSlide + 1);
+});
+
+// Modal de imagen expandida
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImg');
+const closeModal = document.querySelector('.close');
+
+items.forEach(item => {
+    item.addEventListener('click', function () {
+        modal.style.display = 'flex';
+        modalImg.src = this.querySelector('img').src;
     });
 });
 
-// Cerrar el modal
-document.querySelector('.close').addEventListener('click', () => {
-    modal.style.display = "none";
-});
-
-// Función para navegar entre las imágenes
-function showImage(index) {
-    modalImg.src = images[index].src;
-}
-
-// Navegación a la siguiente imagen
-document.getElementById('next').addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-});
-
-// Navegación a la imagen anterior
-document.getElementById('prev').addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
+closeModal.addEventListener('click', function () {
+    modal.style.display = 'none';
 });
