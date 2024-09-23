@@ -1144,6 +1144,12 @@ body {
     transition: opacity 0.3s ease-in-out;
 }
 
+#news-section.active-news {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
 /* Estilos para las tarjetas de Noticias */
 .news-card {
     background-color: white;
@@ -1210,6 +1216,10 @@ body {
     display: none;
 }
 
+#schedule-section.active-schedule {
+    display: block;
+}
+
 /* Estilos para las secciones activas */
 .active-news {
     display: grid; /* La sección de noticias ya tiene su estilo correcto */
@@ -1230,11 +1240,10 @@ body {
 /* Contenedor del cronograma */
 .schedule-container {
     display: flex;
-    overflow: hidden;
     justify-content: space-between;
     position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
+    overflow: hidden;
+    width: 100%; /* Aseguramos que ocupe todo el ancho disponible */
 }
 
 .schedule-item {
@@ -1242,11 +1251,16 @@ body {
     padding: 10px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    display: none; /* Ocultamos los elementos inicialmente */
 }
 
 .schedule-item img {
     width: 100%;
     cursor: pointer;
+}
+
+.schedule-item.active {
+    display: block; /* Solo mostramos el item activo */
 }
 
 .schedule-item p {

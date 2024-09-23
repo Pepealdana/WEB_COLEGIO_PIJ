@@ -132,8 +132,8 @@ const scheduleSection = document.getElementById('schedule-section');
 /// Función para cambiar entre secciones
 btnNews.addEventListener('click', function () {
     // Cambiar estilos para mostrar Noticias y ocultar Cronograma
-    newsSection.classList.add('active');
-    scheduleSection.classList.remove('active');
+    newsSection.classList.add('active-news');
+    scheduleSection.classList.remove('active-schedule');
 
     // Cambiar el estado de los botones
     btnNews.classList.add('active');
@@ -142,8 +142,8 @@ btnNews.addEventListener('click', function () {
 
 btnSchedule.addEventListener('click', function () {
     // Cambiar estilos para mostrar Cronograma y ocultar Noticias
-    newsSection.classList.remove('active');
-    scheduleSection.classList.add('active');
+    newsSection.classList.remove('active-news');
+    scheduleSection.classList.add('active-schedule');
 
     // Cambiar el estado de los botones
     btnNews.classList.remove('active');
@@ -159,28 +159,25 @@ const nextBtn = document.querySelector('.next');
 function showSlide(index) {
     // Asegurarse de que el índice esté dentro del rango
     if (index < 0) {
-        currentSlide = items.length - 1;
-    } else if (index >= items.length) {
+        currentSlide = scheduleItems.length - 1;
+    } else if (index >= scheduleItems.length) {
         currentSlide = 0;
     } else {
         currentSlide = index;
     }
 
     // Mostrar solo el ítem actual
-    items.forEach((item, i) => {
-        item.style.display = (i === currentSlide) ? 'block' : 'none';
+    scheduleItems.forEach((item, i) => {
+        item.classList.toggle('active', i === currentSlide);
     });
 }
 
-// Mostrar el primer slide al cargar la página
-showSlide(currentSlide);
 
-// Eventos para cambiar de slide
-prevBtn.addEventListener('click', function () {
+prevBtn.addEventListener('click', () => {
     showSlide(currentSlide - 1);
 });
 
-nextBtn.addEventListener('click', function () {
+nextBtn.addEventListener('click', () => {
     showSlide(currentSlide + 1);
 });
 
@@ -189,13 +186,13 @@ const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImg');
 const closeModal = document.querySelector('.close');
 
-items.forEach(item => {
+scheduleItems.forEach(item => {
     item.addEventListener('click', function () {
         modal.style.display = 'flex';
         modalImg.src = this.querySelector('img').src;
     });
 });
 
-closeModal.addEventListener('click', function () {
+closeModal.addEventListener('click', () => {
     modal.style.display = 'none';
 });
