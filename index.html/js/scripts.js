@@ -123,76 +123,78 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // SECCIÓN NOTICIAS Y CRONOGRAMA
 
-// Variables para los botones de secciones
+// Referencias a los elementos del DOM
 const btnNews = document.getElementById('btn-news');
 const btnSchedule = document.getElementById('btn-schedule');
 const newsSection = document.getElementById('news-section');
 const scheduleSection = document.getElementById('schedule-section');
 
-/// Función para cambiar entre secciones
+// Alternar entre secciones Noticias y Cronograma
 btnNews.addEventListener('click', function () {
-    // Cambiar estilos para mostrar Noticias y ocultar Cronograma
     newsSection.classList.add('active-news');
     scheduleSection.classList.remove('active-schedule');
 
-    // Cambiar el estado de los botones
     btnNews.classList.add('active');
     btnSchedule.classList.remove('active');
+
+    // Mostrar la sección de Noticias y ocultar Cronograma
+    newsSection.classList.remove('hidden');
+    scheduleSection.classList.add('hidden');
 });
 
 btnSchedule.addEventListener('click', function () {
-    // Cambiar estilos para mostrar Cronograma y ocultar Noticias
     newsSection.classList.remove('active-news');
     scheduleSection.classList.add('active-schedule');
 
-    // Cambiar el estado de los botones
     btnNews.classList.remove('active');
     btnSchedule.classList.add('active');
+
+    // Mostrar la sección de Cronograma y ocultar Noticias
+    newsSection.classList.add('hidden');
+    scheduleSection.classList.remove('hidden');
+
+    // Forzar la actualización del carrusel de Cronograma
+    $('.slick-slider').slick('setPosition');
 });
 
-// Lógica para el carrusel en el cronograma
-let currentSlide = 0;
-const items = document.querySelectorAll('.schedule-item');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-
-function showSlide(index) {
-    // Asegurarse de que el índice esté dentro del rango
-    if (index < 0) {
-        currentSlide = scheduleItems.length - 1;
-    } else if (index >= scheduleItems.length) {
-        currentSlide = 0;
-    } else {
-        currentSlide = index;
-    }
-
-    // Mostrar solo el ítem actual
-    scheduleItems.forEach((item, i) => {
-        item.classList.toggle('active', i === currentSlide);
+// Carrusel de cronograma
+$(document).ready(function(){
+    // Inicializar el carrusel con Slick
+    $('.slick-slider').slick({
+        infinite: true,
+        slidesToShow: 3,  // Muestra 3 imágenes a la vez
+        slidesToScroll: 1,  // Desplaza de 1 en 1 para más control
+        prevArrow: '<button type="button" class="slick-prev">Prev</button>',
+        nextArrow: '<button type="button" class="slick-next">Next</button>',
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     });
-}
 
+    // Modal para expandir la imagen al hacer clic
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeModal = document.querySelector('.close');
 
-prevBtn.addEventListener('click', () => {
-    showSlide(currentSlide - 1);
-});
-
-nextBtn.addEventListener('click', () => {
-    showSlide(currentSlide + 1);
-});
-
-// Modal de imagen expandida
-const modal = document.getElementById('imageModal');
-const modalImg = document.getElementById('modalImg');
-const closeModal = document.querySelector('.close');
-
-scheduleItems.forEach(item => {
-    item.addEventListener('click', function () {
+    $('.schedule-item img').on('click', function() {
         modal.style.display = 'flex';
-        modalImg.src = this.querySelector('img').src;
+        modalImg.src = this.src;
     });
-});
 
-closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // Cerrar el modal al hacer clic fuera de la imagen
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
 });

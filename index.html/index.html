@@ -3,7 +3,6 @@
 <head>
     <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://trusted-site.com; script-src 'self' https://trusted-site.com;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Título y enlaces a recursos externos como CSS y favicon -->
@@ -11,6 +10,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/escudo-sme.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 </head>
 
 <script>
@@ -223,7 +224,7 @@
     </div>
 
     <!-- Sección de Noticias -->
-    <div id="news-section" class="section-content active-news">
+    <section id="news-section" class="news-section active-news">
          <div class="news-card">
             <img src="img/legado.jpg" alt="Clara Fey">
             <div class="news-content">
@@ -232,7 +233,7 @@
                 <a href="https://www.pijcolombia.org" target="_blank" class="news-link">Visita el sitio web de la comunidad PIJ en Colombia</a>
             </div>
         </div>
-
+   
         <div class="news-card">
             <img src="img/social.jpg" alt="Procasita">
             <div class="news-content">
@@ -251,73 +252,44 @@
             </div>
         </div>
     </div>
+</section>
 
     <!-- Sección de Cronograma -->
-    <section id="schedule-section" class="section-content">
-        <h2>Cronograma</h2>
-        <div class="schedule-container">
+    <section id="schedule-section" class="schedule-section">
+            <h2>Cronograma</h2>
+        <div class="slick-slider">
             <!-- Imágenes del cronograma por mes -->
-            <div class="schedule-item active">
-                <img src="img/enero.jpg" alt="Enero">
-                <p>Enero</p>
-            </div>
-            <div class="schedule-item">
-                <img src="img/febrero.jpg" alt="Febrero">
-                <p>Febrero</p>
-            </div>
-            <div class="schedule-item">
-                <img src="img/marzo.jpg" alt="Marzo">
-                <p>Marzo</p>
-            </div>
-            <div class="schedule-item">
-                <img src="img/abril.jpg" alt="Abril">
-                <p>Abril</p>
-            </div>
-            <div class="schedule-item">
-                <img src="img/mayo.jpg" alt="Mayo">
-                <p>Mayo</p>
-            </div>
-            <div class="schedule-item">
-                <img src="img/junio.jpg" alt="Junio">
-                <p>Junio</p>
-            </div>
-            <div class="schedule-item">
-                <img src="img/julio.jpg" alt="Julio">
-                <p>Julio</p>
-            </div>
-            <div class="schedule-item">
-                <img src="img/agosto.jpg" alt="Agosto">
-                <p>Agosto</p>
-            </div>
-            <div class="schedule-item">
-                <img src="img/septiembre.jpg" alt="Septiembre">
-                <p>Septiembre</p>
-            </div>
-            <div class="schedule-item">
-                <img src="img/octubre.jpg" alt="Octubre">
-                <p>Octubre</p>
-            </div>
-            <div class="schedule-item">
-                <img src="img/noviembre.jpg" alt="Noviembre">
-                <p>Noviembre</p>
-            </div>
-            <div class="schedule-item">
-                <img src="img/diciembre.jpg" alt="Diciembre">
-                <p>Diciembre</p>
-            </div>
-
-            <!-- Botones de navegación -->
-            <button class="prev">&#10094;</button>
-            <button class="next">&#10095;</button>
+            <div class="schedule-item"><img src="img/enero.jpg" alt="Enero"></div>
+            <div class="schedule-item"><img src="img/febrero.jpg" alt="Febrero"></div>
+            <div class="schedule-item"><img src="img/marzo.jpg" alt="Marzo"></div>   
+            <div class="schedule-item"><img src="img/abril.jpg" alt="Abril"></div>
+            <div class="schedule-item"><img src="img/mayo.jpg" alt="Mayo"></div>
+            <div class="schedule-item"><img src="img/junio.jpg" alt="Junio"></div> 
+            <div class="schedule-item"><img src="img/julio.jpg" alt="Julio"></div>
+            <div class="schedule-item"><img src="img/agosto.jpg" alt="Agosto"></div>
+            <div class="schedule-item"><img src="img/septiembre.jpg" alt="Septiembre"></div>   
+            <div class="schedule-item"><img src="img/octubre.jpg" alt="Octubre"></div>
+            <div class="schedule-item"><img src="img/noviembre.jpg" alt="Noviembre"></div>
+            <div class="schedule-item"><img src="img/diciembre.jpg" alt="Diciembre"></div> 
         </div>
+    
 
-        <!-- Modal para imagen expandida -->
-        <div id="imageModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="modalImg">
-        </div>
-    </section>
+    <button type="button" class="slick-prev">←</button>
+    <button type="button" class="slick-next">→</button>
+    
+
+
+<!-- Modal para expandir la imagen -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
 </div>
+</section>
+
+<!-- Slick JS y JQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="script.js"></script>
 
     
 <!-- Sección Derechos de autor - Información Institucional -->
@@ -326,9 +298,9 @@
         <p>&copy; 2024. Somos Colegio Santa María de la Esperanza. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Incluyendo el archivo JavaScript -->
-    <script src="js/scripts.js"></script>
-    <script src="js/slider.js"></script>
+<!-- Incluyendo el archivo JavaScript -->
+<script src="js/scripts.js"></script>
+<script src="js/slider.js"></script>
 
 
 </body>

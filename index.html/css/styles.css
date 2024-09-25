@@ -1133,9 +1133,12 @@ body {
 
 
 /* Estilos para la sección de contenido */
-.section-content {
-    display: none; /* Ocultamos las secciones por defecto */
+.hidden {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
 }
+
 
 .section-content.active {
     display: grid;
@@ -1197,6 +1200,21 @@ body {
     color: #004A99;
 }
 
+/* Ocultar la sección no activa */
+.schedule-section, .news-section {
+    display: none; /* Inicialmente ocultamos ambas secciones */
+}
+
+/* Mostrar solo la sección activa */
+.active-news {
+    display: block; /* Mostrar noticias si están activas */
+}
+
+.active-schedule {
+    display: block; /* Mostrar cronograma si está activo */
+}
+
+
 /* Responsive para la sección de noticias */
 @media (max-width: 768px) {
     .section-content.active {
@@ -1211,90 +1229,75 @@ body {
 /* ========== Sección CRONOGRAMA ========== */
 /* Estilos para la sección de cronograma */
 
-/* Ocultar la sección cronograma por defecto */
-#schedule-section {
-    display: none;
+/* Estilos básicos del carrusel */
+.slick-slider {
+    width: 90%;
+    margin: 0 auto;
 }
 
-#schedule-section.active-schedule {
+.slick-slide {
+    padding: 0 10px; /* Añadir espacio entre las imágenes */
+}
+
+.slick-slide img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Para la animación */
+}
+
+.slick-prev, .slick-next {
+    font-size: 20px;
+    background: #333; /* Fondo oscuro para mayor visibilidad */
+    border-radius: 50%;
+    padding: 10px;
+    opacity: 0.75;
+    color: white; /* Color de texto blanco para mejor contraste */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    cursor: pointer; /* Mostrar cursor de puntero */
     display: block;
 }
 
-/* Estilos para las secciones activas */
-.active-news {
-    display: grid; /* La sección de noticias ya tiene su estilo correcto */
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+
+.slick-prev {
+    left: -30px; /* Ajusta según sea necesario */
 }
 
-.active-schedule {
-    display: block; /* Mostramos la sección cronograma cuando está activa */
+.slick-next {
+    right: -30px; /* Ajusta según sea necesario */
 }
 
-/* Botones activos */
-.tab-buttons button.active {
-    background-color: #0066CC;
+.slick-prev:hover, .slick-next:hover {
+    background-color: #555; /* Cambiar el color al pasar el ratón */
+    opacity: 1;
+}
+
+.slick-prev::before, .slick-next::before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
     color: white;
 }
 
-/* Contenedor del cronograma */
-.schedule-container {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-    width: 100%; /* Aseguramos que ocupe todo el ancho disponible */
+/* Animación de hover en las imágenes (como en noticias) */
+.slick-slide img:hover {
+    transform: scale(1.05); /* Agrandar ligeramente la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
 }
 
-.schedule-item {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    display: none; /* Ocultamos los elementos inicialmente */
+/* Aumentar el tamaño del modal */
+.modal-content {
+    max-width: 80%; /* Ajustar el tamaño máximo */
+    max-height: 80%; /* Ajustar el tamaño máximo */
 }
 
-.schedule-item img {
-    width: 100%;
-    cursor: pointer;
-}
-
-.schedule-item.active {
-    display: block; /* Solo mostramos el item activo */
-}
-
-.schedule-item p {
-    margin-top: 10px;
-    font-size: 16px;
-}
-
-/* Botones de navegación del carrusel */
-.schedule-container .prev, .schedule-container .next {
-    position: absolute;
-    top: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 5;
-    font-size: 30px;
-    transform: translateY(-50%);
-}
-
-.schedule-container .prev {
-    left: 0;
-}
-
-.schedule-container .next {
-    right: 0;
-}
-
-/* Modal para la imagen expandida */
+/* Modal de imagen expandida */
 .modal {
     display: none;
     position: fixed;
-    z-index: 10;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
@@ -1304,41 +1307,14 @@ body {
     align-items: center;
 }
 
-.modal-content {
-    max-width: 90%;
-    max-height: 90%;
-}
-
 .close {
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
     font-size: 30px;
     color: white;
     cursor: pointer;
 }
-
-.modal .prev, .modal .next {
-    position: absolute;
-    top: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 15;
-    font-size: 30px;
-    transform: translateY(-50%);
-}
-
-.modal .prev {
-    left: 20px;
-}
-
-.modal .next {
-    right: 20px;
-}
-
 
 /*sección para derechos reservados */
 footer {
