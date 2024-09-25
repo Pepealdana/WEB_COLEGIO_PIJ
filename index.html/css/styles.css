@@ -1230,9 +1230,27 @@ body {
 /* Estilos para la sección de cronograma */
 
 /* Estilos básicos del carrusel */
+
+/* Reducir el margen entre los botones y el carrusel */
+#buttons-container {
+    margin-bottom: 10px; /* Ajusta esta cifra según sea necesario */
+}
+
+/* Asegura que toda la sección cronograma tenga fondo blanco */
+#schedule-section {
+    background-color: #f9f9f9;
+    padding: 20px; /* Añade padding si es necesario para separación */
+}
+
 .slick-slider {
     width: 90%;
     margin: 0 auto;
+    background-color: #f9f9f9; /* Opcional: Asegurar que el contenedor del carrusel también tenga fondo blanco */
+}
+
+/* Asegúrate de que el carrusel esté alineado correctamente */
+#schedule-section .slick-slider {
+    margin-top: 0; /* Elimina cualquier margen adicional por encima */
 }
 
 .slick-slide {
@@ -1247,19 +1265,27 @@ body {
 
 .slick-prev, .slick-next {
     font-size: 20px;
-    background: #333; /* Fondo oscuro para mayor visibilidad */
-    border-radius: 50%;
+    border-radius: 50%; /* Hacer los botones circulares */
+    width: 60px; /* Tamaño del botón */
+    height: 60px;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     opacity: 0.75;
-    color: white; /* Color de texto blanco para mejor contraste */
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1000;
     cursor: pointer; /* Mostrar cursor de puntero */
     display: block;
 }
 
+.slick-prev, .slick-next {
+    background-color: #8d8d8d; /* Color visible para pruebas */
+    display: flex; 
+    color: white; 
+    z-index: 1000; 
+
+}
 
 .slick-prev {
     left: -30px; /* Ajusta según sea necesario */
@@ -1269,16 +1295,13 @@ body {
     right: -30px; /* Ajusta según sea necesario */
 }
 
-.slick-prev:hover, .slick-next:hover {
-    background-color: #555; /* Cambiar el color al pasar el ratón */
-    opacity: 1;
+.slick-prev::before, .slick-next::before {
+    background-color: #ffffff !important;
+    color: rgb(68, 68, 68) !important;
 }
 
-.slick-prev::before, .slick-next::before {
-    font-family: 'slick';
-    font-size: 20px;
-    line-height: 1;
-    color: white;
+.slick-next::before {
+    content: '\2192'; /* Flecha derecha */
 }
 
 /* Animación de hover en las imágenes (como en noticias) */
