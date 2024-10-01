@@ -33,13 +33,23 @@ document.addEventListener('click', function (e) {
         });
     });
 
-    document.querySelector('.down-arrow').addEventListener('click', function(event) {
-        event.preventDefault();
-        document.querySelector('.info-slider').scrollIntoView({
+    document.querySelector('.btn-conoce-mas').addEventListener('click', function(e) {
+        e.preventDefault();  // Prevenir el comportamiento por defecto del ancla
+    
+        const targetSection = document.querySelector('#seccion-informacion');
+        
+        // Añadir la clase para la animación
+        targetSection.setAttribute('transition-style', 'in:wipe:up');
+        
+        // Desplazamiento suave hacia la sección
+        targetSection.scrollIntoView({
             behavior: 'smooth'
         });
     });
-    
+
+
+
+
 
     // Slider de información
     let currentSlide = 0;
@@ -198,3 +208,33 @@ $(document).ready(function(){
         }
     }
 });
+
+// Sección Contacto
+// Obtener la fecha actual y mostrarla en el footer
+document.getElementById("fecha-actual").innerHTML = new Date().toLocaleDateString();
+
+// Mostrar el formulario de contacto
+document.getElementById('btn-contactenos').addEventListener('click', function() {
+    document.getElementById('formulario-contacto').style.display = 'flex';
+  });
+  
+  // Cerrar el formulario
+  document.getElementById('cerrar-formulario').addEventListener('click', function() {
+    document.getElementById('formulario-contacto').style.display = 'none';
+  });
+  
+  // Cerrar el formulario al hacer clic fuera del cuadro
+  window.addEventListener('click', function(event) {
+    if (event.target == document.getElementById('formulario-contacto')) {
+      document.getElementById('formulario-contacto').style.display = 'none';
+    }
+  });
+  
+  // Volver arriba con animación
+  document.getElementById('btn-volver-arriba').addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  

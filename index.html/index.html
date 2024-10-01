@@ -290,11 +290,73 @@
 <script src="script.js"></script>
 
     
-<!-- Sección Derechos de autor - Información Institucional -->
-    <footer>
-        <img src="img/escudo PIJ.png" alt="Escudo Pij" class="escudo-pij-image">
-        <p>&copy; 2024. Somos Colegio Santa María de la Esperanza. Todos los derechos reservados.</p>
-    </footer>
+<!-- Sección de Contacto -->
+<section id="contacto">
+    <div class="container-contacto">
+      <div class="imagenes-contacto">
+        <img src="img/logopij.png" alt="Logo PIJ">
+        <img src="img/escudosme.png" alt="Escudo Colegio">
+      </div>
+  
+      <div class="info-contacto">
+        <div class="menu-contacto">
+          <ul>
+            <li><a href="#">Acerca de nosotros</a></li>
+            <li><a href="#">Beata Clara Fey</a></li>
+            <li><a href="#">Modelo pedagógico</a></li>
+            <li><a href="#">Admisiones</a></li>
+            <li><a href="#">Buzón de sugerencias</a></li>
+          </ul>
+        </div>
+  
+        <div class="datos-contacto">
+          <p><i class="fas fa-phone-alt"></i> Teléfono: +57 (123) 456-7890</p>
+          <p><i class="fas fa-envelope"></i> Correo: info@colegio.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Dirección: Calle 123 #45-67, Bogotá</p>
+        </div>
+  
+        <div class="redes-sociales-contacto">
+          <p>Síguenos en:</p>
+          <div class="redes-sociales">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+          </div>
+          <button id="btn-contactenos">Contáctenos</button>
+          <button id="btn-volver-arriba">Volver arriba</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Formulario emergente de contacto -->
+  <div id="formulario-contacto" class="formulario-emergente">
+    <div class="contenido-formulario">
+      <span id="cerrar-formulario">&times;</span>
+      <form action="enviar_correo.php" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+  
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+  
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+  
+
+<!-- Barra Final -->
+<footer style="background-color: #01142d; color: white; padding: 10px 0;">
+    <div class="container text-center">
+        <p>Hermanas del Niño Jesús Pobre. <span id="fecha-actual"></span> &copy; Colegio Santa María de la Esperanza</p>
+    </div>
+</footer>
+
 
 <!-- Incluyendo el archivo JavaScript -->
 <script src="js/scripts.js"></script>
