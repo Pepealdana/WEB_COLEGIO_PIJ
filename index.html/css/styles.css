@@ -1366,6 +1366,65 @@ body {
 
 /*sección para derechos reservados */
 /* Sección contacto */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #01142d;
+    color: white;
+}
+
+.info-block {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.images {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sections {
+    padding-top: 50px; /* Aumenta el espacio en la parte superior */
+    flex: 2;
+    display: flex;
+    align-items: flex-start;
+}
+
+.sections ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sections ul li {
+    margin-bottom: 10px;
+}
+
+.sections ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-details {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.contact-details p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0; /* Añadir espacio entre las líneas de texto */
+}
+
+.contact-details p i {
+    margin-right: 10px;
+}
+
 #contacto {
     background-color: #01142d;
     color: white;
@@ -1380,6 +1439,11 @@ body {
     margin: 0 auto;
   }
   
+  .images img {
+    max-width: 120px; /* Ajusta según lo que necesites */
+    height: auto;
+}
+
   .imagenes-contacto img {
     max-width: 150px;
     margin-bottom: 20px;
@@ -1413,9 +1477,29 @@ body {
   
   .redes-sociales a {
     color: white;
-    margin-right: 10px;
+  font-size: 24px;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.redes-sociales a:hover {
+    color: #f0f0f0;
   }
   
+  .socials {
+    flex: 1;
+    text-align: right;
+    position: relative;
+    top: 0;
+    margin-right: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-left: 10px;
+    color: white;
+}
+
   #btn-contactenos, #btn-volver-arriba {
     margin-top: 20px;
     padding: 10px 20px;
@@ -1429,25 +1513,77 @@ body {
   #btn-contactenos:hover, #btn-volver-arriba:hover {
     background-color: #f0f0f0;
   }
-  
-  /* Formulario emergente */
-  .formulario-emergente {
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-popup {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    bottom: 100px; /* Fija el popup justo arriba de los botones */
+    right: 20px;
+    width: 300px; /* Ajusta el ancho si es necesario */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #f39c12;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.form-popup.active {
+    display: block;
+}
+
+.form-popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.escudo img {
+    max-height: 100px; /* Ajusta según el tamaño necesario */
+    width: auto;
+    display: block;
+    margin: 0 auto; /* Centra el escudo */
+}
+
+/* Animación del botón de volver arriba */
+.back-to-top {
+    position: absolute;
+    animation: scroll-animation 0.5s ease-in-out;
+    bottom: 20px; /* Coloca el botón "Volver arriba" encima del de contáctenos */
+    right: 20px;
+}
+
+@keyframes scroll-animation {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+  /* Formulario emergente con mejor diseño */
+.formulario-emergente {
+    display: none;
+    position: fixed;
+    bottom: 80px; /* Para que aparezca sobre el botón */
+    left: 50%;
+    transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   }
   
   .contenido-formulario {
     background-color: white;
     padding: 20px;
-    position: relative;
-    width: 400px;
+    border-radius: 10px;
   }
   
   #cerrar-formulario {
@@ -1458,13 +1594,55 @@ body {
     font-size: 20px;
   }
   
+  .contenido-formulario label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .contenido-formulario input, 
+  .contenido-formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .contenido-formulario button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    background-color: #01142d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contenido-formulario button:hover {
+    background-color: #002d50;
+  }
+  
+  .contact-button, .back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 60px; /* Ajusta la distancia desde el borde inferior */
+    z-index: 100;
+}
 
 /* Estilos de la barra final */
 footer {
-    height: 10px; /* Ajusta la altura según prefieras */
-    background-color: #55C9F4;
-    color: white;
+    height: 30px; /* Ajusta la altura según prefieras */
     text-align: center;
-    padding: 5px 0;
-    line-height: 50px;
+    background-color: #002d50;
+    color: white;
+    line-height: 30px;
+  }
+
+  .update-bar {
+    background-color: #01142d; /* Ajustar el color original */
+    color: white; /* Asegura que el texto sea legible */
+    font-size: 16px; /* Ajusta el tamaño según lo que necesitas */
+    padding: 20px 0; /* Añade relleno para darle más altura */
+    text-align: center;
 }

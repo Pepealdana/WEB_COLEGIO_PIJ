@@ -1,17 +1,12 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nombre = $_POST['nombre'];
-    $correo = $_POST['correo'];
-    $mensaje = $_POST['mensaje'];
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $to = "pepealdanagomez@hotmail.com";
+    $subject = "Mensaje desde el formulario de contacto";
+    $message = "Nombre: " . $_POST['nombre'] . "\nCorreo: " . $_POST['correo'] . "\nMensaje: " . $_POST['mensaje'];
+    $headers = "From: " . $_POST['correo'];
 
-    // Correo al que se enviarán los mensajes
-    $destinatario = "pepealdanagomez@hotmail.com";
-    $asunto = "Mensaje desde la web";
-    $cuerpo = "Nombre: $nombre\nCorreo: $correo\nMensaje:\n$mensaje";
-
-    // Enviar correo
-    if (mail($destinatario, $asunto, $cuerpo)) {
-        echo "Mensaje enviado";
+    if(mail($to, $subject, $message, $headers)){
+        echo "Mensaje enviado con éxito";
     } else {
         echo "Error al enviar el mensaje";
     }

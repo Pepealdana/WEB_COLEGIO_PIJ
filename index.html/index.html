@@ -289,71 +289,60 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="script.js"></script>
 
-    
+
 <!-- Sección de Contacto -->
-<section id="contacto">
-    <div class="container-contacto">
-      <div class="imagenes-contacto">
-        <img src="img/logopij.png" alt="Logo PIJ">
-        <img src="img/escudosme.png" alt="Escudo Colegio">
-      </div>
-  
-      <div class="info-contacto">
-        <div class="menu-contacto">
-          <ul>
-            <li><a href="#">Acerca de nosotros</a></li>
-            <li><a href="#">Beata Clara Fey</a></li>
-            <li><a href="#">Modelo pedagógico</a></li>
-            <li><a href="#">Admisiones</a></li>
-            <li><a href="#">Buzón de sugerencias</a></li>
-          </ul>
+<div class="contact-section">
+    <div class="info-block">
+        <div class="images">
+            <img src="img/logopij.png" alt="Escudo">
+            <img src="img/escudosme.png" alt="Escudo 2">
         </div>
-  
-        <div class="datos-contacto">
-          <p><i class="fas fa-phone-alt"></i> Teléfono: +57 (123) 456-7890</p>
-          <p><i class="fas fa-envelope"></i> Correo: info@colegio.com</p>
-          <p><i class="fas fa-map-marker-alt"></i> Dirección: Calle 123 #45-67, Bogotá</p>
+
+        <div class="sections">
+            <ul>
+                <li><a href="#">Acerca de nosotros</a></li>
+                <li><a href="#">Beata Clara Fey</a></li>
+                <li><a href="#">Modelo pedagógico</a></li>
+                <li><a href="#">Admisiones</a></li>
+                <li><a href="#">Buzón de sugerencias</a></li>
+            </ul>
         </div>
-  
-        <div class="redes-sociales-contacto">
-          <p>Síguenos en:</p>
-          <div class="redes-sociales">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-          </div>
-          <button id="btn-contactenos">Contáctenos</button>
-          <button id="btn-volver-arriba">Volver arriba</button>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <div class="contact-details">
+            <p><i class="fa fa-phone"></i> Teléfono: +57 (123) 456-7890</p>
+            <p><i class="fa fa-envelope"></i> Correo: info@colegio.com</p>
+            <p><i class="fa fa-map-marker"></i> Dirección: Calle 123 #45-67, Bogotá</p>
         </div>
-      </div>
+
+        <div class="socials">
+            <p>Síguenos en:</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+        </div>
     </div>
-  </section>
-  
-  <!-- Formulario emergente de contacto -->
-  <div id="formulario-contacto" class="formulario-emergente">
-    <div class="contenido-formulario">
-      <span id="cerrar-formulario">&times;</span>
-      <form action="enviar_correo.php" method="POST">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" required>
-  
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" required></textarea>
-  
-        <button type="submit">Enviar</button>
-      </form>
+    <button id="btn-contactenos" onclick="showForm()">Contáctenos</button>
+
+    <div id="contact-form-popup" class="form-popup">
+    <form id="contact-form">
+            <!-- Campos del formulario aquí -->
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+            <span class="close" onclick="hideForm()">&times;</span>
+        </form>
     </div>
-  </div>
-  
+ 
 
 <!-- Barra Final -->
 <footer style="background-color: #01142d; color: white; padding: 10px 0;">
     <div class="container text-center">
-        <p>Hermanas del Niño Jesús Pobre. <span id="fecha-actual"></span> &copy; Colegio Santa María de la Esperanza</p>
+        <p>Colegio Santa María de la Esperanza.     <span id="fecha-actual"></span> &copy;     Hermanas del Niño Jesús Pobre.</p>
     </div>
 </footer>
 

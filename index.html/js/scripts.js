@@ -214,27 +214,38 @@ $(document).ready(function(){
 document.getElementById("fecha-actual").innerHTML = new Date().toLocaleDateString();
 
 // Mostrar el formulario de contacto
+document.getElementById('btn-contactenos').addEventListener('click', showForm);
+
 document.getElementById('btn-contactenos').addEventListener('click', function() {
-    document.getElementById('formulario-contacto').style.display = 'flex';
+    document.getElementById('contact-form-popup').style.display = 'flex';
   });
   
   // Cerrar el formulario
   document.getElementById('cerrar-formulario').addEventListener('click', function() {
-    document.getElementById('formulario-contacto').style.display = 'none';
+    document.getElementById('contact-form-popup').style.display = 'none';
   });
   
   // Cerrar el formulario al hacer clic fuera del cuadro
-  window.addEventListener('click', function(event) {
-    if (event.target == document.getElementById('formulario-contacto')) {
-      document.getElementById('formulario-contacto').style.display = 'none';
+ 
+function showForm() {
+    document.getElementById('contact-form-popup').classList.add('active');
+}
+
+function hideForm() {
+    document.getElementById('contact-form-popup').classList.remove('active');
+}
+
+window.addEventListener('click', function(event) {
+    const formPopup = document.getElementById('contact-form-popup');
+    if (event.target === formPopup) {
+        hideForm();
     }
-  });
-  
+});
+
   // Volver arriba con animación
-  document.getElementById('btn-volver-arriba').addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+  
   
