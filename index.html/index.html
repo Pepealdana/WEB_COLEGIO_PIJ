@@ -291,56 +291,55 @@
 
 
 <!-- Sección de Contacto -->
-<div class="contact-section">
-    <div class="info-block">
+<section class="contact-section">
+    <div class="contact-container">
+        <!-- Column 1: Imágenes -->
         <div class="images">
-            <img src="img/logopij.png" alt="Escudo">
+            <img src="img/logopij.png" alt="Escudo 1">
             <img src="img/escudosme.png" alt="Escudo 2">
         </div>
 
-        <div class="sections">
+        <!-- Column 2: Enlaces -->
+        <div class="links">
             <ul>
-                <li><a href="#">Acerca de nosotros</a></li>
-                <li><a href="#">Beata Clara Fey</a></li>
-                <li><a href="#">Modelo pedagógico</a></li>
-                <li><a href="#">Admisiones</a></li>
-                <li><a href="#">Buzón de sugerencias</a></li>
+                <li><a href="#about">Acerca de nosotros</a></li>
+                <li><a href="#beata">Beata Clara Fey</a></li>
+                <li><a href="#model">Modelo pedagógico</a></li>
+                <li><a href="#admissions">Admisiones</a></li>
+                <li><a href="#suggestions">Buzón de sugerencias</a></li>
             </ul>
         </div>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-        <div class="contact-details">
-            <p><i class="fa fa-phone"></i> Teléfono: +57 (123) 456-7890</p>
-            <p><i class="fa fa-envelope"></i> Correo: info@colegio.com</p>
-            <p><i class="fa fa-map-marker"></i> Dirección: Calle 123 #45-67, Bogotá</p>
+        <!-- Column 3: Información de contacto -->
+        <div class="contact-info">
+            <p><i class="fas fa-phone-alt"></i> Teléfono: +57 (123) 456-7890</p>
+            <p><i class="fas fa-envelope"></i> Correo: info@colegio.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Dirección: Calle 123 #45-67, Bogotá</p>
         </div>
 
-        <div class="socials">
+        <!-- Column 4: Redes sociales -->
+        <div class="social-media">
             <p>Síguenos en:</p>
-            <div class="social-icons">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-            </div>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
-    <button id="btn-contactenos" onclick="showForm()">Contáctenos</button>
 
-    <div id="contact-form-popup" class="form-popup">
-    <form id="contact-form">
-            <!-- Campos del formulario aquí -->
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Correo" required>
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-            <span class="close" onclick="hideForm()">&times;</span>
-        </form>
+    <!-- Botón "Contáctenos" -->
+    <div class="contact-button">
+        <button id="btn-contactenos">Contáctenos</button>
     </div>
- 
+
+    <!-- Botón "Volver arriba" -->
+    <div class="back-to-top">
+        <button onclick="scrollToTop()">Volver arriba</button>
+    </div>
+</section>
+
 
 <!-- Barra Final -->
-<footer style="background-color: #01142d; color: white; padding: 10px 0;">
+<footer style="background-color: #55C9F4; color: #01142d; padding: 2px 0;">
     <div class="container text-center">
         <p>Colegio Santa María de la Esperanza.     <span id="fecha-actual"></span> &copy;     Hermanas del Niño Jesús Pobre.</p>
     </div>

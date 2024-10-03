@@ -1365,276 +1365,127 @@ body {
 }
 
 /*sección para derechos reservados */
-/* Sección contacto */
+/* Estilos generales de la sección */
 .contact-section {
+    background-color: #01142d;
+    color: white;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #01142d;
-    color: white;
+    text-align: center;
 }
 
-.info-block {
+/* Contenedor principal con 4 columnas */
+.contact-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
     width: 100%;
-}
-
-.images {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.sections {
-    padding-top: 50px; /* Aumenta el espacio en la parte superior */
-    flex: 2;
-    display: flex;
-    align-items: flex-start;
-}
-
-.sections ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sections ul li {
-    margin-bottom: 10px;
-}
-
-.sections ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.contact-details {
-    text-align: center;
-    margin: 0 auto;
-    width: 80%;
-}
-
-.contact-details p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px 0; /* Añadir espacio entre las líneas de texto */
-}
-
-.contact-details p i {
-    margin-right: 10px;
-}
-
-#contacto {
-    background-color: #01142d;
-    color: white;
-    padding: 40px 0;
-  }
-  
-  .container-contacto {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .images img {
-    max-width: 120px; /* Ajusta según lo que necesites */
-    height: auto;
+    padding: 20px;
 }
 
-  .imagenes-contacto img {
-    max-width: 150px;
+.contact-container > div {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Imágenes */
+.images img {
+    max-width: 100px;
     margin-bottom: 20px;
-  }
-  
-  .menu-contacto ul {
-    list-style: none;
+}
+
+/* Lista de enlaces */
+.links ul {
+    list-style-type: none;
     padding: 0;
-  }
-  
-  .menu-contacto ul li {
-    margin-bottom: 10px;
-  }
-  
-  .menu-contacto ul li a {
+}
+
+.links ul li {
+    margin: 10px 0;
+}
+
+.links ul li a {
     color: white;
     text-decoration: none;
-  }
-  
-  .datos-contacto {
-    text-align: center;
-  }
-  
-  .datos-contacto i {
-    margin-right: 10px;
-  }
-  
-  .redes-sociales-contacto {
-    text-align: right;
-  }
-  
-  .redes-sociales a {
+}
+
+.links ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Información de contacto */
+.contact-info p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.contact-info i {
+    margin-right: 8px;
+}
+
+/* Redes sociales */
+.social-media p {
+    margin-bottom: 10px;
+}
+
+.social-media a {
     color: white;
-  font-size: 24px;
-  margin-right: 15px;
-  text-decoration: none;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
 }
 
-.redes-sociales a:hover {
-    color: #f0f0f0;
-  }
-  
-  .socials {
-    flex: 1;
-    text-align: right;
-    position: relative;
-    top: 0;
-    margin-right: 20px;
+.social-media a:hover {
+    color: #FFD700;
 }
 
-.social-icons a {
-    display: inline-block;
-    margin-left: 10px;
-    color: white;
+/* Botón "Contáctenos" */
+.contact-button {
+    margin: 20px 0;
 }
 
-  #btn-contactenos, #btn-volver-arriba {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #fff;
+.contact-button button {
+    background-color: white;
     color: #01142d;
     border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #btn-contactenos:hover, #btn-volver-arriba:hover {
-    background-color: #f0f0f0;
-  }
-
-.buttons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.form-popup {
-    display: none;
-    position: fixed;
-    bottom: 100px; /* Fija el popup justo arriba de los botones */
-    right: 20px;
-    width: 300px; /* Ajusta el ancho si es necesario */
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    border: 2px solid #f39c12;
-    z-index: 1000;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-.form-popup.active {
-    display: block;
-}
-
-.form-popup .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-.escudo img {
-    max-height: 100px; /* Ajusta según el tamaño necesario */
-    width: auto;
-    display: block;
-    margin: 0 auto; /* Centra el escudo */
+.contact-button button:hover {
+    background-color: #FFD700;
 }
 
-/* Animación del botón de volver arriba */
+/* Botón "Volver arriba" */
 .back-to-top {
-    position: absolute;
-    animation: scroll-animation 0.5s ease-in-out;
-    bottom: 20px; /* Coloca el botón "Volver arriba" encima del de contáctenos */
+    position: fixed;
+    bottom: 20px;
     right: 20px;
 }
 
-@keyframes scroll-animation {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-  /* Formulario emergente con mejor diseño */
-.formulario-emergente {
-    display: none;
-    position: fixed;
-    bottom: 80px; /* Para que aparezca sobre el botón */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    width: 400px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  .contenido-formulario {
+.back-to-top button {
     background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  #cerrar-formulario {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
-  .contenido-formulario label {
-    display: block;
-    margin-top: 10px;
-  }
-  
-  .contenido-formulario input, 
-  .contenido-formulario textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .contenido-formulario button {
-    margin-top: 20px;
-    padding: 10px;
-    width: 100%;
-    background-color: #01142d;
-    color: white;
+    color: #01142d;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
     cursor: pointer;
-  }
-  
-  .contenido-formulario button:hover {
-    background-color: #002d50;
-  }
-  
-  .contact-button, .back-to-top {
-    position: fixed;
-    right: 20px;
-    bottom: 60px; /* Ajusta la distancia desde el borde inferior */
-    z-index: 100;
 }
+
+.back-to-top button:hover {
+    background-color: #FFD700;
+}
+
 
 /* Estilos de la barra final */
 footer {
     height: 30px; /* Ajusta la altura según prefieras */
     text-align: center;
-    background-color: #002d50;
+    background-color: #55C9F4;
     color: white;
     line-height: 30px;
   }

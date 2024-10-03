@@ -214,11 +214,10 @@ $(document).ready(function(){
 document.getElementById("fecha-actual").innerHTML = new Date().toLocaleDateString();
 
 // Mostrar el formulario de contacto
-document.getElementById('btn-contactenos').addEventListener('click', showForm);
-
 document.getElementById('btn-contactenos').addEventListener('click', function() {
-    document.getElementById('contact-form-popup').style.display = 'flex';
-  });
+    // Aquí puedes abrir tu formulario emergente con el código que prefieras
+    alert("Formulario de contacto (popup) aquí");
+});
   
   // Cerrar el formulario
   document.getElementById('cerrar-formulario').addEventListener('click', function() {
