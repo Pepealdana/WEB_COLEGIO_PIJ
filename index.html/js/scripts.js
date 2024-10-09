@@ -210,41 +210,26 @@ $(document).ready(function(){
 });
 
 // Sección Contacto
-// Obtener la fecha actual y mostrarla en el footer
 document.getElementById("fecha-actual").innerHTML = new Date().toLocaleDateString();
 
-// Mostrar el formulario de contacto
+// Mostrar el formulario al hacer clic en "Contáctenos"
 document.getElementById('btn-contactenos').addEventListener('click', function() {
-    // Aquí puedes abrir tu formulario emergente con el código que prefieras
-    alert("Formulario de contacto (popup) aquí");
+    document.getElementById("contactFormModal").style.display = "flex";
 });
-  
-  // Cerrar el formulario
-  document.getElementById('cerrar-formulario').addEventListener('click', function() {
-    document.getElementById('contact-form-popup').style.display = 'none';
-  });
-  
-  // Cerrar el formulario al hacer clic fuera del cuadro
- 
-function showForm() {
-    document.getElementById('contact-form-popup').classList.add('active');
-}
 
-function hideForm() {
-    document.getElementById('contact-form-popup').classList.remove('active');
-}
+// Cerrar el formulario al hacer clic en "X" o fuera del formulario
+document.querySelector(".close").addEventListener('click', function() {
+    document.getElementById("contactFormModal").style.display = "none";
+});
 
-window.addEventListener('click', function(event) {
-    const formPopup = document.getElementById('contact-form-popup');
-    if (event.target === formPopup) {
-        hideForm();
+window.onclick = function(event) {
+    if (event.target == document.getElementById("contactFormModal")) {
+        document.getElementById("contactFormModal").style.display = "none";
     }
-});
+};
 
-  // Volver arriba con animación
-  function scrollToTop() {
+
+// Volver arriba con animación
+function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-  
-  
