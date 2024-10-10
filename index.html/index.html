@@ -12,6 +12,7 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <script>
@@ -56,8 +57,8 @@
     </div>
 </div>
 
-    <!-- Encabezado fijo con logotipo y navegación -->
-    <header>
+<!-- Encabezado fijo con logotipo y navegación -->
+<header id="top">
         <!-- Logotipo de la institución -->
         <div class="logo">
             <img src="img/logosmeytexto.png" alt="Logo de la Institución">
@@ -100,7 +101,7 @@
             <span></span>
             <span></span>
         </div>
-    </header>
+</header>
 
 <!-- Icono del menú hamburguesa -->
 <div id="menu-toggle" class="hamburger-icon" onclick="toggleMenu()">
@@ -123,8 +124,8 @@
 </div>
 
 
-    <!-- Sección hero con imagen de fondo y texto centralizado -->
-    <section class="hero-section">
+<!-- Sección hero con imagen de fondo y texto centralizado -->
+<section class="hero-section">
         <div class="hero-content">
             <h1>Bienvenido al Colegio Santa María de la Esperanza</h1>
             <p>"Somos Luz y Esperanza para el mundo de hoy."</p>
@@ -134,7 +135,7 @@
         </div>
         <!-- Imagen de fondo en la sección hero -->
         <img src="img/colegio1.JPG" alt="Vista aérea del colegio" class="hero-image active">
-    </section>
+</section>
 
 
 <!-- Sección de slider -->
@@ -281,6 +282,7 @@
 <div id="imageModal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="modalImg">
+    <div id="caption"></div>
 </div>
 </section>
 
@@ -291,51 +293,81 @@
 
 
 <!-- Sección de Contacto -->
-<section class="contact-section">
-    <div class="contact-container">
-        <!-- Column 1: Imágenes -->
-        <div class="images">
-            <img src="img/logopijsin.png" alt="Escudo 1">
-            <img src="img/escudosme.png" alt="Escudo 2">
-        </div>
-
-        <!-- Column 2: Enlaces -->
-        <div class="links">
-            <ul>
-                <li><a href="#about">Acerca de nosotros</a></li>
-                <li><a href="#beata">Beata Clara Fey</a></li>
-                <li><a href="#model">Modelo pedagógico</a></li>
-                <li><a href="#admissions">Admisiones</a></li>
-                <li><a href="#suggestions">Buzón de sugerencias</a></li>
-            </ul>
-        </div>
-
-        <!-- Column 3: Información de contacto -->
-        <div class="contact-info">
-            <p><i class="fas fa-phone-alt"></i> Teléfono: +57 (123) 456-7890</p>
-            <p><i class="fas fa-envelope"></i> Correo: info@colegio.com</p>
-            <p><i class="fas fa-map-marker-alt"></i> Dirección: Calle 123 #45-67, Bogotá</p>
-        </div>
-
-        <!-- Column 4: Redes sociales -->
-        <div class="social-media">
-            <p>Síguenos en:</p>
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
+<div class="footer-container contact-section">
+    <!-- Sección de logos -->
+    <div class="footer-images">
+        <a href="https://www.pijcolombia.org" target="_blank">
+            <img id="logopij" src="img/logopijsin.png" alt="Logotipo PIJ">
+        </a>
+      <img src="img/escudosme.png" class="escudosme" alt="Escudo SME">
     </div>
-
-    <!-- Botón "Contáctenos" -->
-    <div class="contact-button">
-        <button id="btn-contactenos">Contáctenos</button>
+  
+    <!-- Sección de enlaces (Acerca de nosotros, etc.) -->
+    <div class="footer-links contact-links">
+      <ul>
+        <li><a href="#">Acerca de nosotros</a></li>
+        <li><a href="#">Beata Clara Fey</a></li>
+        <li><a href="#">Modelo pedagógico</a></li>
+        <li><a href="#">Admisiones</a></li>
+        <li><a href="#">Buzón de sugerencias</a></li>
+      </ul>
     </div>
-
-    <!-- Botón "Volver arriba" -->
-    <div class="back-to-top">
-        <button onclick="scrollToTop()">Volver arriba</button>
+  
+    <!-- Sección de detalles de contacto -->
+    <div class="footer-contact">
+      <p><i class="fas fa-phone"></i>   Teléfono: (60) + 1 8427408</p>
+      <p><i class="fas fa-envelope"></i>   Correo: s.mariadelaesperanza@yahoo.com</p>
+      <p><i class="fas fa-map-marker"></i>   Dirección: Calle 14 N° 3A - 167 Sur</p>
+      <p></i> Facatativá, Cundinamarca</p>
     </div>
-</section>
+  
+    <!-- Sección de iconos de redes sociales -->
+    <div class="social-media">
+        <span>Síguenos:</span>
+        <a href="https://www.facebook.com/colegiosantamariadelaesperanza" target="_blank">
+            <img src="img/facebook-icon.png" alt="Facebook">
+        </a>
+        <a href="https://www.youtube.com/channel/UCY0figVslii6xSoJrAxj-Cg" target="_blank">
+            <img src="img/youtube-icon.png" alt="Youtube">
+        </a>
+        <a href="https://www.instagram.com/colegio_sme/?hl=es-la" target="_blank">
+            <img src="img/instagram-icon.png" alt="Instagram">
+        </a>
+    </div>
+    
+  
+<!-- Sección de botones (Contáctenos y Volver arriba) -->
+<div class="footer-buttons contact-buttons">
+    <button id="btn-contactenos">Contáctenos</button>
+    
+    <!-- Botón Volver arriba como enlace -->
+    <a href="#" id="btn-volver-arriba" class="scroll-up-btn">Volver arriba</a>
+  </div>
+  
+  
+  <!-- Formulario emergente -->
+  <div id="contactFormModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Formulario de contacto</h2>
+      <form action="contact.php" method="POST">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+  
+        <label for="email">Correo:</label>
+        <input type="email" id="email" name="email" required>
+  
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+  
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+
+<div class="modal-header">
+    <span class="close-modal">&times;</span>
+</div>
 
 
 <!-- Barra Final -->
@@ -345,6 +377,14 @@
     </div>
 </footer>
 
+<!-- POPUP ocasional-->
+<div id="infoPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-popup">&times;</span>
+      <img src="img/popup.png" alt="Infografía importante">
+    </div>
+  </div>
+  
 
 <!-- Incluyendo el archivo JavaScript -->
 <script src="js/scripts.js"></script>

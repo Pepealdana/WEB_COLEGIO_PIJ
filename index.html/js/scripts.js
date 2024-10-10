@@ -48,9 +48,6 @@ document.addEventListener('click', function (e) {
     });
 
 
-
-
-
     // Slider de información
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slider-item');
@@ -212,24 +209,54 @@ $(document).ready(function(){
 // Sección Contacto
 document.getElementById("fecha-actual").innerHTML = new Date().toLocaleDateString();
 
-// Mostrar el formulario al hacer clic en "Contáctenos"
+// Mostrar el formulario emergente
 document.getElementById('btn-contactenos').addEventListener('click', function() {
     document.getElementById("contactFormModal").style.display = "flex";
 });
 
-// Cerrar el formulario al hacer clic en "X" o fuera del formulario
+// Cerrar el formulario emergente al hacer clic en la "X"
 document.querySelector(".close").addEventListener('click', function() {
     document.getElementById("contactFormModal").style.display = "none";
 });
 
-window.onclick = function(event) {
-    if (event.target == document.getElementById("contactFormModal")) {
-        document.getElementById("contactFormModal").style.display = "none";
-    }
-};
+// Cerrar el formulario si se hace clic fuera del formulario
+// Cerrar modal al hacer clic en la 'X'
+document.getElementById('close-modal').addEventListener('click', function() {
+    document.getElementById('modal').style.display = 'none';
+});
 
+window.onclick = function(event) {
+    var modal = document.getElementById("miModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 // Volver arriba con animación
-function scrollToTop() {
+document.getElementById("btn-volver-arriba").addEventListener("click", function(e) {
+    e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Mostrar popup al cargar la página
+window.onload = function() {
+    document.getElementById("infoPopup").style.display = "block";
+}
+
+// Mostrar popup al cargar la página
+window.onload = function() {
+    document.getElementById("infoPopup").style.display = "block";
+}
+
+// Cerrar popup al hacer clic en la 'X' o fuera del contenido
+var popup = document.getElementById("infoPopup");
+var closeBtn = document.getElementsByClassName("close-popup")[0];
+closeBtn.onclick = function() {
+    popup.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == popup) {
+        popup.style.display = "none";
+    }
 }
