@@ -211,26 +211,38 @@ document.getElementById("fecha-actual").innerHTML = new Date().toLocaleDateStrin
 
 // Mostrar el formulario emergente
 document.getElementById('btn-contactenos').addEventListener('click', function() {
-    document.getElementById("contactFormModal").style.display = "flex";
+    var modal = document.getElementById("contactFormModal");
+    modal.classList.remove("hidden");
+    modal.style.display = "block";
+    console.log("Formulario mostrado, comprobando visibilidad de la X.");
 });
 
 // Cerrar el formulario emergente al hacer clic en la "X"
 document.querySelector(".close").addEventListener('click', function() {
-    document.getElementById("contactFormModal").style.display = "none";
+    var modal = document.getElementById("contactFormModal");
+    modal.classList.add("hidden");
+    console.log("Formulario cerrado.");
+    setTimeout(function() {
+        modal.style.display = "none";
+    }, 500);
+});
+
+var modal = document.getElementById("contactFormModal");
+modal.addEventListener('show', function() {
+    document.querySelector('.close').style.display = 'block'; // Asegúrate de que la 'X' se mantenga visible
 });
 
 // Cerrar el formulario si se hace clic fuera del formulario
-// Cerrar modal al hacer clic en la 'X'
-document.getElementById('close-modal').addEventListener('click', function() {
-    document.getElementById('modal').style.display = 'none';
+window.addEventListener('click', function(event) {
+    var modal = document.getElementById("contactFormModal");
+    if (event.target == modal) {
+        modal.classList.add("hidden");
+        setTimeout(function() {
+            modal.style.display = "none";
+        }, 500);
+    }
 });
 
-window.onclick = function(event) {
-    var modal = document.getElementById("miModal");
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
 
 // Volver arriba con animación
 document.getElementById("btn-volver-arriba").addEventListener("click", function(e) {
@@ -238,25 +250,27 @@ document.getElementById("btn-volver-arriba").addEventListener("click", function(
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Mostrar popup al cargar la página
+// Mostrar el popup 
 window.onload = function() {
     document.getElementById("infoPopup").style.display = "block";
 }
 
-// Mostrar popup al cargar la página
-window.onload = function() {
-    document.getElementById("infoPopup").style.display = "block";
-}
-
-// Cerrar popup al hacer clic en la 'X' o fuera del contenido
-var popup = document.getElementById("infoPopup");
-var closeBtn = document.getElementsByClassName("close-popup")[0];
-closeBtn.onclick = function() {
-    popup.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == popup) {
+// Cerrar popup al hacer clic en la 'X'
+document.querySelector(".close-popup").addEventListener('click', function() {
+    var popup = document.getElementById("infoPopup");
+    popup.classList.add("hidden");
+    setTimeout(function() {
         popup.style.display = "none";
+    }, 500);
+});
+
+// Cerrar el popup si se hace clic fuera del contenido del popup
+window.onclick = function(event) {
+    var popup = document.getElementById("infoPopup");
+    if (event.target == popup) {
+        popup.classList.add("hidden");
+        setTimeout(function() {
+            popup.style.display = "none";
+        }, 500);
     }
 }

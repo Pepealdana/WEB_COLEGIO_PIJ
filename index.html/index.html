@@ -345,12 +345,14 @@
   </div>
   
   
-  <!-- Formulario emergente -->
-  <div id="contactFormModal" class="modal">
+<!-- Formulario emergente -->
+<div id="contactFormModal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
+      <span class="close">&times;</span> <!-- 'X' para cerrar -->
       <h2>Formulario de contacto</h2>
       <form action="contact.php" method="POST">
+        <label for="contactForm">COLEGIO SANTA MARÍA DE LA ESPERANZA</label>
+        <label for="contactForm">Déjanos tu mensaje:</label>
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="name" required>
   
@@ -364,11 +366,7 @@
       </form>
     </div>
   </div>
-
-<div class="modal-header">
-    <span class="close-modal">&times;</span>
-</div>
-
+  
 
 <!-- Barra Final -->
 <footer style="background-color: #55C9F4; color: #01142d; padding: 2px 0;">
@@ -378,10 +376,10 @@
 </footer>
 
 <!-- POPUP ocasional-->
-<div id="infoPopup" class="popup">
+<div id="infoPopup">
     <div class="popup-content">
-      <span class="close-popup">&times;</span>
-      <img src="img/popup.png" alt="Infografía importante">
+      <span class="close-popup">&times;</span> <!-- Botón 'X' para cerrar -->
+      <img src="img/popup.png" alt="Infografía" />
     </div>
   </div>
   
