@@ -102,8 +102,31 @@ body {
     margin-right: 5px; /* Espacio ajustado entre las dos imágenes */
 }
 
+/* Para pantallas grandes: mostrar imágenes de los botones y ocultar logo */
+@media (min-width: 769px) {
+    .logo-responsive {
+        display: none; /* Ocultar el logo responsive */
+    }
+}
+
+/* Para pantallas pequeñas: ocultar las imágenes de los botones y mostrar logo */
+@media (max-width: 768px) {
+    .topbar-image {
+        display: none; /* Ocultar las imágenes de los botones */
+    }
+
+    .logo-responsive {
+        display: block; /* Mostrar el logo responsive */
+        margin-right: auto; /* Ajustar el margen si es necesario */
+        margin-left: 3px; /* Espacio entre las imágenes */
+        border-radius: 20px; /* esquinas redondeadas */ 
+    }
+}
+
+
 
 /* Estilos para el encabezado y la navegación */
+/* Header fijo */
 header {
     display: flex;
     position: fixed;
@@ -118,32 +141,38 @@ header {
     transition: background-color 0.3s ease;
 }
 
-body {
-    margin-top: 80px;
+/* Ocultar el menú responsivo en pantallas grandes */
+.nav-links {
+    display: none;
 }
 
 /* Estilos del menú de navegación */
+/* Menú de navegación principal en pantallas grandes */
+.main-nav {
+    display: flex;
+}
+
 .main-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
-    padding-right: 50px;
+    margin-right: 45px; /* Ajustar hacia la izquierda */
 }
 
 .main-nav ul li {
-    margin-left: 0px;
+    margin-left: 4px;
     position: relative;
-    }
+}
 
 .main-nav ul li a {
     text-decoration: none;
     color: #fff;
     font-size: 16px;
-    padding: 10px;
+    padding: 10px 5px; /* Puedes ajustar el padding si es necesario */
     transition: color 0.3s ease, background-color 0.3s ease;
-    white-space: nowrap; /* Evita que las palabras se dividan en dos líneas */
+    white-space: nowrap;
 }
 
 .main-nav ul li a:hover {
@@ -190,77 +219,106 @@ body {
     color: #01142d;
 }
 
-/* Estilos del menú responsivo (hamburguesa) */
-.menu-toggle {
+/* Estilos del botón hamburguesa */
+/* Estilos para el menú */
+.burger {
     display: none;
-    flex-direction: column;
     cursor: pointer;
-    z-index: 1001;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    z-index: 1000;
+    position: relative;
 }
 
-.menu-toggle span {
-    background-color: #fff;
-    height: 2px;
-    width: 25px;
-    margin: 3px 0;
+.burger div {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
     transition: all 0.3s ease;
 }
 
-/* Estilos responsivos para pantallas pequeñas */
-@media (max-width: 768px) 
-{
-    .menu-toggle {
-        display: flex;
-    }
+.nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #01142d;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
 
-    .main-nav ul {
+.nav-active {
+    display: flex;
+    transform: translateX(0);
+}
+
+.nav-links ul {
+    list-style: none;
+}
+
+.nav-links ul li {
+    margin: 20px 0;
+}
+
+.nav-links ul li a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+    color: #ffdd57;
+}
+
+/* Animaciones del menú hamburguesa */
+.burger.toggle div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.toggle div:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.toggle div:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media (max-width: 768px) {
+    /* Asegura que el menú principal esté oculto inicialmente */
+    .main-nav {
         display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #01142d;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        z-index: 997;
     }
 
-    .main-nav.open ul {
+    /* Muestra el menú hamburguesa en pantallas pequeñas */
+    .burger {
         display: flex;
     }
 
-    .main-nav ul li {
-        margin: 0;
-        padding: 10px 0;
+    /* Cuando el menú está activo, se muestra */
+    .nav-links.nav-active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: #01142d;
+        top: 50px;
+        left: 0;
         width: 100%;
         text-align: center;
     }
 
-    .main-nav ul li ul.submenu {
-        position: relative;
-        left: 0;
-        transform: none;
+    .nav-links li {
+        margin: 20px 0;
     }
 }
 
-/* Animaciones para un toque dinámico */
-.main-nav ul li a:hover {
-    background-color: #ffdd57;
-    color: #01142d;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.main-nav ul li ul.submenu li a:hover {
-    background-color: #ffdd57;
-    color: #01142d;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.main-nav ul li:last-child {
-    margin-right: 40px;
-}
 
 /* Estilos de la sección hero */
 .hero-section {
@@ -339,7 +397,6 @@ body {
     background-color: #ffcc00;
 }
 
-
 /* Media query para pantallas medianas (tablets)*/
 @media (max-width: 1024px) {
     .hero-content h1 {
@@ -364,7 +421,6 @@ body {
     padding-top: 200px; /* Ajusta según la altura de tu barra superior */
     margin-top: -200px; /* Mismo valor que el padding-top para ajustar el desplazamiento */
 }
-
  
 @keyframes wipe-in-up { 
     from {
@@ -378,8 +434,7 @@ body {
   [transition-style="in:wipe:up"] {
     animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-up both;
   }
-  
-
+ 
 
 /* Slider container NUestra Historia */
 .info-slider {
@@ -661,187 +716,8 @@ body {
     }
   }
   
-  /* SIDEBAR */
-.sidebar-menu {
-    position: relative;
-}
 
-/* Icono de menú */
-.menu-toggle {
-    font-size: 28px;
-    cursor: pointer;
-    position: fixed;
-    top: 60px;
-    left: 15px;
-    z-index: 1001;
-    display: none; /* Se mostrará solo en pantallas pequeñas */
-}
-
-#menu-toggle {
-    position: relative;
-    top: 40px;
-    z-index: 1002;
-}
-
-/* Ajusta también la posición del icono del sidebar */
-.menu-toggle {
-    position: fixed;
-    top: 60px; /* Ajusta según la posición deseada */
-    left: 10px;
-    font-size: 30px;
-    cursor: pointer;
-    color: #b6aaac; /* Ajusta el color aquí */
-}
-
-.menu-toggle.active {
-    background-color: #555; /* Cambia esto por el color que prefieras */
-    color: #fff; /* Color del ícono cuando está pulsado */
-}
-
-/* Sidebar oculto por defecto */
-.sidebar {
-    position: fixed;
-    top: 40px; /* Ajusta esta altura según la altura de tu header */
-    left: -250px; /* Sidebar oculto en la parte izquierda */
-    width: 250px; /* Ancho del sidebar */
-    height: 100%; /* Ocupa toda la altura de la pantalla */
-    background-color: #01142d;
-    transition: left 0.3s ease; /* Transición suave al abrir/cerrar */
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5); /* Sombra del sidebar */
-    overflow-y: auto; /* Permitir scroll vertical si hay mucho contenido */
-    z-index: 1000; /* Asegura que el sidebar esté por encima de otros elementos *
-}
-
-/* Cambia el color cuando el sidebar está activo */
-.sidebar.active {
-    transform: translateX(0);
-    background-color: #e5d1d1;
-}
-
-.menu-icon {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    font-size: 30px;
-    cursor: pointer;
-    color: #b6aaac;
-}
-
-/* Sidebar oculto por defecto */
-#sidebar {
-    position: fixed;
-    left: -250px; /* Sidebar oculto en la parte izquierda */
-    width: 250px; /* Ancho del sidebar */
-    height: 100%; /* Ocupa toda la altura de la pantalla */
-    background-color: #333; /* Color de fondo del sidebar */
-    transition: left 0.3s ease; /* Transición suave al abrir/cerrar */
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5); /* Sombra del sidebar */
-    overflow-y: auto; /* Permitir scroll vertical si hay mucho contenido */
-    z-index: 1000; /* Asegura que el sidebar esté por encima de otros elementos */
-}
-
-/* Sidebar cuando está abierto */
-#sidebar.open {
-    left: 0; /* El sidebar se desplaza hacia la vista */
-}
-
-/* Estilo para los enlaces dentro del sidebar */
-#sidebar a {
-    display: block;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-}
-
-.sidebar a:hover {
-    background-color: #ffdd57;
-    color: #01142d;
-}
-
-.sidebar ul li a:hover,
-.sidebar ul li a.active {
-    background-color: #ffdd57;
-    color: #01142d;
-}
-
-.main-nav ul {
-    z-index: 1001; /* Debe estar por encima del header pero debajo del menú toggle */
-    position: absolute;
-}
-
-/* Cambiar el color cuando se selecciona un ítem */
-.sidebar a:active {
-    background-color: #333;
-    color: #fff;
-}
-
-.sidebar.active a.selected {
-    background-color: #333;
-    color: #fff;
-}
-
-.sidebar.open {
-    width: 200px;
-    left: 0; /* Muestra el sidebar cuando se activa */
-}
-
-/* Opcional: cambiar el color del icono de menú cuando se abre */
-.menu-icon.open {
-    color: #fff; /* Cambia el color del icono al abrir */
-}
-
-/* Mostrar el ícono en pantallas pequeñas */
-@media screen and (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-        top: 60px;
-    }
-
-    .sidebar {
-        top: 80px;
-        height: auto;
-        max-height: 100vh;
-        overflow-y: auto;
-        width: 200px; /* ancho de sidebar */
-        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
-    }
-}
-
-.menu-toggle span {
-    background-color: #ffdd57;
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
-    transition: background-color 0.3s ease;
-}
-
-/* Cuando el menú está activo */
-.menu-toggle.active span {
-    background-color: #ffdd57;
-}
-
-/* Ocultar sidebar en pantallas grandes */
-@media (min-width: 768px) {
-    .sidebar {
-        transform: translateX(-100%);
-    }
-}
-
-/* Sidebar visible solo en pantallas pequeñas cuando está activo */
-@media (max-width: 768px) {
-    .sidebar.active {
-        transform: translateX(0);
-        transition: transform 0.3s ease-in-out;
-    }
-}@media screen and (max-width: 768px) {
-    .sidebar {
-        width: 180px; /* Un tamaño más pequeño en pantallas móviles */
-    }
-}
-}
-
-/* Sección frases Madre clara */
+/* SECCIÓN FRASES MADRE CLARA */
 .content-section {
     display: flex;
     justify-content: space-between;
@@ -929,7 +805,6 @@ body {
     max-width: 150px; /* Imagen más pequeña para moverla a la derecha */
     display: block;
 }
-
 
 .content-section:hover .vertical-line {
     height: 100%; /* La barra crece cuando se pasa el mouse sobre la sección */
@@ -1545,6 +1420,7 @@ body {
 .contact-buttons button:hover {
     background-color: #FFD700;
     border-color: #FFD700;
+    color: #01142d;
 }
 
 /* Modal (Formulario emergente) */
@@ -1643,14 +1519,19 @@ body {
     color: #01142d;
 }
 
-.modal-close {
-    display: block; /* O asegurarte que no esté en 'none' */
-    cursor: pointer;
+.modal .close {
     position: absolute;
     top: 10px;
     right: 10px;
-    color: #01142d; /* Color de la 'X' */
-    z-index: 1001; /* Asegura que esté por encima de otros elementos */
+    font-size: 20px;
+    color: #040404;
+    cursor: pointer;
+    z-index: 100;
+}
+
+
+.modal-close:hover {
+    color: #f00; /* Cambia el color al pasar el mouse, opcional */
 }
 
 /* POPUP */
@@ -1698,21 +1579,59 @@ body {
   }
 
 /* Botón para cerrar (X) */
+.popup-content {
+    position: relative; /* Asegura que el contenedor de la imagen o el popup sea el contexto */
+}
+
 .popup-content .close-popup {
-    position: static;
-    top: 10px;
-    right: 10px;
+    position: absolute; /* Cambiar a absolute para que se posicione dentro del contenedor */
+    top: 0px; /* Ajusta según el espacio que desees en la parte superior */
+    right: 35px; /* Ajusta para que se acerque al borde derecho */
     font-size: 30px;
     cursor: pointer;
     color: rgb(255, 255, 255);
-  }
+}
 
   .hidden {
     display: none;
     animation: fadeOut 0.5s ease forwards;
 }
 
-/* Estilos de la barra final */
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 90%; /* Ajusta el tamaño del popup */
+        margin: 0 auto; /* Centra el popup horizontalmente */
+        position: relative;
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        height: 100vh; /* Altura completa de la pantalla */
+    }
+
+    .popup-content .close-popup {
+        position: absolute;
+        top: 265px;  /* Justo en la parte superior */
+        right: 5; /* Justo en la parte derecha */
+        font-size: 30px;
+        cursor: pointer;
+        color: #fff;
+        padding: 5px; /* Ajusta si quieres un pequeño margen */
+    }
+    
+    .popup {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+    }
+}
+
+
+
+
+/* BARRA CONTACTOS */
 footer {
     width: 100%;
     text-align: center;

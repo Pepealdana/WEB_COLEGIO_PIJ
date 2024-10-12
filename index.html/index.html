@@ -42,20 +42,32 @@
                 <img src="img/instagram-icon.png" alt="Instagram">
             </a>
         </div>
-          <!-- Imagen enlazada al lado derecho -->
-           <!-- Contenedor para las imágenes -->
-    <div class="topbar-images">
-        <a href="https://familia.mattilda.io/login/" class="topbar-link" target="_blank">
-            <img src="img/boton-mattilda.png" alt="phidias" class="topbar-image">
-        </a>
-        <a href="https://prod.progrentis.com/signin/tabid/1543/Default.aspx?returnurl=%2fmain.aspx" class="topbar-link" target="_blank">
-            <img src="img/boton-progrentis.png" alt="Progrentis" class="topbar-image">
-        </a>
-        <a href="https://colsme.phidias.co/" class="topbar-link" target="_blank">
-            <img src="img/boton-phidias.png" alt="phidias" class="topbar-image">
-        </a>
-    </div>
+<!-- Contenedor para las imágenes -->
+<div class="topbar-images">
+    <!-- Imágenes que se muestran en pantallas grandes -->
+    <a href="https://familia.mattilda.io/login/" class="topbar-link" target="_blank">
+        <img src="img/boton-mattilda.png" alt="Mattilda" class="topbar-image">
+    </a>
+    <a href="https://prod.progrentis.com/signin/tabid/1543/Default.aspx?returnurl=%2fmain.aspx" class="topbar-link" target="_blank">
+        <img src="img/boton-progrentis.png" alt="Progrentis" class="topbar-image">
+    </a>
+    <a href="https://colsme.phidias.co/" class="topbar-link" target="_blank">
+        <img src="img/boton-phidias.png" alt="Phidias" class="topbar-image">
+    </a>
+
+    <!-- Logo que solo se muestra en pantallas pequeñas -->
+    <a href="https://familia.mattilda.io/login/" class="logo-responsive">
+        <img src="img/mrespon.png" alt="Logo responsive" style="width: 20px;">
+    </a>
+    <a href="https://prod.progrentis.com/signin/tabid/1543/Default.aspx?returnurl=%2fmain.aspx" class="logo-responsive">
+        <img src="img/prrenspon.png" alt="Logo responsive" style="width: 20px;">
+    </a>
+    <a href="https://colsme.phidias.co/x" class="logo-responsive">
+        <img src="img/phirespon.png" alt="Logo responsive" style="width: 20px;">
+    </a>
 </div>
+</div>
+
 
 <!-- Encabezado fijo con logotipo y navegación -->
 <header id="top">
@@ -64,8 +76,8 @@
             <img src="img/logosmeytexto.png" alt="Logo de la Institución">
         </div>
 
-        <!-- Menú de navegación principal -->
-        <nav class="main-nav">
+<!-- Menú de navegación principal -->
+<nav class="main-nav">
             <ul>
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#nosotros">Acerca de Nosotros</a>
@@ -84,44 +96,30 @@
                         <li><a href="#">Pensamientos</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#modeloped">Modelo Pedagógico</a>
-                </li>
-                <li>
-                    <a href="#admisiones">Admisiones</a>
-                </li>
-                <li>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLX8E0ty9sJETMxOgt0kEBxPZdERD3ZhNp6UepYK8HlEYt5g/viewform?usp=sf_link">Buzón de sugerencias</a>
-                </li>
+                <li><a href="#modeloped">Modelo Pedagógico</a></li>
+                <li><a href="#admisiones">Admisiones</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfLX8E0ty9sJETMxOgt0kEBxPZdERD3ZhNp6UepYK8HlEYt5g/viewform?usp=sf_link">Buzón de sugerencias</a></li>
             </ul>
         </nav>
-        <!-- Botón de menú hamburguesa para pantallas pequeñas -->
-        <div id="hamburger-icon" class="hamburger-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        
+<!-- Botón de menú hamburguesa para pantallas pequeñas -->
+<!-- Menú hamburguesa -->
+<div class="burger" id="burger">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<!-- Menú responsivo -->
+<nav class="nav-links" id="nav-links">
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
 </header>
-
-<!-- Icono del menú hamburguesa -->
-<div id="menu-toggle" class="hamburger-icon" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-
-<!-- Menú móvil (Sidebar) -->
-<div id="sidebar" class="sidebar">
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Beata Clara Fey</a></li>
-            <li><a href="#">Modelo Pedagógico</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
-</div>
 
 
 <!-- Sección hero con imagen de fondo y texto centralizado -->

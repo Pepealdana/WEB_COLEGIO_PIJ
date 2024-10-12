@@ -3,36 +3,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.getElementById('sidebar');
     const sidebarLinks = document.querySelectorAll('.sidebar a');
 
-    // Alternar el menú al hacer clic en el ícono de hamburguesa
-    menuToggle.addEventListener('click', function () {
-        sidebar.classList.toggle('open');
-        menuToggle.classList.toggle('open');
-    });
+// Alternar el menú al hacer clic en el ícono de hamburguesa
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav-links');
 
-// Cerrar el menú al hacer clic fuera de él
-document.addEventListener('click', function (e) {
-        if (!menuToggle.contains(e.target) && !sidebar.contains(e.target)) {
-            sidebar.classList.remove('open');
-            menuToggle.classList.remove('open');
-        }
-    });
+burger.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+    burger.classList.toggle('toggle');
+});
 
-// Cerrar el menú al hacer clic en un enlace
-    sidebarLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
-            sidebar.classList.remove('open');
-            menuToggle.classList.remove('open');
+/* Cerrar el menú si se hace clic fuera de él */
+document.addEventListener('click', (e) => {
+    if (!burger.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove('nav-active');
+        burger.classList.remove('toggle');
+    }
+});
 
-            const target = link.getAttribute('href');
-            if (target && target.startsWith('#')) {
-                const targetElement = document.querySelector(target);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        });
-    });
-
+   
     document.querySelector('.btn-conoce-mas').addEventListener('click', function(e) {
         e.preventDefault();  // Prevenir el comportamiento por defecto del ancla
     
