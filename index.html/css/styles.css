@@ -38,7 +38,7 @@ body {
 
 .topbar-content {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 1200px;
@@ -76,7 +76,15 @@ body {
     display: flex;
     align-items: center;
     margin-left: 0;
-    margin-right: 0;}
+    margin-right: 0;
+}
+
+.topbar-images {
+    display: flex;
+    align-items: center;
+    gap: 3px; /* Espacio entre imágenes */
+    margin-top: 5px; /* Ajuste manual */
+}
 
 .top-bar .topbar-image {
     width: 100px;
@@ -84,6 +92,7 @@ body {
     margin: 0;
     padding: 0;
     vertical-align: middle;
+    margin-top: 25px; /* Ajuste manual */
     margin-left: 10px; /* Espacio entre las imágenes */
 }
 
@@ -123,6 +132,16 @@ body {
     }
 }
 
+/* Redondear esquinas de los logos en la derecha */
+.topbar-images img {
+    border-radius: 5px; /* Ajusta el valor según el nivel de redondeo que quieras */
+    transition: all 0.3s ease;
+}
+
+/* Efecto de hover en los logos */
+.topbar-images img:hover {
+    transform: scale(1.05); /* Efecto de agrandar levemente al pasar el mouse */
+}
 
 
 /* Estilos para el encabezado y la navegación */
@@ -1527,8 +1546,12 @@ header {
     color: #040404;
     cursor: pointer;
     z-index: 100;
+    /* Fuerza la visibilidad */
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: none; /* Desactivar cualquier posible animación que la oculte */
 }
-
 
 .modal-close:hover {
     color: #f00; /* Cambia el color al pasar el mouse, opcional */

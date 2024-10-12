@@ -197,13 +197,23 @@ $(document).ready(function(){
 // Sección Contacto
 document.getElementById("fecha-actual").innerHTML = new Date().toLocaleDateString();
 
+
 // Mostrar el formulario emergente
 document.getElementById('btn-contactenos').addEventListener('click', function() {
     var modal = document.getElementById("contactFormModal");
+    var closeButton = document.querySelector('.close');
+    
     modal.classList.remove("hidden");
     modal.style.display = "block";
+
+    // Asegurar que la 'X' esté visible y con opacidad total
+    closeButton.style.display = 'block'; 
+    closeButton.style.opacity = '1'; 
+    closeButton.style.visibility = 'visible'; 
+
     console.log("Formulario mostrado, comprobando visibilidad de la X.");
 });
+
 
 // Cerrar el formulario emergente al hacer clic en la "X"
 document.querySelector(".close").addEventListener('click', function() {
