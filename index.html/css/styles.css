@@ -77,6 +77,7 @@ body {
     align-items: center;
     margin-left: 0;
     margin-right: 0;
+    margin-top: -30px; /* Ajuste manual */
 }
 
 .topbar-images {
@@ -101,6 +102,8 @@ body {
     display: flex; /* Hace que las imágenes estén una al lado de la otra */
     align-items: center;
     gap: 20; /* Asegura que no haya espacio extra entre las imágenes */
+    
+    top: 10; 
 }
 
 .top-bar .topbar-link:first-child {
@@ -110,6 +113,8 @@ body {
 .top-bar .topbar-link:first-of-type {
     margin-right: 5px; /* Espacio ajustado entre las dos imágenes */
 }
+
+
 
 /* Para pantallas grandes: mostrar imágenes de los botones y ocultar logo */
 @media (min-width: 769px) {
@@ -238,104 +243,55 @@ header {
     color: #01142d;
 }
 
-/* Estilos del botón hamburguesa */
-/* Estilos para el menú */
-.burger {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
+/* Estilos para el sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Oculto fuera de la pantalla */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: right 0.3s ease;
     z-index: 1000;
-    position: relative;
 }
 
-.burger div {
-    width: 100%;
+.sidebar.active {
+    right: 0; /* Muestra el sidebar al activarlo */
+}
+
+/* Estilos para la hamburguesa */
+.burger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001; /* Asegúrate que el botón de la hamburguesa esté encima */
+}
+
+.burger span {
+    display: block;
+    width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: #fff;
     margin: 5px;
     transition: all 0.3s ease;
 }
 
-.nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #01142d;
-    position: fixed;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-}
-
-.nav-active {
-    display: flex;
-    transform: translateX(0);
-}
-
-.nav-links ul {
-    list-style: none;
-}
-
-.nav-links ul li {
-    margin: 20px 0;
-}
-
-.nav-links ul li a {
-    color: white;
-    font-size: 24px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.nav-links ul li a:hover {
-    color: #ffdd57;
-}
-
-/* Animaciones del menú hamburguesa */
-.burger.toggle div:nth-child(1) {
+.burger.toggle span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
 
-.burger.toggle div:nth-child(2) {
+.burger.toggle span:nth-child(2) {
     opacity: 0;
 }
 
-.burger.toggle div:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+.burger.toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
-@media (max-width: 768px) {
-    /* Asegura que el menú principal esté oculto inicialmente */
-    .main-nav {
-        display: none;
-    }
-
-    /* Muestra el menú hamburguesa en pantallas pequeñas */
-    .burger {
-        display: flex;
-    }
-
-    /* Cuando el menú está activo, se muestra */
-    .nav-links.nav-active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        background-color: #01142d;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-links li {
-        margin: 20px 0;
-    }
+/* Clases adicionales */
+.hidden {
+    display: none;
 }
 
 
