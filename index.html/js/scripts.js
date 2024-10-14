@@ -1,4 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const menuItems = document.querySelectorAll('.toggle-submenu');
+    
+    menuItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            const submenuId = item.getAttribute('data-submenu');
+            const submenu = document.getElementById('submenu-' + submenuId);
+            
+            if (submenu.style.display === 'block') {
+                submenu.style.display = 'none';
+            } else {
+                document.querySelectorAll('.main-nav ul li .submenu').forEach(submenu => {
+                    submenu.style.display = 'none';
+                });
+                submenu.style.display = 'block';
+            }
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
    const popup = document.getElementById("infoPopup"); // Referencia al popup
 
     // Abrir/Cerrar sidebar al hacer clic en el menú hamburguesa
