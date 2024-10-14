@@ -1,24 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const burger = document.querySelector('.burger');
-    const sidebar = document.getElementById('sidebar');
-    const popup = document.getElementById("infoPopup"); // Referencia al popup
+   const popup = document.getElementById("infoPopup"); // Referencia al popup
 
     // Abrir/Cerrar sidebar al hacer clic en el menú hamburguesa
-    burger.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-        burger.classList.toggle('toggle');
+    menuBtn.addEventListener("click", function() {
+        sidebar.classList.toggle("active"); // Muestra u oculta el sidebar
     });
 
     // Cerrar el sidebar y el popup al hacer clic fuera de ellos
     document.addEventListener('click', (e) => {
-        if (!burger.contains(e.target) && !sidebar.contains(e.target)) {
+        if (!menuBtn.contains(e.target) && !sidebar.contains(e.target)) {
             sidebar.classList.remove('active');
-            burger.classList.remove('toggle');
-        }
-        if (popup && e.target == popup) {
-            closePopup(); // Llamada a la función que cierra el popup
         }
     });
+
+    document.getElementById("menu-btn").addEventListener("click", function() {
+        document.getElementById("sidebar").classList.toggle("active");
+    });
+    
 
     // Slider de información
     let currentSlide = 0;
@@ -74,8 +72,22 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const frases = [
         "Jesús me ama! con este solo pensamiento debemos olvidar todo lo demás”.",
-        "Pero tú, Señor, lo puedes todo...",
-        // [El resto de las frases...]
+        "Pero tú, Señor, lo puedes todo; sin duda tú puedes hacer también que te amemos, que te amemos con fuerza e intrepidez”.",
+        "Aquí deberemos preguntar muchas veces a la Santísima Madre de Dios y a San José ¿Qué debemos hacer para alegrar al Divino Niño?”.",
+        "Aquí deberemos preguntar muchas veces a la Santísima Madre de Dios y a San José ¿Qué debemos hacer para alegrar al Divino Niño?”.",
+        "Nuestra alegría ha de ser una alegría interior que por nada se deja perturbar si no que pasa por encima de todo, porque sabemos que poseemos el único tesoro que se puede tener”.  ",
+        "Piensa cuantos años lleva el señor contigo, cuantas veces, si, cuantas veces entra el señor en tu corazón. ¿y que fruto ha sacado hasta la fecha de esta comunicación con el señor?”.",
+        "Tendríamos que estar más agradecidos por todo lo que él señor ha hecho por nosotros. De esta manera nos dispondríamos a recibir mayores gracias y con más frecuencia",
+        "Dichoso quien acoge con corazón fiel la gracia de Dios y no rechaza ninguno que llama la puerta, por pequeña que sea”",
+        "Si el señor ve en un alma la sed de santidad, entonces la bendice, la planifica con sus dones y la colma abundantemente con sus gracias”.",
+        "Si vamos a él y suplicamos misericordia nos curara; porque como niño que es nos ama; un niño ama siempre”.",
+        "El mismo señor y Dios que se nos dio a través de María entra en nuestro corazón por la sagrada comunión. ¿pero dónde está nuestro amor, nuestro aprecio, nuestra devoción, nuestro recogimiento continuo?”",
+        "El Señor nos regala en la Sagrada comunión su sangre, la sangre de su corazón. Que esta Sangre nos encienda en el amor verdadero a Él y un amor sincero al prójimo.”",
+        "Si practicamos el amor al prójimo el Señor será misericordioso con nosotros y nos perdonará nuestros pecados.” ",
+        "El Señor quiere que nos tengamos un amor sincero y cordial, un amor que tenga sus raíces en El, que venda de Él y El conduzca.”",
+        "Tendríamos que estar más agradecidos por todo lo que él señor ha hecho por nosotros. De esta manera nos dispondríamos a recibir mayores gracias y con más frecuencia.”",
+        "Todo por Jesús, por Jesús Solo",
+        "Todo por Jesús, por Jesús Solo"
     ];
 
     const randomIndex = Math.floor(Math.random() * frases.length);

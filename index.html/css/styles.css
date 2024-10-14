@@ -165,40 +165,30 @@ header {
     transition: background-color 0.3s ease;
 }
 
-/* Ocultar el menú responsivo en pantallas grandes */
-.nav-links {
-    display: none;
-}
-
-/* Estilos del menú de navegación */
-/* Menú de navegación principal en pantallas grandes */
+/* Estilos del menú de navegación en pantallas grandes */
 .main-nav {
     display: flex;
+    justify-content: center; /* Ajustar según necesidad */
+    flex-grow: 1;
 }
-
 .main-nav ul {
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    align-items: center;
-    margin-right: 45px; /* Ajustar hacia la izquierda */
 }
-
 .main-nav ul li {
     margin-left: 4px;
     position: relative;
 }
-
 .main-nav ul li a {
     text-decoration: none;
     color: #fff;
     font-size: 16px;
-    padding: 10px 5px; /* Puedes ajustar el padding si es necesario */
+    padding: 10px 5px;
     transition: color 0.3s ease, background-color 0.3s ease;
     white-space: nowrap;
 }
-
 .main-nav ul li a:hover {
     background-color: #ffdd57;
     color: #01142d;
@@ -220,80 +210,77 @@ header {
     z-index: 998;
     text-align: center;
 }
-
 .main-nav ul li:hover ul.submenu {
     display: block;
 }
-
 .main-nav ul li ul.submenu li {
     margin: 0;
     padding: 0;
     text-align: left;
 }
-
 .main-nav ul li ul.submenu li a {
     color: #fff;
     font-size: 14px;
     padding: 5px 12px;
     display: block;
 }
-
 .main-nav ul li ul.submenu li a:hover {
     background-color: #ffdd57;
     color: #01142d;
 }
 
-/* Estilos para el sidebar */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -250px; /* Oculto fuera de la pantalla */
-    width: 250px;
-    height: 100%;
-    background-color: #333;
-    transition: right 0.3s ease;
-    z-index: 1000;
-}
-
-.sidebar.active {
-    right: 0; /* Muestra el sidebar al activarlo */
-}
-
-/* Estilos para la hamburguesa */
-.burger {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 1001; /* Asegúrate que el botón de la hamburguesa esté encima */
-}
-
-.burger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 5px;
-    transition: all 0.3s ease;
-}
-
-.burger.toggle span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.burger.toggle span:nth-child(2) {
-    opacity: 0;
-}
-
-.burger.toggle span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Clases adicionales */
-.hidden {
+/* Estilos para el menú hamburguesa en pantallas pequeñas */
+.menu-toggle {
     display: none;
 }
+.menu-icon {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    padding: 10px;
+    color: #fff;
+}
 
+/* Estilos del menú para pantallas pequeñas */
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column; /* Cambia la dirección a columna */
+        display: none;
+        width: 100%; /* Asegura que ocupe todo el ancho */
+        background-color: #01142d; /* Fondo consistente */
+        position: absolute; /* Posición fija para cubrir el área */
+        top: 60px; /* Ajustar según la posición del header */
+        left: 0; /* Inicia desde la izquierda */
+    }
+    .main-nav ul li {
+        text-align: center; /* Centra el texto */
+        margin: 0; /* Elimina el margen */
+        padding: 10px 0; /* Espacio entre ítems */
+    }
+    .main-nav ul li a {
+        padding: 15px; /* Más espacio alrededor del texto */
+        border-bottom: 1px solid #444; /* Separadores entre ítems */
+    }
+    .main-nav ul .submenu {
+        display: none; /* Ocultar submenú por defecto */
+        position: relative; /* Cambiar a relativo para posición estática */
+        top: 0; /* Eliminar desplazamiento vertical */
+        left: 0; /* Eliminar desplazamiento horizontal */
+        background-color: #01142d; /* Fondo consistente */
+    }
+    .main-nav ul li:hover .submenu {
+        display: flex; /* Mostrar submenú al pasar el mouse */
+        flex-direction: column; /* Cambiar a dirección columna */
+    }
+    .menu-toggle:checked + .menu-icon + .main-nav ul {
+        display: flex;
+    }
+    .menu-icon {
+        display: block;
+    }    .menu-icon {
+        display: block;
+    }
+}
 
 /* Estilos de la sección hero */
 .hero-section {
@@ -563,8 +550,7 @@ header {
 .info-box {
     padding: 20px;
     box-sizing: border-box;
-    width: 50%;
-    
+    width: 50%;   
 }
 
 .slider-item img {
