@@ -238,6 +238,10 @@ header {
     ;
 }
 
+.submenu {
+    display: none;
+  }
+
 /* Estilos para el menú hamburguesa en pantallas pequeñas */
 .menu-toggle {
     display: none;

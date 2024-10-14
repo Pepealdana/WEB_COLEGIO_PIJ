@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    
     const menuItems = document.querySelectorAll('.toggle-submenu');
     
     menuItems.forEach(item => {
@@ -18,6 +19,28 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // Selecciona todos los submenús
+    const submenus = document.querySelectorAll('.submenu');
+    
+    // Asegúrate de que todos los submenús estén ocultos por defecto
+    submenus.forEach(function(submenu) {
+      submenu.style.display = 'none'; // Oculta todos los submenús al cargar la página
+    });
+  
+    // Añadir funcionalidad para abrir/cerrar el submenú correspondiente al hacer clic
+    const menuItems = document.querySelectorAll('.has-submenu');
+    menuItems.forEach(function(item) {
+      item.addEventListener('click', function() {
+        const submenu = item.querySelector('.submenu');
+        if (submenu) {
+          // Alterna entre mostrar y ocultar el submenú
+          submenu.style.display = (submenu.style.display === 'none') ? 'block' : 'none';
+        }
+      });
+    });
+  });
+  
 
 
 document.addEventListener("DOMContentLoaded", function () {
