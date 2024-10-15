@@ -376,6 +376,15 @@
 <script src="js/scripts.js"></script>
 <script src="js/slider.js"></script>
 
+window.addEventListener('load', function() {
+    var sliderItems = document.querySelectorAll('.slider-item');
+    sliderItems.forEach(function(item) {
+        var textBox = item.querySelector('.slider-text');
+        textBox.style.height = 'auto'; // Reset height
+        textBox.style.height = textBox.scrollHeight + 'px'; // Set to the height of content
+    });
+});
+
 
 </body>
 </html>

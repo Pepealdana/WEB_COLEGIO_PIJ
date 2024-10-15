@@ -91,6 +91,12 @@ document.addEventListener("DOMContentLoaded", function () {
     showSlide(currentSlide);
 });
 
+// Control de transición
+document.querySelectorAll('.slider-item').forEach(item => {
+    item.style.transition = 'all 0.5s ease'; // Suaviza la transición entre slides
+});
+
+
 // Efecto de aparición gradual para elementos
 document.addEventListener("DOMContentLoaded", function () {
     const faders = document.querySelectorAll('.fade-in');
