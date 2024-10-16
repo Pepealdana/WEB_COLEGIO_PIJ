@@ -1,3 +1,31 @@
+// Cerrar submenús al hacer clic fuera del área
+document.addEventListener('click', function(event) {
+    var submenu = document.querySelectorAll('.main-nav ul li ul.submenu');
+    submenu.forEach(function(menu) {
+        if (!menu.parentElement.contains(event.target)) {
+            menu.style.display = 'none'; // Oculta el submenú
+        }
+    });
+});
+
+// Mostrar el submenú al hacer hover
+document.querySelectorAll('.main-nav ul li').forEach(function(item) {
+    item.addEventListener('mouseenter', function() {
+        var submenu = this.querySelector('ul.submenu');
+        if (submenu) {
+            submenu.style.display = 'block';
+        }
+    });
+    item.addEventListener('mouseleave', function() {
+        var submenu = this.querySelector('ul.submenu');
+        if (submenu) {
+            submenu.style.display = 'none';
+        }
+    });
+});
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     
     const menuItems = document.querySelectorAll('.toggle-submenu');
@@ -19,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     // Selecciona todos los submenús
     const submenus = document.querySelectorAll('.submenu');
@@ -258,7 +287,18 @@ document.querySelector(".close-popup").addEventListener('click', closePopup);
 
 window.onclick = function(event) {
     var popup = document.getElementById("infoPopup");
+    var modal = document.getElementById("contactFormModal");
+    
+    // Cierra el popup si se hace clic fuera de él
     if (event.target == popup) {
         closePopup();
     }
-}
+
+    // Cierra el modal de contacto si se hace clic fuera de él
+    if (event.target == modal) {
+        modal.classList.add("hidden");
+        setTimeout(function() {
+            modal.style.display = "none";
+        }, 500);
+    }
+};

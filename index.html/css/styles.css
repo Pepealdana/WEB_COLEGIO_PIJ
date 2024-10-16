@@ -4,7 +4,7 @@ html {
   }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'alberta', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
@@ -14,10 +14,14 @@ body {
 
 /* Estilos del logotipo */
 .logo img {
-    width: 320px;
+    width: 100px;
     height: auto;
     display: block;
-    margin-left: 20px; /* Ajusta este valor para separar el logo del borde izquierdo */
+    position: absolute; /* Posiciona el logo */
+    top: -30px; /* Ajusta el valor para que sobresalga del header */
+    left: 20px; /* Ajusta este valor según dónde quieras que esté el logo */
+    z-index: 1101; /* Asegura que esté sobre el header y top bar */
+    transition: transform 0.3s ease-in-out; /* Suaviza el efecto de zoom */
 }
 
 /* Estilos de la barra superior */
@@ -25,9 +29,9 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #55C9F4; /* Color de fondo */
-    color: #fff; /* Color del texto */
-    z-index: 1000;
+    background-color: whitesmoke; /* Color de fondo */
+    color: #01142d; /* Color del texto */
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
@@ -43,8 +47,9 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    color: white;
+    padding-left: 100px; /* Ajusta el valor para dejar espacio para el logo */
+    padding-right: 20px; /* Mantén el padding derecho */
+    color: #01142d;
 }
 
 .top-bar .social-media {
@@ -53,11 +58,12 @@ body {
 }
 
 .top-bar .social-media span {
-    margin-right: 10px;
-    color: #fff;
+    margin-right: 20px; /* ubicacion iconos redes*/
+    color: #01142d;
     line-height: 1;
     display: flex;
     align-items: center;
+    padding-left: 120px; /* margen siguenos en: ;*/
 }
 
 .top-bar .social-media a {
@@ -65,8 +71,8 @@ body {
 }
 
 .top-bar .social-media img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin-left: 5px;
     vertical-align: middle;
 }
@@ -102,7 +108,6 @@ body {
     display: flex; /* Hace que las imágenes estén una al lado de la otra */
     align-items: center;
     gap: 20; /* Asegura que no haya espacio extra entre las imágenes */
-    
     top: 10; 
 }
 
@@ -113,7 +118,6 @@ body {
 .top-bar .topbar-link:first-of-type {
     margin-right: 5px; /* Espacio ajustado entre las dos imágenes */
 }
-
 
 
 /* Para pantallas grandes: mostrar imágenes de los botones y ocultar logo */
@@ -148,6 +152,11 @@ body {
     transform: scale(1.05); /* Efecto de agrandar levemente al pasar el mouse */
 }
 
+/* Efecto de hover en los logos */
+.logo img:hover {
+    transform: scale(1.05); /* Efecto de agrandar levemente al pasar el mouse */
+}
+
 
 /* Estilos para el encabezado y la navegación */
 /* Header fijo */
@@ -159,7 +168,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 10px 30px;
-    background-color: #01142d;
+    background-color: #ffdd57;
     z-index: 999;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
@@ -183,14 +192,14 @@ header {
 }
 .main-nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #01142d;
     font-size: 16px;
     padding: 10px 5px;
     transition: color 0.3s ease, background-color 0.3s ease;
     white-space: nowrap;
 }
 .main-nav ul li a:hover {
-    background-color: #ffdd57;
+    background-color: #55C9F4;
     color: #01142d;
     border-radius: 5px;
 }
@@ -202,7 +211,7 @@ header {
     top: 125%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #01142d;
+    background-color: #ffdd57;
     padding: 0;
     list-style: none;
     border-radius: 5px;
@@ -219,13 +228,13 @@ header {
     text-align: left;
 }
 .main-nav ul li ul.submenu li a {
-    color: #fff;
+    color: #01142d;
     font-size: 14px;
     padding: 5px 12px;
     display: block;
 }
 .main-nav ul li ul.submenu li a:hover {
-    background-color: #ffdd57;
+    background-color: #55C9F4;
     color: #01142d;
 }
 
@@ -263,7 +272,7 @@ header {
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: #01142d;
+        background-color: #ffdd57;
     }
     
     .main-nav ul li {
@@ -286,7 +295,7 @@ header {
         font-size: 26px;
         cursor: pointer;
         padding: 10px;
-        color: #fff;
+        color: #01142d;
     }
 
     .menu-toggle:checked + .menu-icon + .main-nav ul {
@@ -575,22 +584,29 @@ button.prev:hover, button.next:hover {
 }
 
 @media (max-width: 768px) {
+    .info-box {
+        width: 100%;
+        padding: 10px;
+        height: auto; /* Importante: que la caja se adapte */
+        display: block;
+    }
+
     .slider-container {
         display: flex;
         flex-direction: column;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     .slider-item {
         display: flex;
-        flex-direction: column; /* Asegura que el contenido esté en una columna */
+        flex-direction: column;/* Alineación vertical */
         width: 100%;
-        height: auto;
-        align-items: center;
+        height: auto; /* Deja que el tamaño dependa del contenido */
     }
 
     .slider-item img {
-        width: 100%;
+        width: 100%;/* Imagen ocupa el 100% del ancho */
         height: auto;
     }
 
@@ -600,9 +616,7 @@ button.prev:hover, button.next:hover {
         background-color: white;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        height: auto;
-        overflow: visible;
-        display: block;
+        height: auto; /* Deja que el contenedor crezca según el contenido */
     }
 
     .slider-content p {
@@ -617,24 +631,29 @@ button.prev:hover, button.next:hover {
         height: auto;
         overflow: visible;
     }
-    
+
+    .slider-content, .slider-text {
+        height: auto; /* Elimina cualquier altura fija */
+        overflow: visible;  
+    }
+
     .info-box {
         width: 100%;
         padding: 10px;
     }
 
     .slider-text {
-        overflow-y: visible;
-        padding: 10px;
-        border: 1px solid #ccc;
-        background-color: #f9f9f9;
-        white-space: pre-wrap;
-        word-wrap: break-word;
-        height: auto;
-        max-height: none;
-        display: block;
+        white-space: normal; /* Permitir saltos de línea */
+        word-wrap: break-word; /* Evitar que el texto se salga del contenedor */
+        height: auto; /* Dinámico: ajusta según el contenido */
+        overflow: visible; /* Asegúrate que no haya cortes */
     }
 
+    .slider-text {
+        max-height: none;
+        overflow: visible;
+    }
+    
     .prev, .next {
         top: auto;
         bottom: 10px;
@@ -648,6 +667,29 @@ button.prev:hover, button.next:hover {
     .next {
         right: 5px;
     }
+}
+/* Indicadores (puntos) debajo del slider */
+.slider-indicators {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #01142d;
+}
+
+.indicator:hover {
+    background-color: #555;
 }
 
 
@@ -1218,7 +1260,7 @@ button.prev:hover, button.next:hover {
 .footer-icons a {
     margin-right: 15px;
     font-size: 20px;
-    color: white;
+    color: #01142d;
   }
 
 .footer-buttons {
@@ -1248,7 +1290,7 @@ button.prev:hover, button.next:hover {
 .scroll-up-btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #55C9F4; /* Color de fondo */
+    background-color: #55C9F4; /* volver arriba */
     color: #01142d; /* Color del texto */
     border: none;
     border-radius: 5px;
@@ -1259,12 +1301,13 @@ button.prev:hover, button.next:hover {
 }
 
 .scroll-up-btn:hover {
-    background-color: #fdf102; /* Color de fondo al pasar el cursor */
+    background-color: white; /* Color de fondo al pasar el cursor */
+    color: #01142d
 }
 
 .contact-section {
-    background-color: #01142d;
-    color: white;
+    background-color: #ffdd57;
+    color: #01142d;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -1273,7 +1316,7 @@ button.prev:hover, button.next:hover {
 }
 
 .escudosme, .escudopij {
-    max-width: 150px; /* Ajusta el tamaño */
+    max-width: 160px; /* Ajusta el tamaño */
     margin-right: 20px;
     justify-content: flex-start; /* Alinea las imágenes a la izquierda */
     align-items: center; /* Centra verticalmente */
@@ -1281,6 +1324,7 @@ button.prev:hover, button.next:hover {
 
 .escudosme {
     margin-right: 30px; /* Ajusta la separación entre las imágenes */
+    max-width: 120px
 }
 
 .contact-links ul {
@@ -1293,12 +1337,12 @@ button.prev:hover, button.next:hover {
 }
 
 .contact-links ul li a {
-    color: white;
+    color: #01142d;
     text-decoration: none;
 }
 
 .contact-links ul li a:hover {
-    color: #FFD700;
+    color: #016fb9;
 }
 
 .contact-details p {
@@ -1315,7 +1359,7 @@ button.prev:hover, button.next:hover {
 }
 
 .social-icons a {
-    color: white;
+    color: #01142d;
     font-size: 24px;
     margin-right: 10px;
     text-decoration: none;
@@ -1343,17 +1387,16 @@ button.prev:hover, button.next:hover {
 }
 
 .contact-buttons button {
-    background-color: #01142d;
-    color: white;
+    background-color: #55C9F4;
+    color: #01142d;
     padding: 10px 20px;
-    border: 2px solid white;
+    
     margin: 10px 0;
     cursor: pointer;
 }
 
 .contact-buttons button:hover {
-    background-color: #FFD700;
-    border-color: #FFD700;
+    background-color: white; /* contacto presionado */
     color: #01142d;
 }
 
@@ -1460,7 +1503,7 @@ button.prev:hover, button.next:hover {
     font-size: 20px;
     color: #040404;
     cursor: pointer;
-    z-index: 100;
+    z-index: 9999;
     /* Fuerza la visibilidad */
     display: block !important;
     opacity: 1 !important;
@@ -1469,7 +1512,7 @@ button.prev:hover, button.next:hover {
 }
 
 .modal-close:hover {
-    color: #f00; /* Cambia el color al pasar el mouse, opcional */
+    color: #040404; /* Cambia el color al pasar el mouse, opcional */
 }
 
 /* POPUP */
@@ -1553,7 +1596,7 @@ button.prev:hover, button.next:hover {
         right: 5; /* Justo en la parte derecha */
         font-size: 30px;
         cursor: pointer;
-        color: #fff;
+        color: black;
         padding: 5px; /* Ajusta si quieres un pequeño margen */
     }
     
@@ -1565,9 +1608,6 @@ button.prev:hover, button.next:hover {
         width: 100%;
     }
 }
-
-
-
 
 /* BARRA CONTACTOS */
 footer {
@@ -1592,7 +1632,7 @@ footer:hover {
 }
 
 .update-bar {
-    background-color: #01142d; /* Ajustar el color original */
+    background-color: #55C9F4; /* Ajustar el color original */
     color: white; /* Asegura que el texto sea legible */
     font-size: 16px; /* Ajusta el tamaño según lo que necesitas */
     padding: 20px 0; /* Añade relleno para darle más altura */
