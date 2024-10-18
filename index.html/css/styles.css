@@ -29,7 +29,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: whitesmoke; /* Color de fondo */
+    background-color: white; /* Color de fondo */
     color: #01142d; /* Color del texto */
     z-index: 999;
     display: flex;
@@ -667,29 +667,6 @@ button.prev:hover, button.next:hover {
     .next {
         right: 5px;
     }
-}
-/* Indicadores (puntos) debajo del slider */
-.slider-indicators {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.indicator {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    background-color: #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.indicator.active {
-    background-color: #01142d;
-}
-
-.indicator:hover {
-    background-color: #555;
 }
 
 
@@ -1369,6 +1346,23 @@ button.prev:hover, button.next:hover {
     color: #FFD700;
 }
 
+.footer-social-media {
+    display: flex;
+    flex-direction: column; /* Coloca los íconos en una columna */
+    align-items: flex-start; /* Alinea los íconos al principio de la columna */
+    margin-left: 200px; /* Ajusta esta propiedad para mover los íconos hacia la derecha */
+}
+
+.footer-social-media a {
+    margin-bottom: 5px; /* Espacio entre los íconos */
+}
+
+.footer-social-media a img {
+    width: 50px;  /* Ajusta el tamaño de los íconos */
+    height: 50px; /* Mantén las proporciones cambiando ambas dimensiones */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Agrega una sombra suave */
+}
+
 .social-media a img {
     vertical-align: middle; /* Alinea verticalmente todos los íconos */
     display: inline-block;
@@ -1380,6 +1374,16 @@ button.prev:hover, button.next:hover {
 
 .social-media a img:hover {
     transform: scale(1.1); /* Agranda un poco al pasar el mouse */
+}
+
+.footer-social-media {
+    display: flex;
+    flex-direction: column; /* Coloca los íconos en una columna */
+    align-items: flex-start; /* Alinea los íconos al principio de la columna */
+}
+
+.footer-social-media a {
+    margin-bottom: 10px; /* Espacio entre los íconos */
 }
 
 .contact-buttons {
@@ -1398,6 +1402,16 @@ button.prev:hover, button.next:hover {
 .contact-buttons button:hover {
     background-color: white; /* contacto presionado */
     color: #01142d;
+}
+
+
+.enlace-direccion {
+    color: #01142d; /* Cambia el color del enlace */
+    text-decoration: none; /* Quita el subrayado si no lo quieres */
+}
+
+.enlace-direccion:hover {
+    color: lightgray; /* Cambia el color cuando el usuario pasa el cursor */
 }
 
 /* Modal (Formulario emergente) */
@@ -1503,7 +1517,7 @@ button.prev:hover, button.next:hover {
     font-size: 20px;
     color: #040404;
     cursor: pointer;
-    z-index: 9999;
+    z-index: 100;
     /* Fuerza la visibilidad */
     display: block !important;
     opacity: 1 !important;
@@ -1619,7 +1633,7 @@ footer {
     transition: transform 0.3s ease;
 }
 
-  footer span {
+footer span {
     color: #01142d; /* Color del texto de la fecha */
 }
 
