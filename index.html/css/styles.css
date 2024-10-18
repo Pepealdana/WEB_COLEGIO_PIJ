@@ -670,287 +670,99 @@ button.prev:hover, button.next:hover {
 }
 
 
-/* SECCIÓN FRASES MADRE CLARA */
-.content-section {
+/* SECCIÓN MADRE CLARA */
+/* Encapsulación para evitar conflictos con otros estilos */
+.madre-clara-section {
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  /* Estilo del header */
+  .madre-clara-hero {
+    position: relative;
+    height: 60vh;
+    background-image: url('../img/fondoseccionmc.jpg'); /* Ajusta la ruta según tu estructura */
+    max-width: 100%;
+    
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
-    justify-content: space-between;
-    padding: 40px;
-    background-color: #f7f9fc; /* Color suave */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 900;
 }
 
-/* Títulos con fondo de color */
-.title-container {
-        font-size: 1.3rem;
-        padding: 3px;
-        background-color: #ffdd57;
-        color: #001f3f;
-        width: 30vw; /* Asegura que se extienda a todo el ancho de la pantalla */
-        margin-left: -40px; /* Asegura que comience desde el borde izquierdo absoluto */
-        padding-left: 120px; /* Agrega un poco de espacio interno si es necesario */
-    }
-
-/* Estilo para la frase y la imagen alineadas horizontalmente */
-.image-text-row {
-    display: flex;
-    align-items: center; /* Centrado vertical entre la imagen y la caja de frases */
-    justify-content: space-between; /* Mantener separación horizontal */
-    margin-left: 35px;
-    height: auto; /* Ajuste dinámico de altura */
-}
-
-/* Imagen de Madre Clara más grande */
-.madre-clara-image {
-    width: 300%; 
-    max-width: 200px; /* Mantener el tamaño */
-    display: block;
-    margin-right: 15px;
-    margin-top: 25px; /* Alinea la imagen con la caja de frases */
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15); /* Sombra suave */
-}
-
-/* Contenedor de la frase */
-.quote-container {
-    margin-top: 45px;
-    margin-left: 40px;
-    max-width: 600px; /* Caja de la frase más grande */
-    border: 120px solid #01142d;
-    padding: 20px; /* Más espacio interno */
-    background-color: #ffffff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  .madre-clara-hero-content {
     display: flex;
     align-items: center;
-    font-size: 1.2rem; /* Tamaño de letra más grande */
-    font-style: italic;
-}
+    justify-content: center;
+    text-align: left;
+    margin-bottom: -35px;
+  }
 
-/* Marco de la frase con estilo */
-.quote-container.styled-quote {
-    width: 400px; /* Tamaño fijo del contenedor de la frase */
-    border: 4px solid #55C9F4; /* Borde azul */
-    padding: 15px;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Evita que el texto se vea debajo de la imagen */
+  .madre-clara-img {
+    width: 300px; /* Ajusta el tamaño de la imagen */
+    margin-right: 20px;
+  }
+
+  .madre-clara-hero-text {
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .madre-clara-hero-text h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+
+  .madre-clara-hero-text p {
+    font-size: 1.2em;
     margin-top: 10px;
-}
+  }
 
-.big-quote {
-    font-size: 5rem; /* Aumentado el tamaño de la comilla */
-    color: #55C9F4;
-    margin-right: 8px;
-    align-self: flex-start; /* Alinea la comilla al principio de la caja */
-    margin-top: -15px; /* Ajustar la posición superior si es necesario */
-}
-
-/* Ajuste para que el texto de la frase se adapte */
-.quote-text {
-    font-size: 1.1rem;
-    font-style: italic;
-    flex: 1;
-    word-wrap: break-word;
-    text-align: center; /* Alinea el texto en el centro horizontalmente */
-}
-
-.side-image {
-    width: 100%;
-    max-width: 150px; /* Imagen más pequeña para moverla a la derecha */
-    display: block;
-}
-
-.content-section:hover .vertical-line {
-    height: 100%; /* La barra crece cuando se pasa el mouse sobre la sección */
-}
-
-/* Derecha: contenedor del video */
-.right-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 20px; /* Mueve el contenido a la derecha */
-}
-
-/* Contenedor del video estilizado */
-.styled-video {
-    border: 2px solid #ffdd57; /* Borde amarillo */
-    padding: 10px;
-    background-color: #f5f5f5;
-    margin-right: 5px; /* Espacio entre el video y la imagen adicional */
-}
-
-.video-container {
-    display: flex;
-    flex-direction: column; /* Apilar video y título verticalmente */
-    align-items: center; /* Centrar contenido verticalmente */
-    max-width: 700px; /* Reduce el ancho del video */
-    margin-left: 20px; /* Espacio para que la imagen y logo se muevan más a la derecha */   
-}
-
-.video-container video {
-    margin-top: 15px;
-    width: 80%;
-    height: auto;
-}
-
-/* Línea debajo del título del video */
-.video-title::after {
-    content: '';
-    display: block;
-    width: calc(80vw - 830px); /* Longitud de la línea: desde el borde derecho hasta el borde izquierdo del video */
-    height: 2px;
-    background-color: #01142d; /* Color de la línea */
-    margin-top: 5px; /* Pequeño margen superior */
-    margin-right: auto; /* Asegura que la línea comience en el borde derecho */
-}
-
-
-/* Mover el título del video a la derecha y abajo */
-.video-title {
-    text-align: center; /* Centra el texto del título */
-    font-size: 1.2rem;
-    color: #01142d;
-    margin-top: 10px; /* Espacio más pequeño entre video y título */
-    position: relative; /* Posición relativa para controlar la línea debajo */
-}
-
-/* Contenedor del video estilizado */
-.styled-video {
-    border: 2px solid #ffdd57; /* Borde amarillo */
-    padding: 10px;
-    background-color: #f5f5f5;
-    max-width: 300px;
-}
-
-.video-container img {
-    max-width: 200px; /* Tamaño del escudo */
-    margin-right: 20px; /* Espacio entre la imagen y el video */
-}
-
-/* Suavizar sombras */
-.madre-clara-image, .quote-container, .video-container {
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Suave */
-    border-radius: 8px;
-}
-
-/* Añadir animación para cuando los elementos son visibles */
-.fade-in {
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-}
-
-/* Añadir transición para el título y la barra */
-.title-container, .vertical-line, .video-title {
-    transition: all 0.3s ease-in-out; /* Transición suave */
-}
-
-/* Efecto de disolvencia al pasar el cursor */
-.title-container:hover {
-    background-color: #fdf102; /* Mantén el mismo color o ajusta */
-    opacity: 0.8; /* Efecto de disolvencia */
-}
-
-.video-title:hover::after, .vertical-line:hover {
-    background-color: #ffdd57; /* Cambia el color o disolvencia al pasar */
-    opacity: 1; /* Aumenta la visibilidad */
-}
-/* Hover para imágenes */
-.madre-clara-image:hover, .video-container video:hover {
-    transform: scale(1.05); /* Efecto de zoom */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
-    transition: all 0.3s ease-in-out;
-}
-
-/*RESPONSIVE DESING - sección madres clara */
-/* Estilo general para mantener el diseño aprobado */
-.content-section {
-    display: flex;
-    justify-content: center; /* Centra todo el contenido */
-    flex-wrap: wrap; /* Permite que los elementos se muevan uno debajo del otro en pantallas pequeñas */
-    padding: 40px;
-    background-color: #f7f9fc;
-}
-
-/* Contenedor principal para imagen y frase */
-.image-text-row {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrar en pantallas pequeñas */
-    margin-left: 0; /* Restablece el margen en pantallas pequeñas */
-    width: 90%;
-}
-
-@media (min-width: 768px) {
-    .image-text-row {
-        flex-direction: row; /* Alineación horizontal en pantallas grandes */
-        justify-content: space-between;
-        margin-left: 35px;
-    }
-}
-
-/* Ajustes para la imagen de Madre Clara */
-.madre-clara-image {
-    width: 100%;
-    max-width: 200px;
-    margin-right: 0;
-    margin-bottom: 20px; /* Espacio entre imagen y frase en pantallas pequeñas */
-}
-
-@media (min-width: 768px) {
-    .madre-clara-image {
-        margin-right: 20px;
-        margin-bottom: 0;
-    }
-}
-
-/* Ajustes para la caja de frases */
-.quote-container {
-    width: 100%;
-    max-width: 500px;
+  .madre-clara-auto-frase {
     text-align: center;
-    margin: 0 auto; /* Centra la caja de frases */
-}
+    margin-top: 10px;
+  }
 
-@media (min-width: 768px) {
-    .quote-container {
-        margin: 0;
-        text-align: left;
-    }
-}
+  .madre-clara-auto-frase p {
+    font-size: 1.5em;
+    color: #333;
+    transition: opacity 1s ease-in-out;
+  }
 
-/* Ajustes para la tipografía y tamaño de la caja en pantallas pequeñas */
-@media (max-width: 767px) {
-    .quote-container {
-        font-size: 1rem; /* Reduce el tamaño de la letra en pantallas pequeñas */
-        padding: 15px;
-    }
-}
-
-/* Ajustes para el video */
-.video-container {
-    width: 100%;
-    text-align: center; /* Centra el video */
+  .madre-clara-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
-}
+  }
 
-.video-container video {
-    width: 100%;
-    height: auto;
-    max-width: 500px; /* Ajusta el tamaño del video en pantallas pequeñas */
-}
+  .madre-clara-logo {
+    width: 250px;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
 
-/* Mantén el video al lado derecho en pantallas grandes */
-@media (min-width: 768px) {
-    .video-container {
-        text-align: left; /* Alinea a la izquierda en pantallas grandes */
-        margin-left: 20px;
-    }
-}
+  .madre-clara-video-container {
+    text-align: center;
+  }
+
+  .madre-clara-img, .madre-clara-logo, .madre-clara-video-section iframe {
+    transition: transform 0.5s ease;
+  }
+  
+  .madre-clara-img:hover, .madre-clara-logo:hover, .madre-clara-video-section iframe:hover {
+    transform: scale(1.1); /* Aumenta el tamaño en un 10% */
+  }
+  
+  .madre-clara-video-section iframe {
+    margin-top: 10px;
+  }
+
 
 /*sección NOTICIAS Y CRONOGRAMA */
 /* Estilos para la sección general */
