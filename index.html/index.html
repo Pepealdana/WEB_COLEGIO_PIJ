@@ -205,34 +205,41 @@
 
 <!-- Sección MADRE CLARA -->
 <div class="madre-clara-section">
-    <header class="madre-clara-hero">
+    <div class="madre-clara-hero">
       <div class="madre-clara-hero-content">
         <img class="madre-clara-img" src="img/claritanew.jpg" alt="Madre Clara">
         <div class="madre-clara-hero-text">
           <h1>Madre Clara Fey</h1>
-          <p>A la edad de 11 años, Clara tuvo un sueño. Caminaba por calle y donde se encontró con un chico con poca ropa. Quería darle limosna. 
-            El muchacho dijo: "Todavía tengo muchos hermanos y hermanas pobres en esta ciudad". Cuando se le preguntó dónde vivía, señaló hacia arriba. Cuando Clara le preguntó su nombre, él respondió: "Yo soy el pobre niño Jesús". Este sueño refleja el motivo principal de las acciones de Clara.</p>
+          <p>A la edad de 11 años, Clara tuvo un sueño: Caminaba por la calle y se encontró a niño con poca ropa, ella quería darle limosna; 
+            El le dijo a ella: "Todavía tengo muchos hermanos y hermanas pobres en esta ciudad", cuando ella le preguntó dónde vivía, Él señaló hacia arriba, Cuando Clara le preguntó su nombre, Él respondió: "Yo soy el pobre niño Jesús". Este sueño refleja el motivo principal de las acciones de Clara, Fundando de la Congregación de Hermanas del Niño Jesús Pobre.</p>
         </div>
       </div>
-      <div class="madre-clara-frase">
-        <p id="madre-clara-frase"></p>
-      </div>
-    </header>
+      <div class="madre-clara-frases fade-in">
+        <div class="frase-recuadro madre-clara-visible">
+            <div id="random-quote">"Frase aleatoria actualizada de Madre Clara."</div>
+        </div>
+    </div>
+</div>
   
-    <section class="madre-clara-content">
-        <div class="madre-clara-media-container">
-          <div class="madre-clara-logo-section">
-            <h3>Logo del año:</h3>
-            <img class="madre-clara-logo" src="img/simbolo2024.png" alt="Logo del Año">
-          </div>
-          <div class="madre-clara-video-section">
-            <iframe width="560" height="315" src="img/canción 2024.mp4" title="Video Madre Clara" frameborder="0" allowfullscreen></iframe>
-            <h3>Peregrinos de esperanza</h3>
-          </div>
+ <!-- Pestañas para Logo y Video -->
+    <div class="tabs-container">
+        <div class="tabs">
+            <button class="tab-link" onclick="openTab(event, 'logo')">Logo del Año</button>
+            <button class="tab-link" onclick="openTab(event, 'video')">Video del Año</button>
         </div>
-      </section>
+        <div id="logo" class="tab-content">
+            <img class="madre-clara-logo" src="img/simbolo2024.png" alt="Logo del Año">
+            <p>Este es el logo del año que representa la esperanza y el compromiso de nuestra comunidad.</p>
+        </div>
+        <div id="video" class="tab-content">
+            <iframe width="560" height="315" src="img/cancion 2024.mp4" title="Video Madre Clara" frameborder="0" allowfullscreen></iframe>
+            <p>Este video muestra los momentos más importantes del año y el mensaje espiritual de la Madre Clara.</p>
+        </div>
+    </div>
+</div>
+    
       
-  </div>
+      
   
 
 

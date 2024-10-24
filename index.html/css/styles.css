@@ -677,33 +677,46 @@ button.prev:hover, button.next:hover {
     scroll-behavior: smooth;
   }
   
-  /* Estilo del header */
+  /* Hero principal */
   .madre-clara-hero {
     position: relative;
-    height: 60vh;
-    background-image: url('../img/fondoseccionmc.jpg'); /* Ajusta la ruta según tu estructura */
-    max-width: 100%;
-    
+    height: 80vh; /* Ajusté la altura para que el contenido suba más */
+    background-image: url('../img/fondoseccionmc.jpg');
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Alinea el contenido más hacia arriba */
+    padding-top: 20px; /* Ajusta el espaciado si es necesario */
+    max-width: 100vw;
+    box-sizing: border-box;
     z-index: 900;
 }
+
+/* Ajustar el alto de la imagen hero */
+.hero-image {
+    height: 200px; /* Ajusta el alto según sea necesario */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin distorsionarse */
+  }
+
+/* Ajustar márgenes de la frase que se actualiza */
+.hero-phrase {
+    margin-top: 20px; /* Ajusta el margen superior */
+    margin-bottom: 20px; /* Asegura que el margen inferior sea igual */
+    text-align: center;
+  }
 
   .madre-clara-hero-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: left;
-    margin-bottom: -35px;
   }
 
   .madre-clara-img {
-    width: 300px; /* Ajusta el tamaño de la imagen */
+    width: 220px; /* Ajusta el tamaño de la imagen */
     margin-right: 20px;
+    border-radius: 10px;
   }
 
   .madre-clara-hero-text {
@@ -711,17 +724,56 @@ button.prev:hover, button.next:hover {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-  }
+    max-width: 80%;
+    text-align: left;
+}
 
   .madre-clara-hero-text h1 {
     font-size: 3em;
     margin: 0;
+    text-align: left;
   }
 
   .madre-clara-hero-text p {
-    font-size: 1.2em;
+    font-size: 1.0em;
     margin-top: 10px;
+    text-align: left;
   }
+
+/* Sección de frases */
+.madre-clara-frases {
+    margin-top: 20px; /* Aumenta el espacio entre el texto de Madre Clara y la frase */
+    text-align: center;
+    z-index: 1100; 
+}
+
+/* Recuadro blanco y comilla grande para la frase */
+.frase-recuadro {
+    background-color: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    max-width: 80%;
+    position: relative;
+    font-style: italic;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.madre-clara-visible .frase-recuadro {
+    opacity: 1;
+}
+
+/* Estilo de la comilla grande fija */
+.frase-recuadro::before {
+    content: "“"; /* Comilla grande fija */
+    font-size: 8em;
+    color: #016fb9;
+    position: absolute;
+    top: -70px;
+    left: -10px;
+}
 
   .madre-clara-auto-frase {
     text-align: center;
@@ -731,8 +783,16 @@ button.prev:hover, button.next:hover {
   .madre-clara-auto-frase p {
     font-size: 1.5em;
     color: #333;
-    transition: opacity 1s ease-in-out;
-  }
+    transition: opacity 1s ease-in-out, transform 0.5s ease-in-out; /* Añade transición para suavidad */
+    opacity: 1; /* Asegúrate de que sea visible */
+    transform: translateY(0); /* Posición inicial */
+}
+
+/* Cuando se oculta o se actualiza */
+.madre-clara-auto-frase.hidden p {
+    opacity: 0;
+    transform: translateY(-10px); /* Efecto de subir */
+}
 
   .madre-clara-row {
     display: flex;
@@ -740,28 +800,153 @@ button.prev:hover, button.next:hover {
     align-items: center;
     margin-top: 20px;
   }
-
-  .madre-clara-logo {
-    width: 250px;
-    margin-right: 20px;
-    border-radius: 10px;
-  }
-
-  .madre-clara-video-container {
+/* Estilos para las pestañas de Logo y Video */
+.logo-video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
     text-align: center;
+    margin-top: 40px;
+}
+
+/* Cada uno de los bloques de logo y video */
+.logo-container, .video-container {
+    flex: 1;
+    max-width: 500px;
+}
+
+/* Animación suave para mostrar logo y video */
+#logo-content, #video-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+/* Títulos y descripción debajo */
+.logo-container h2, .video-container h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.logo-container p, .video-container p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Cuando se expande */
+.active-content {
+    max-height: 500px; /* Ajusta según el contenido */
+    opacity: 1;
+}
+
+/* Animaciones de hover */
+.madre-clara-logo, iframe {
+    transition: transform 0.3s ease;
+}
+
+.madre-clara-logo:hover, iframe:hover {
+    transform: scale(1.05);
+}
+
+/* Animación de zoom al pasar el cursor sobre las imágenes */
+.madre-clara-logo, .madre-clara-img, iframe {
+    transition: transform 0.3s ease-in-out;
+}
+
+.madre-clara-logo:hover, .madre-clara-img:hover, iframe:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo de las pestañas para logo y video */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tab-link {
+    background-color: #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+}
+
+.tab-link:hover {
+    background-color: #999;
+}
+
+.tab-content {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 0 5px 5px 5px;
+    margin-top: 10px;
+}
+
+.active-content {
+    display: block;
   }
 
-  .madre-clara-img, .madre-clara-logo, .madre-clara-video-section iframe {
-    transition: transform 0.5s ease;
+/* Botones de pestañas con transiciones */
+.tab-buttons button {
+    background-color: #EAEAEA;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tab-buttons button.active {
+    background-color: #0066CC;
+    color: white;
+}
+
+.tab-buttons button:hover {
+    transform: translateY(-2px); /* Efecto al pasar el cursor */
+}
+
+/* Animación suave para mostrar logo y video */
+#logo-content, #video-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+/* Cuando se expande */
+.active-content {
+    max-height: 500px; /* Ajusta según el contenido */
+    opacity: 1;
+}
+
+/* Hover y animaciones */
+.madre-clara-logo, iframe {
+    transition: transform 0.3s ease;
   }
   
-  .madre-clara-img:hover, .madre-clara-logo:hover, .madre-clara-video-section iframe:hover {
-    transform: scale(1.1); /* Aumenta el tamaño en un 10% */
+  .madre-clara-logo:hover, iframe:hover {
+    transform: scale(1.05);
   }
   
-  .madre-clara-video-section iframe {
-    margin-top: 10px;
-  }
+
+/* Animación de Noticias al desplazarse */
+.news-schedule-section {
+    transition: margin-top 0.5s ease-in-out;
+}
+
+.news-schedule-section.shifted {
+    margin-top: 300px; /* Ajusta según el espacio necesario cuando los contenidos están visibles */
+}
+
 
 
 /*sección NOTICIAS Y CRONOGRAMA */
@@ -974,18 +1159,18 @@ button.prev:hover, button.next:hover {
 
 /* Aumentar el tamaño del modal */
 .modal-content {
-    max-width: 80%; /* Ajustar el tamaño máximo */
-    max-height: 80%; /* Ajustar el tamaño máximo */
+    max-width: 100%; /* Ajustar el tamaño máximo */
+    max-height: 100%; /* Ajustar el tamaño máximo */
 }
 
 /* Modal de imagen expandida */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 1200;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 150%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
@@ -1345,7 +1530,7 @@ button.prev:hover, button.next:hover {
 #infoPopup {
     display: none; /* Oculto por defecto */
     position: fixed;
-    z-index: 1000;
+    z-index: 1100;
     left: 0;
     top: 0;
     width: 100%;

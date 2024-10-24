@@ -148,31 +148,53 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Cargar frase aleatoria de Madre Clara
-document.addEventListener("DOMContentLoaded", function () {
-    const frases = [
-        "Jesús me ama! con este solo pensamiento debemos olvidar todo lo demás”.",
-        "Pero tú, Señor, lo puedes todo; sin duda tú puedes hacer también que te amemos, que te amemos con fuerza e intrepidez”.",
-        "Aquí deberemos preguntar muchas veces a la Santísima Madre de Dios y a San José ¿Qué debemos hacer para alegrar al Divino Niño?”.",
-        "Aquí deberemos preguntar muchas veces a la Santísima Madre de Dios y a San José ¿Qué debemos hacer para alegrar al Divino Niño?”.",
-        "Nuestra alegría ha de ser una alegría interior que por nada se deja perturbar si no que pasa por encima de todo, porque sabemos que poseemos el único tesoro que se puede tener”.  ",
-        "Piensa cuantos años lleva el señor contigo, cuantas veces, si, cuantas veces entra el señor en tu corazón. ¿y que fruto ha sacado hasta la fecha de esta comunicación con el señor?”.",
-        "Tendríamos que estar más agradecidos por todo lo que él señor ha hecho por nosotros. De esta manera nos dispondríamos a recibir mayores gracias y con más frecuencia",
-        "Dichoso quien acoge con corazón fiel la gracia de Dios y no rechaza ninguno que llama la puerta, por pequeña que sea”",
-        "Si el señor ve en un alma la sed de santidad, entonces la bendice, la planifica con sus dones y la colma abundantemente con sus gracias”.",
-        "Si vamos a él y suplicamos misericordia nos curara; porque como niño que es nos ama; un niño ama siempre”.",
-        "El mismo señor y Dios que se nos dio a través de María entra en nuestro corazón por la sagrada comunión. ¿pero dónde está nuestro amor, nuestro aprecio, nuestra devoción, nuestro recogimiento continuo?”",
-        "El Señor nos regala en la Sagrada comunión su sangre, la sangre de su corazón. Que esta Sangre nos encienda en el amor verdadero a Él y un amor sincero al prójimo.”",
-        "Si practicamos el amor al prójimo el Señor será misericordioso con nosotros y nos perdonará nuestros pecados.” ",
-        "El Señor quiere que nos tengamos un amor sincero y cordial, un amor que tenga sus raíces en El, que venda de Él y El conduzca.”",
-        "Tendríamos que estar más agradecidos por todo lo que él señor ha hecho por nosotros. De esta manera nos dispondríamos a recibir mayores gracias y con más frecuencia.”",
-        "Todo por Jesús, por Jesús Solo",
-        "Todo por Jesús, por Jesús Solo"
-    ];
+// Botones de Logo y Video
+function openTab(evt, tabName) {
+    const tabContent = document.getElementsByClassName('tab-content');
+    for (let i = 0; i < tabContent.length; i++) {
+      tabContent[i].style.display = 'none';
+    }
+  
+    const tabLinks = document.getElementsByClassName('tab-link');
+    for (let i = 0; i < tabLinks.length; i++) {
+      tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+    }
+  
+    document.getElementById(tabName).style.display = 'block';
+    evt.currentTarget.className += " active";
+  }
+  
+  // Mostrar y ocultar con clic fuera
+  function toggleTab(evt, tabName) {
+    const tabContent = document.getElementById(tabName);
+    const allTabContent = document.getElementsByClassName('tab-content');
+    const allTabLinks = document.getElementsByClassName('tab-link');
+  
+    document.addEventListener('click', function(e) {
+      if (!tabContent.contains(e.target) && !evt.currentTarget.contains(e.target)) {
+        tabContent.classList.remove('active-content');
+        evt.currentTarget.classList.remove('active');
+      }
+    });
+  
+    for (let i = 0; i < allTabContent.length; i++) {
+      allTabContent[i].classList.remove('active-content');
+    }
+  
+    for (let i = 0; i < allTabLinks.length; i++) {
+      allTabLinks[i].classList.remove('active');
+    }
+  
+    if (tabContent.classList.contains('active-content')) {
+      tabContent.classList.remove('active-content');
+      evt.currentTarget.classList.remove('active');
+    } else {
+      tabContent.classList.add('active-content');
+      evt.currentTarget.classList.add('active');
+    }
+  }
+  
 
-    const randomIndex = Math.floor(Math.random() * frases.length);
-    document.getElementById('random-quote').textContent = frases[randomIndex];
-});
 
 // Sección Noticias y Cronograma
 const btnNews = document.getElementById('btn-news');

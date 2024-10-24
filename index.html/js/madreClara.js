@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Aquí deberemos preguntar muchas veces a la Santísima Madre de Dios y a San José ¿Qué debemos hacer para alegrar al Divino Niño?”.",
         "Nuestra alegría ha de ser una alegría interior que por nada se deja perturbar si no que pasa por encima de todo, porque sabemos que poseemos el único tesoro que se puede tener”.",
         "Piensa cuantos años lleva el señor contigo, cuantas veces, si, cuantas veces entra el señor en tu corazón. ¿y que fruto ha sacado hasta la fecha de esta comunicación con el señor?”.",
-        "Tendríamos que estar más agradecidos por todo lo que el señor ha hecho por nosotros. De esta manera nos dispondríamos a recibir mayores gracias y con más frecuencia.",
+        "Tendríamos que estar más agradecidos por todo lo que el señor ha hecho por nosotros. De esta manera nos dispondríamos a recibir mayores gracias y con más frecuencia”.",
         "Dichoso quien acoge con corazón fiel la gracia de Dios y no rechaza ninguno que llama la puerta, por pequeña que sea”.",
         "Si el señor ve en un alma la sed de santidad, entonces la bendice, la planifica con sus dones y la colma abundantemente con sus gracias”.",
         "Si vamos a él y suplicamos misericordia nos curará; porque como niño que es nos ama; un niño ama siempre”.",
@@ -42,6 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "Todo por Jesús, por Jesús Solo."
     ];
 
+
+
+    const randomQuoteElement = document.getElementById("random-quote");
     const randomIndex = Math.floor(Math.random() * frases.length);
-    document.getElementById('madre-clara-frase').textContent = frases[randomIndex];
-});
+    randomQuoteElement.textContent = frases[randomIndex];
+  });
