@@ -680,7 +680,7 @@ button.prev:hover, button.next:hover {
   /* Hero principal */
   .madre-clara-hero {
     position: relative;
-    height: 80vh; /* Ajusté la altura para que el contenido suba más */
+    height: 60vh; /* Ajusté la altura para que el contenido suba más */
     background-image: url('../img/fondoseccionmc.jpg');
     background-size: cover;
     background-position: center;
@@ -695,13 +695,13 @@ button.prev:hover, button.next:hover {
 }
 
 /* Ajustar el alto de la imagen hero */
-.hero-image {
-    height: 200px; /* Ajusta el alto según sea necesario */
+.madre-clara-hero-image {
+    height: 100px; /* Ajusta el alto según sea necesario */
     object-fit: cover; /* Asegura que la imagen se ajuste sin distorsionarse */
   }
 
 /* Ajustar márgenes de la frase que se actualiza */
-.hero-phrase {
+.madre-clara-hero-phrase {
     margin-top: 20px; /* Ajusta el margen superior */
     margin-bottom: 20px; /* Asegura que el margen inferior sea igual */
     text-align: center;
@@ -863,20 +863,21 @@ button.prev:hover, button.next:hover {
 .tabs {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 .tab-link {
-    background-color: #ccc;
+    background-color: #ffdd57;
     padding: 10px 20px;
     cursor: pointer;
     border: none;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 5px 5px;
     margin-right: 5px;
 }
 
 .tab-link:hover {
-    background-color: #999;
+    background-color: white;
 }
 
 .tab-content {

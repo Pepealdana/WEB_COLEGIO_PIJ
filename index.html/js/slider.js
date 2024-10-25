@@ -73,3 +73,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mostrar la primera diapositiva
     showSlide(currentSlide);
 });
+
+
+// botones logo y video
+document.addEventListener('click', function(event) {
+    const videoSection = document.querySelector('.video-section');
+    const logoSection = document.querySelector('.logo-section');
+    const logoButton = document.querySelector('.logo-btn');
+    const videoButton = document.querySelector('.video-btn');
+    
+    // Detectar clic en botón de logo y video
+    if (logoButton.contains(event.target)) {
+      logoSection.classList.toggle('visible');
+      videoSection.classList.remove('visible'); // Oculta el video si está visible
+    } else if (videoButton.contains(event.target)) {
+      videoSection.classList.toggle('visible');
+      logoSection.classList.remove('visible'); // Oculta el logo si está visible
+    } else {
+      // Cerrar ambos si se hace clic fuera
+      logoSection.classList.remove('visible');
+      videoSection.classList.remove('visible');
+    }
+  });
+  
+  // Ejemplo de clases CSS para mostrar/ocultar video y logo
+  .visible {
+    display: block;
+  }
+  
+  .logo-section, .video-section {
+    display: none; /* Oculto por defecto */
+  }
+  
