@@ -120,10 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
     showSlide(currentSlide);
 });
 
-// Control de transición
-document.querySelectorAll('.slider-item').forEach(item => {
-    item.style.transition = 'all 0.5s ease'; // Suaviza la transición entre slides
-});
 
 
 // Efecto de aparición gradual para elementos
@@ -164,35 +160,43 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
   }
   
-  // Mostrar y ocultar con clic fuera
-  function toggleTab(evt, tabName) {
-    const tabContent = document.getElementById(tabName);
-    const allTabContent = document.getElementsByClassName('tab-content');
-    const allTabLinks = document.getElementsByClassName('tab-link');
-  
-    document.addEventListener('click', function(e) {
-      if (!tabContent.contains(e.target) && !evt.currentTarget.contains(e.target)) {
-        tabContent.classList.remove('active-content');
-        evt.currentTarget.classList.remove('active');
-      }
+  // botones logo y video
+  document.addEventListener("DOMContentLoaded", function() {
+    const logoButton = document.querySelector(".tab-link[onclick*='logo']");
+    const videoButton = document.querySelector(".tab-link[onclick*='video']");
+    const logoSection = document.getElementById("logo");
+    const videoSection = document.getElementById("video");
+
+    document.addEventListener("click", function(event) {
+        const isClickInsideLogo = logoSection.contains(event.target);
+        const isClickInsideVideo = videoSection.contains(event.target);
+        const isClickOnLogoButton = logoButton.contains(event.target);
+        const isClickOnVideoButton = videoButton.contains(event.target);
+
+        if (isClickOnLogoButton) {
+            logoSection.classList.toggle("visible");
+            videoSection.classList.remove("visible");
+        } else if (isClickOnVideoButton) {
+            videoSection.classList.toggle("visible");
+            logoSection.classList.remove("visible");
+        } else if (!isClickInsideLogo && !isClickInsideVideo) {
+            logoSection.classList.remove("visible");
+            videoSection.classList.remove("visible");
+        }
     });
-  
-    for (let i = 0; i < allTabContent.length; i++) {
-      allTabContent[i].classList.remove('active-content');
-    }
-  
-    for (let i = 0; i < allTabLinks.length; i++) {
-      allTabLinks[i].classList.remove('active');
-    }
-  
-    if (tabContent.classList.contains('active-content')) {
-      tabContent.classList.remove('active-content');
-      evt.currentTarget.classList.remove('active');
-    } else {
-      tabContent.classList.add('active-content');
-      evt.currentTarget.classList.add('active');
-    }
-  }
+
+    // Asegúrate de que las secciones estén ocultas por defecto
+    logoSection.classList.remove("visible");
+    videoSection.classList.remove("visible");
+});
+
+
+// Asegúrate de que las secciones estén ocultas por defecto
+document.addEventListener("DOMContentLoaded", function() {
+    logoSection.classList.remove("visible");
+    videoSection.classList.remove("visible");
+});
+
   
 
 

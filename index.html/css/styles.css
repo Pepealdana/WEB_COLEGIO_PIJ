@@ -4,13 +4,26 @@ html {
   }
 
 body {
-    font-family: 'alberta', sans-serif;
+    font-family: 'Exo', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
     line-height: 1.6;
     background-color: #55C9F4; /* Color de fondo de la página */
 }
+
+/* Fuente de google */
+/*<uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900*/
+
+.exo-{
+  font-family: "Exo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+  
 
 /* Estilos del logotipo */
 .logo img {
@@ -156,7 +169,6 @@ body {
 .logo img:hover {
     transform: scale(1.05); /* Efecto de agrandar levemente al pasar el mouse */
 }
-
 
 /* Estilos para el encabezado y la navegación */
 /* Header fijo */
@@ -673,7 +685,7 @@ button.prev:hover, button.next:hover {
 /* SECCIÓN MADRE CLARA */
 /* Encapsulación para evitar conflictos con otros estilos */
 .madre-clara-section {
-    font-family: 'Arial', sans-serif;
+    font-family: 'exo', sans-serif;
     scroll-behavior: smooth;
   }
   
@@ -883,10 +895,21 @@ button.prev:hover, button.next:hover {
 .tab-content {
     display: none;
     text-align: center;
-    padding: 20px;
-    background-color: #f9f9f9;
+    padding: -4px;
+    background-color: white;
     border-radius: 0 5px 5px 5px;
     margin-top: 10px;
+
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.tab-content.visible {
+    display: block; /* Mostrar contenido */
+    max-height: 500px; /* Ajusta según el contenido */
+    opacity: 1;
 }
 
 .active-content {
@@ -932,6 +955,7 @@ button.prev:hover, button.next:hover {
 /* Hover y animaciones */
 .madre-clara-logo, iframe {
     transition: transform 0.3s ease;
+
   }
   
   .madre-clara-logo:hover, iframe:hover {
@@ -948,6 +972,14 @@ button.prev:hover, button.next:hover {
     margin-top: 300px; /* Ajusta según el espacio necesario cuando los contenidos están visibles */
 }
 
+.visible {
+    display: block;
+}
+
+#logo, #video {
+    display: none; /* Ocultos por defecto */
+}
+
 
 
 /*sección NOTICIAS Y CRONOGRAMA */
@@ -961,12 +993,14 @@ button.prev:hover, button.next:hover {
 
 /* Botones de Noticias y Cronograma */
 .tab-buttons {
+    font-family: 'exo', sans-serif;
     display: flex;
     justify-content: flex-end;
     margin-bottom: 20px;
 }
 
 .tab-buttons button {
+    font-family: 'exo', sans-serif;
     background-color: #EAEAEA;
     color: #333;
     border: none;
@@ -1190,6 +1224,7 @@ button.prev:hover, button.next:hover {
 /* ========== Sección CONTACTO ========== */
 /*sección para derechos reservados */
 .footer-container {
+    font-family: 'exo', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1389,6 +1424,7 @@ button.prev:hover, button.next:hover {
 }
 
 .contact-buttons button {
+    font-family: 'exo', sans-serif;
     background-color: #55C9F4;
     color: #01142d;
     padding: 10px 20px;
