@@ -13,9 +13,6 @@ body {
 }
 
 /* Fuente de google */
-/*<uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 100 to 900*/
-
 .exo-{
   font-family: "Exo", sans-serif;
   font-optical-sizing: auto;
@@ -25,16 +22,29 @@ body {
 
   
 
-/* Estilos del logotipo */
-.logo img {
-    width: 100px;
+/* HEADER */
+/* Alinear los logos en una misma línea */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    position: absolute;
+    left: 20px; /* Mueve los logos hacia la izquierda */
+    z-index: 1100;
+}
+
+/* Estilo individual de cada logo */
+.logo-container img {
+    width: 90px;
     height: auto;
-    display: block;
-    position: absolute; /* Posiciona el logo */
-    top: -30px; /* Ajusta el valor para que sobresalga del header */
-    left: 20px; /* Ajusta este valor según dónde quieras que esté el logo */
+    margin-top: 10px; /* Sobresale del header */
+    transition: transform 0.3s ease-in-out; 
+}
+
+.logo img {
     z-index: 1101; /* Asegura que esté sobre el header y top bar */
     transition: transform 0.3s ease-in-out; /* Suaviza el efecto de zoom */
+    width: 75px;
 }
 
 /* Estilos de la barra superior */
@@ -58,9 +68,9 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding-left: 100px; /* Ajusta el valor para dejar espacio para el logo */
+    padding-left: 80px; /* Ajusta el valor para dejar espacio para el logo */
     padding-right: 20px; /* Mantén el padding derecho */
     color: #01142d;
 }
@@ -76,7 +86,7 @@ body {
     line-height: 1;
     display: flex;
     align-items: center;
-    padding-left: 120px; /* margen siguenos en: ;*/
+    padding-left: 220px; /* margen siguenos en: ;*/
 }
 
 .top-bar .social-media a {
@@ -177,9 +187,10 @@ header {
     position: fixed;
     top: 40px; /* Ajuste para que el header esté debajo del top bar */
     width: 100%;
+    height: 50px;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 30px;
+    justify-content: space-between; /* Separación entre logos y menú */
+    padding: 10px -10px;
     background-color: #ffdd57;
     z-index: 999;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -188,9 +199,10 @@ header {
 
 /* Estilos del menú de navegación en pantallas grandes */
 .main-nav {
+    margin-left: auto; /* Empuja el menú hacia la derecha */
     display: flex;
     justify-content: center; /* Ajustar según necesidad */
-    flex-grow: 1;
+    margin-right: 30px; /* Ajusta según necesites */
 }
 .main-nav ul {
     display: flex;
@@ -321,7 +333,7 @@ header {
 }
 
 
-/* Estilos de la sección hero */
+/* SECCIÓN HERO (FOTO GRANDE) */
 .hero-section {
     position: relative;
     height: 85vh;/* Ocupa toda la altura de la ventana */
@@ -986,6 +998,7 @@ button.prev:hover, button.next:hover {
 /* Estilos para la sección general */
 
 .news-schedule-section {
+    z-index: 1100;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -1020,6 +1033,7 @@ button.prev:hover, button.next:hover {
 
 /* Estilos para la sección de contenido */
 .hidden {
+    z-index: 1250;
     visibility: hidden;
     height: 0;
     overflow: hidden;
@@ -1194,29 +1208,33 @@ button.prev:hover, button.next:hover {
 
 /* Aumentar el tamaño del modal */
 .modal-content {
-    max-width: 100%; /* Ajustar el tamaño máximo */
-    max-height: 100%; /* Ajustar el tamaño máximo */
+    z-index: 10;
+    max-width: 80%; /* Ajuste del tamaño de la imagen */
+    max-height: 80vh; /* Mantener la imagen grande */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Sombra adicional para enfoque */
+    border-radius: 8px; /* Redondear esquinas */
 }
 
 /* Modal de imagen expandida */
 .modal {
-    display: none;
+    display: flex;
     position: fixed;
-    z-index: 1200;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 150%;
+    width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Ubica la imagen más arriba */
+    padding-top: 40px; /* Ajuste de espacio superior */
 }
 
 .close {
     position: absolute;
     top: 10px;
-    right: 20px;
-    font-size: 30px;
+    right: 30px;
+    font-size: 35px;
     color: white;
     cursor: pointer;
 }
@@ -1334,7 +1352,7 @@ button.prev:hover, button.next:hover {
 
 .escudosme {
     margin-right: 30px; /* Ajusta la separación entre las imágenes */
-    max-width: 120px
+    width: 85px;
 }
 
 .contact-links ul {
@@ -1686,3 +1704,4 @@ footer:hover {
     padding: 20px 0; /* Añade relleno para darle más altura */
     text-align: center;
 }
+
