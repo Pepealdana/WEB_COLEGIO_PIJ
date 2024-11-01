@@ -20,7 +20,23 @@ body {
   font-style: normal;
 }
 
-  
+.audiowide-regular {
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  } 
+
+/* Estilo para los títulos (h1, h2, etc.) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Audiowide', sans-serif;
+    font-weight: 400;
+}
+
+/* Estilo para los párrafos */
+p {
+    font-family: 'Exo', sans-serif;
+    font-weight: 400;
+}
 
 /* HEADER */
 /* Alinear los logos en una misma línea */
@@ -70,7 +86,7 @@ body {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    padding-left: 80px; /* Ajusta el valor para dejar espacio para el logo */
+    padding-left: 100px; /* Ajusta el valor para dejar espacio para el logo */
     padding-right: 20px; /* Mantén el padding derecho */
     color: #01142d;
 }
@@ -86,7 +102,9 @@ body {
     line-height: 1;
     display: flex;
     align-items: center;
-    padding-left: 220px; /* margen siguenos en: ;*/
+    padding-left: 220px; /* obra apostólica*/
+    transform: scale(1.05);
+    margin-top: 5px; /* Ajusta este valor según necesites */
 }
 
 .top-bar .social-media a {
@@ -98,6 +116,7 @@ body {
     height: 30px;
     margin-left: 5px;
     vertical-align: middle;
+    transition: transform 0.3s ease; /* Suaviza la animación */
 }
 
 /* Imagen a la derecha */
@@ -107,6 +126,7 @@ body {
     margin-left: 0;
     margin-right: 0;
     margin-top: -30px; /* Ajuste manual */
+    transform: scale(1.05);
 }
 
 .topbar-images {
@@ -114,6 +134,7 @@ body {
     align-items: center;
     gap: 3px; /* Espacio entre imágenes */
     margin-top: 5px; /* Ajuste manual */
+    transform: scale(1.05);
 }
 
 .top-bar .topbar-image {
@@ -167,7 +188,7 @@ body {
 /* Redondear esquinas de los logos en la derecha */
 .topbar-images img {
     border-radius: 5px; /* Ajusta el valor según el nivel de redondeo que quieras */
-    transition: all 0.3s ease;
+   
 }
 
 /* Efecto de hover en los logos */
@@ -178,6 +199,10 @@ body {
 /* Efecto de hover en los logos */
 .logo img:hover {
     transform: scale(1.05); /* Efecto de agrandar levemente al pasar el mouse */
+}
+
+.top-bar .social-media img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño ligeramente al pasar el mouse */
 }
 
 /* Estilos para el encabezado y la navegación */
@@ -203,6 +228,7 @@ header {
     display: flex;
     justify-content: center; /* Ajustar según necesidad */
     margin-right: 30px; /* Ajusta según necesites */
+    padding-left: 120px; /* Ajuste adicional para separar del logo */
 }
 .main-nav ul {
     display: flex;
@@ -1026,8 +1052,8 @@ button.prev:hover, button.next:hover {
 }
 
 .tab-buttons button.active {
-    background-color: #0066CC;
-    color: white;
+    background-color: #55C9F4;
+    color: black;
 }
 
 
@@ -1096,7 +1122,7 @@ button.prev:hover, button.next:hover {
 }
 
 .news-link:hover {
-    color: #004A99;
+    color: #0066CC;
 }
 
 /* Ocultar la sección no activa */
