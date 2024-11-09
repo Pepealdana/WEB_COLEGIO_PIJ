@@ -725,6 +725,8 @@ button.prev:hover, button.next:hover {
 .madre-clara-section {
     font-family: 'exo', sans-serif;
     scroll-behavior: smooth;
+    z-index: 100; /* Baja prioridad en la pila de elementos */
+    position: relative;
   }
   
   /* Hero principal */
@@ -741,7 +743,7 @@ button.prev:hover, button.next:hover {
     padding-top: 20px; /* Ajusta el espaciado si es necesario */
     max-width: 100vw;
     box-sizing: border-box;
-    z-index: 900;
+    z-index: 100;
 }
 
 /* Ajustar el alto de la imagen hero */
@@ -794,7 +796,7 @@ button.prev:hover, button.next:hover {
 .madre-clara-frases {
     margin-top: 20px; /* Aumenta el espacio entre el texto de Madre Clara y la frase */
     text-align: center;
-    z-index: 1100; 
+    z-index: 999; 
 }
 
 /* Recuadro blanco y comilla grande para la frase */
@@ -850,6 +852,7 @@ button.prev:hover, button.next:hover {
     align-items: center;
     margin-top: 20px;
   }
+
 /* Estilos para las pestañas de Logo y Video */
 .logo-video-container {
     display: flex;
@@ -1234,35 +1237,36 @@ button.prev:hover, button.next:hover {
 
 /* Aumentar el tamaño del modal */
 .modal-content {
-    z-index: 10;
-    max-width: 80%; /* Ajuste del tamaño de la imagen */
+    
+    max-width: 90%; /* Ajuste del tamaño de la imagen */
     max-height: 80vh; /* Mantener la imagen grande */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Sombra adicional para enfoque */
-    border-radius: 8px; /* Redondear esquinas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra adicional para enfoque */
+    border-radius: 10px; /* Redondear esquinas */
 }
 
 /* Modal de imagen expandida */
 .modal {
-    display: flex;
+    display: none; /* Oculto por defecto */
     position: fixed;
-    z-index: 1000;
+    z-index: 1100;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
-    align-items: flex-start; /* Ubica la imagen más arriba */
-    padding-top: 40px; /* Ajuste de espacio superior */
+    align-items: center; 
+    padding-top: -40px; /* Ajuste de espacio superior */
 }
 
 .close {
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 30px;
-    font-size: 35px;
+    font-size: 40px;
     color: white;
     cursor: pointer;
+    z-index: 1101; /* Asegura que el botón de cerrar esté encima */
 }
 
 /* ========== Sección CONTACTO ========== */
@@ -1507,7 +1511,7 @@ button.prev:hover, button.next:hover {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1100;
     left: 0;
     top: 0;
     width: 100%;
@@ -1520,12 +1524,13 @@ button.prev:hover, button.next:hover {
 
 .modal-content {
     background-color: #fefefe;
-    max-width: 40%; /* Reduce el ancho del modal */
+    max-width: 55%; /* ancho del modal */
     margin: auto;
-    padding: 20px;
+    padding: 30px;
     border: 1px solid #888;
     width: 80%;
     animation: fadeIn 0.5s ease;
+    margin-top: -55px; 
 }
 
 .modal-content h2 {
@@ -1730,4 +1735,3 @@ footer:hover {
     padding: 20px 0; /* Añade relleno para darle más altura */
     text-align: center;
 }
-
