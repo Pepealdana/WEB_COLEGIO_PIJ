@@ -3,23 +3,42 @@
 <head>
     <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- ✅ Hacemos que la vista se adapte a la pantalla del dispositivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Título y enlaces a recursos externos como CSS y favicon -->
     <title>Colsme.edu.co</title>
+
+    <!-- ✅ Enlace al archivo de estilos principal -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="img/escudo-sme.ico" type="image/x-icon">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+    <!-- ✅ Enlace al manifest.json (requerido para PWA) -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- ✅ Íconos para PWA y favicon-->
+    <link rel="icon" href="img/escudosme.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    
+    <!-- ✅ Colores para barra de estado en móviles -->
+    <meta name="theme-color" content="#0c2e4d">
+
+    <!-- ✅ Fuentes y estilos de terceros -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+ 
+
+    <link rel="icon" href="img/escudo-sme.ico" type="image/x-icon">
+
+    <!-- ✅ Fuentes de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo:ital,wght@0,100..900;1,100..900&family=Neucha&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400&family=Audiowide&display=swap" rel="stylesheet">
-
 </head>
+
 
 <script>
     if ('serviceWorker' in navigator) {
@@ -34,22 +53,23 @@
 </script>
 
 <body>
-    <!-- Barra superior con enlaces a redes sociales -->
+    <!-- 1. Barra superior redes sociales lado izquierdo -->
     <div class="top-bar">
         <div class="social-media">
             <span>Obra Apostólica de las Hermanas del Niño Jesús Pobre.</span>
             <a href="https://www.facebook.com/colegiosantamariadelaesperanza" target="_blank">
-                <img src="img/iconfco.png" alt="Facebook">
+                <img src="img/iconfco.png" alt="Enlace a Facebook del colegio">
             </a>
             <a href="https://www.youtube.com/channel/UCY0figVslii6xSoJrAxj-Cg" target="_blank">
-                <img src="img/iconyco.png" alt="Youtube">
+                <img src="img/iconyco.png" alt="Enlace al canal youtube del colegio">
             </a>
             <a href="https://www.instagram.com/colegio_sme/?hl=es-la" target="_blank">
-                <img src="img/iconico.png" alt="Instagram">
+                <img src="img/iconico.png" alt="Enlace a Instagram del colegio">
             </a>
         </div>
 
-<!-- Contenedor para las imágenes -->
+        
+<!-- 1. Barra superior lado derecho -->
 <div class="topbar-images">
     <!-- Imágenes que se muestran en pantallas grandes -->
     <a href="https://familia.mattilda.io/login/" class="topbar-link" target="_blank">
@@ -76,7 +96,7 @@
 </div>
 
 
-<!-- Encabezado fijo con logotipo y navegación -->
+<!-- 2. Header y navegación -->
 <header id="top">
         <!-- Logotipo de la institución -->
         <div class="logo-container">
@@ -115,19 +135,21 @@
         </li>
         <li><a href="#admisiones">Admisiones</a></li>
         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfLX8E0ty9sJETMxOgt0kEBxPZdERD3ZhNp6UepYK8HlEYt5g/viewform?usp=sf_link">Buzón de sugerencias</a></li>
+    </li>
+        <li><a href="#exalumnos">Exalumnos</a></li>   
     </ul>
 </nav>
 
 </header>
 
 
-<!-- Sección hero con imagen de fondo y texto centralizado -->
+<!-- 3. Sección Hero -->
 <section class="hero-section">
         <div class="hero-content">
             <h1>Bienvenido al Colegio Santa María de la Esperanza</h1>
             <p>"Somos Luz y Esperanza para el mundo de hoy."</p>
             <a href="#slider" class="cta-button">Conoce Más</a>
-            <a href="#slider" class="down-arrow"> &#8595; </a> <!-- Flecha hacia abajo -->
+            
             </a>
         </div>
         <!-- Imagen de fondo en la sección hero -->
@@ -135,7 +157,7 @@
 </section>
 
 
-<!-- Sección de slider -->
+<!-- 4. Sección Slider -->
 <section id="slider">
 <section class="info-slider">
     <div class="slider-container">
@@ -222,7 +244,7 @@
  <div class="slider-indicators"></div>
 
 
-<!-- Sección MADRE CLARA -->
+<!-- 5. Sección Madre Clara -->
 <div class="madre-clara-section">
     <div class="madre-clara-hero">
       <div class="madre-clara-hero-content">
@@ -240,29 +262,24 @@
     </div>
 </div>
   
- <!-- Pestañas para Logo y Video -->
+ <!-- 6. Tabs de Logo y Video -->
     <div class="tabs-container">
         <div class="tabs">
             <button class="tab-link" onclick="openTab(event, 'logo')">Logo del Año</button>
             <button class="tab-link" onclick="openTab(event, 'video')">Video del Año</button>
         </div>
         <div id="logo" class="tab-content">
-            <img class="madre-clara-logo" src="img/simbolo2024.png" alt="Logo del Año">
+            <img class="madre-clara-logo" src="img/simbolo2025.png" alt="Logo del Año">
             <p>Este es el logo del año que representa la esperanza y el compromiso de nuestra comunidad.</p>
         </div>
         <div id="video" class="tab-content">
-            <iframe width="560" height="315" src="img/cancion 2024.mp4" title="Video Madre Clara" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="img/cancion 2025.mp4" title="Video Madre Clara" frameborder="0" allowfullscreen></iframe>
             <p>Peregrinos de la Esperanza, fortaleciendo nuestra amistad con Jesús Ecucaristía, perseverando en mi misión.</p>
         </div>
     </div>
 </div>
     
-      
-      
-  
-
-
-<!-- Sección NOTICIAS Y CRONOGRAMA -->
+<!-- 7. Sección de Noticias y Cronograma -->
 
 <div class="news-schedule-section">
     <!-- Contenedor de botones -->
@@ -359,6 +376,7 @@
         <li><a href="#">Beata Clara Fey</a></li>
         <li><a href="#">Admisiones</a></li>
         <li><a href="#">Buzón de sugerencias</a></li>
+        <li><a href="#">Exalumnos</a></li>
       </ul>
     </div>
   
