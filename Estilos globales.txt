@@ -163,10 +163,32 @@ p {
     margin-right: 5px; /* Espacio ajustado entre las dos imágenes */
 }
 
-/* Estilos para los logos en la derecha */
+
+/* Para pantallas grandes: mostrar imágenes de los botones y ocultar logo */
+@media (min-width: 769px) {
+    .logo-responsive {
+        display: none; /* Ocultar el logo responsive */
+    }
+}
+
+/* Para pantallas pequeñas: ocultar las imágenes de los botones y mostrar logo */
+@media (max-width: 768px) {
+    .topbar-image {
+        display: none; /* Ocultar las imágenes de los botones */
+    }
+
+    .logo-responsive {
+        display: block; /* Mostrar el logo responsive */
+        margin-right: auto; /* Ajustar el margen si es necesario */
+        margin-left: 3px; /* Espacio entre las imágenes */
+        border-radius: 20px; /* esquinas redondeadas */ 
+    }
+}
+
 /* Redondear esquinas de los logos en la derecha */
 .topbar-images img {
-    border-radius: 5px; /* Ajusta el valor según el nivel de redondeo que quieras */ 
+    border-radius: 5px; /* Ajusta el valor según el nivel de redondeo que quieras */
+   
 }
 
 /* Efecto de hover en los logos */
@@ -266,6 +288,71 @@ header {
     color: #01142d;
 }
 
+/* Estilos para el menú hamburguesa en pantallas pequeñas */
+.menu-toggle {
+    display: none;
+}
+.menu-icon {
+    display: none;
+    ;
+}
+
+.submenu {
+    display: none;
+  }
+
+/* Estilos para el menú hamburguesa en pantallas pequeñas */
+.menu-toggle {
+    display: none;
+}
+.menu-icon {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    padding: 10px;
+    color: #fff;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    .main-nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #ffdd57;
+    }
+    
+    .main-nav ul li {
+        text-align: center;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .main-nav ul li a {
+        padding: 15px;
+        border-bottom: 1px solid #444;
+    }
+
+    .main-nav ul li .submenu {
+        display: none; /* Ocultar submenús por defecto */
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 26px;
+        cursor: pointer;
+        padding: 10px;
+        color: #01142d;
+    }
+
+    .menu-toggle:checked + .menu-icon + .main-nav ul {
+        display: flex;
+    }
+}
+
 /* Estilos de submenú en pantallas grandes */
 .main-nav ul li:hover ul.submenu {
     display: block;
@@ -349,6 +436,25 @@ header {
     background-color: #ffcc00;
 }
 
+/* Media query para pantallas medianas (tablets)*/
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 2rem; /* Reducir tamaño en pantallas medianas */
+        white-space: normal; /* Permite saltos de línea */
+        text-overflow: clip; /* Permite que el texto se divida */
+        line-height: 1.3;
+}
+
+/* Media query para pantallas muy pequeñas (teléfonos móviles) */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.5rem; /* Reducir aún más el tamaño en móviles */
+        white-space: normal; /* Permite saltos de línea en móviles */
+        text-overflow: clip; 
+        line-height: 1.4; /* Aumenta el espacio entre líneas */
+    }
+}
+}
 
 #slider {
     padding-top: 200px; /* Ajusta según la altura de tu barra superior */
@@ -527,6 +633,91 @@ button.prev:hover, button.next:hover {
     right: 10px;
 }
 
+@media (max-width: 768px) {
+    .info-box {
+        width: 100%;
+        padding: 10px;
+        height: auto; /* Importante: que la caja se adapte */
+        display: block;
+    }
+
+    .slider-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .slider-item {
+        display: flex;
+        flex-direction: column;/* Alineación vertical */
+        width: 100%;
+        height: auto; /* Deja que el tamaño dependa del contenido */
+    }
+
+    .slider-item img {
+        width: 100%;/* Imagen ocupa el 100% del ancho */
+        height: auto;
+    }
+
+    .slider-content {
+        width: 100%;
+        padding: 10px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        height: auto; /* Deja que el contenedor crezca según el contenido */
+    }
+
+    .slider-content p {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        height: auto;
+        overflow: visible;
+        width: 100%;
+    }
+
+    .slider-item, .slider-content, .slider-text {
+        height: auto;
+        overflow: visible;
+    }
+
+    .slider-content, .slider-text {
+        height: auto; /* Elimina cualquier altura fija */
+        overflow: visible;  
+    }
+
+    .info-box {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .slider-text {
+        white-space: normal; /* Permitir saltos de línea */
+        word-wrap: break-word; /* Evitar que el texto se salga del contenedor */
+        height: auto; /* Dinámico: ajusta según el contenido */
+        overflow: visible; /* Asegúrate que no haya cortes */
+    }
+
+    .slider-text {
+        max-height: none;
+        overflow: visible;
+    }
+    
+    .prev, .next {
+        top: auto;
+        bottom: 10px;
+        transform: none;
+    }
+
+    .prev {
+        left: 5px;
+    }
+
+    .next {
+        right: 5px;
+    }
+}
 
 
 /* SECCIÓN MADRE CLARA */
@@ -805,6 +996,7 @@ button.prev:hover, button.next:hover {
 /* Hover y animaciones */
 .madre-clara-logo, iframe {
     transition: transform 0.3s ease;
+
   }
   
   .madre-clara-logo:hover, iframe:hover {
@@ -950,6 +1142,16 @@ button.prev:hover, button.next:hover {
     display: block; /* Mostrar cronograma si está activo */
 }
 
+
+/* Responsive para la sección de noticias */
+@media (max-width: 768px) {
+    .section-content.active {
+        grid-template-columns: 1fr;
+    }
+    .tab-buttons {
+        justify-content: center;
+    }
+}
 
 
 /* ========== Sección CRONOGRAMA ========== */
@@ -1473,27 +1675,64 @@ button.prev:hover, button.next:hover {
     animation: fadeOut 0.5s ease forwards;
 }
 
-/* ====== Footer Azul Final (Sticky y Delgado) ====== */
-.footer-bar {
-  background-color: #55C9F4;
-  color: #01142d;
-  padding: 6px 0; /* Altura más baja */
-  width: 100%;
-  font-family: 'Exo', sans-serif;
-  font-size: 13px;
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 90%; /* Ajusta el tamaño del popup */
+        margin: 0 auto; /* Centra el popup horizontalmente */
+        position: relative;
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        height: 100vh; /* Altura completa de la pantalla */
+    }
+
+    .popup-content .close-popup {
+        position: absolute;
+        top: 265px;  /* Justo en la parte superior */
+        right: 5; /* Justo en la parte derecha */
+        font-size: 30px;
+        cursor: pointer;
+        color: black;
+        padding: 5px; /* Ajusta si quieres un pequeño margen */
+    }
+    
+    .popup {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+    }
 }
 
-.footer-bar-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
+/* BARRA CONTACTOS */
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: #55C9F4;
+    color: #01142d;
+    padding: 10px 0;
+    transition: transform 0.3s ease;
 }
 
-/* Comportamiento Sticky */
-.sticky-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
+footer span {
+    color: #01142d; /* Color del texto de la fecha */
+}
+
+footer p {
+    margin: 0;
+}
+
+footer:hover {
+    transform: scale(1.02);
+}
+
+.update-bar {
+    background-color: #55C9F4; /* Ajustar el color original */
+    color: white; /* Asegura que el texto sea legible */
+    font-size: 16px; /* Ajusta el tamaño según lo que necesitas */
+    padding: 20px 0; /* Añade relleno para darle más altura */
+    text-align: center;
 }
 

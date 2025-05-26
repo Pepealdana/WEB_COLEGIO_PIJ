@@ -10,10 +10,8 @@
     
     <title>Colsme.edu.co</title>
 
-    <!-- ✅ Enlace al archivo de estilos principal -->
+    <!-- ✅ Enlace al archivo de estilos -->
     <link rel="stylesheet" href="css/styles.css"> <!-- CSS base (desktop) -->
-
-    <!-- ✅ Enlace al archivo de estilos responsive -->
     <link rel="stylesheet" href="css/responsive.css"> <!-- Responsive -->
 
     <!-- ✅ Enlace al manifest.json (requerido para PWA) -->
@@ -84,22 +82,15 @@
     <a href="https://colsme.phidias.co/" class="topbar-link" target="_blank">
         <img src="img/boton-phidias.png" alt="Phidias" class="topbar-image">
     </a>
-
-    <!-- Logo que solo se muestra en pantallas pequeñas -->
-    <a href="https://familia.mattilda.io/login/" class="logo-responsive">
-        <img src="img/mrespon.png" alt="Logo responsive" style="width: 20px;">
-    </a>
-    <a href="https://prod.progrentis.com/signin/tabid/1543/Default.aspx?returnurl=%2fmain.aspx" class="logo-responsive">
-        <img src="img/prrenspon.png" alt="Logo responsive" style="width: 20px;">
-    </a>
-    <a href="https://colsme.phidias.co/x" class="logo-responsive">
-        <img src="img/phirespon.png" alt="Logo responsive" style="width: 20px;">
-    </a>
 </div>
 </div>
 
 
 <!-- 2. Header y navegación -->
+<header>
+<button class="menu-toggle" onclick="toggleMenu()">☰ Menú</button>
+<!-- Botón para abrir el menú en pantallas pequeñas -->
+
 <header id="top">
         <!-- Logotipo de la institución -->
         <div class="logo-container">
@@ -110,9 +101,6 @@
             <img src="img/escudosme.png" alt="Logo de la Institución">
         </div>
 
-<!-- Botón de menú hamburguesa para pantallas pequeñas -->
-<input type="checkbox" id="menu-toggle" class="menu-toggle">
-<label for="menu-toggle" class="menu-icon">&#9776;</label>
 
 <!-- Menú de navegación principal -->
 <nav class="main-nav">
@@ -142,9 +130,11 @@
         <li><a href="#exalumnos">Exalumnos</a></li>   
     </ul>
 </nav>
-
+</header>
 </header>
 
+
+ 
 
 <!-- 3. Sección Hero -->
 <section class="hero-section">
@@ -507,11 +497,12 @@
 
 
 <!-- Barra Final -->
-<footer style="background-color: #55C9F4; color: #01142d; padding: 2px 0;">
-    <div class="container text-center">
-        <p>Colegio Santa María de la Esperanza.     <span id="fecha-actual"></span> &copy;     Hermanas del Niño Jesús Pobre.</p>
-    </div>
+<footer class="footer-bar">
+  <div class="footer-bar-content">
+    <p>Colegio Santa María de la Esperanza. <span id="fecha-actual"></span> &copy; Hermanas del Niño Jesús Pobre.</p>
+  </div>
 </footer>
+
 
 <!-- POPUP ocasional-->
 <div id="infoPopup">
@@ -527,6 +518,14 @@
 <script src="js/slider.js"></script>
 <script src="js/madreClara.js"></script>
 
+
+<!-- función menu hamburguesa-->
+<script>
+  function toggleMenu() {
+    const nav = document.querySelector('.main-nav ul');
+    nav.classList.toggle('show');
+  }
+</script>
 
 </body>
 </html>
