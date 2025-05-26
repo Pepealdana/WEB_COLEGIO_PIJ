@@ -733,7 +733,7 @@ button.prev:hover, button.next:hover {
   .madre-clara-hero {
     position: relative;
     height: 60vh; /* Ajusté la altura para que el contenido suba más */
-    background-image: url('../img/fondoseccionmc.jpg');
+    background-image: url('../img/fondoseccionmc.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1042,7 +1042,7 @@ button.prev:hover, button.next:hover {
 }
 
 .tab-buttons button {
-    font-family: 'exo', sans-serif
+  font-family: 'exo', sans-serif;
     background-color: #EAEAEA;
     color: #333;
     border: none;
